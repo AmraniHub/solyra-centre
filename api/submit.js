@@ -18,7 +18,8 @@ function moroccanTime() {
   });
 }
 
-async function sendTelegram(name, phone, service) {
+// ── Telegram: booking lead ────────────────────────────────────
+async function sendTelegramLead(name, phone, service) {
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
   const text = [
     `🌸 <b>حجز جديد — Centre Solyra</b>`,
@@ -36,20 +37,43 @@ async function sendTelegram(name, phone, service) {
   });
 }
 
-async function sendToSheets(name, phone, service) {
+// ── Telegram: recruitment application ────────────────────────
+async function sendTelegramRecruit(name, phone, specialty, experience, previousSalon) {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
+  const text = [
+    `💼 <b>طلب توظيف جديد — Centre Solyra</b>`,
+    ``,
+    `👤 <b>الاسم:</b> ${name}`,
+    `📞 <b>الهاتف:</b> <code>${phone}</code>`,
+    `💅 <b>التخصص:</b> ${specialty}`,
+    `⏱ <b>الخبرة:</b> ${experience}`,
+    `🏪 <b>آخر صالون:</b> ${previousSalon || 'غير محدد'}`,
+    `🕐 <b>التوقيت:</b> ${moroccanTime()}`,
+  ].join('\n');
+
+  await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' })
+  });
+}
+
+// ── Google Sheets ─────────────────────────────────────────────
+async function sendToSheets(payload) {
   if (!SHEETS_WEBHOOK_URL) return;
   await fetch(SHEETS_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ timestamp: moroccanTime(), name, phone, service })
+    body: JSON.stringify(payload)
   });
 }
 
-async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl) {
+// ── Meta CAPI ─────────────────────────────────────────────────
+async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, eventName) {
   if (!META_PIXEL_ID || !META_ACCESS_TOKEN) return;
   const payload = {
     data: [{
-      event_name: 'Lead',
+      event_name: eventName,
       event_time: Math.floor(Date.now() / 1000),
       event_id: eventId,
       event_source_url: eventSourceUrl,
@@ -68,19 +92,44 @@ async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSour
   );
 }
 
+// ── Main handler ──────────────────────────────────────────────
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name = '', phone = '', service = '', eventId = '', userAgent = '', eventSourceUrl = '' } = req.body || {};
+  const {
+    type = 'lead',
+    name = '', phone = '', service = '',
+    experience = '', previousSalon = '',
+    eventId = '', userAgent = '', eventSourceUrl = ''
+  } = req.body || {};
+
   const clientIp = req.headers['x-forwarded-for']?.split(',')[0] || req.socket?.remoteAddress || '';
 
-  await Promise.allSettled([
-    sendTelegram(name, phone, service),
-    sendToSheets(name, phone, service),
-    sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl),
-  ]);
+  if (type === 'recrutement') {
+    // ── recruitment submission ──
+    await Promise.allSettled([
+      sendTelegramRecruit(name, phone, service, experience, previousSalon),
+      sendToSheets({
+        type: 'recrutement',
+        name, phone, service, experience, previousSalon,
+        timestamp: moroccanTime()
+      }),
+      sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'CompleteRegistration'),
+    ]);
+  } else {
+    // ── booking lead (default) ──
+    await Promise.allSettled([
+      sendTelegramLead(name, phone, service),
+      sendToSheets({
+        type: 'lead',
+        name, phone, service,
+        timestamp: moroccanTime()
+      }),
+      sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'Lead'),
+    ]);
+  }
 
   return res.status(200).json({ ok: true });
 }
