@@ -765,21 +765,8 @@
               <label for="fphone">رقم الواتساب</label>
               <input type="tel" id="fphone" name="phone" placeholder="06XXXXXXXX" required />
             </div>
-            <div class="field">
-              <label>الخدمة المطلوبة</label>
-              <div class="select-wrap">
-                <select name="service" id="fservice" required>
-                  <option value="">— اختاري الخدمة —</option>
-                  <option value="بروتين الشعر - Nano Gel 300dh">💇 بروتين الشعر — 300dh</option>
-                  <option value="علاج هيدرافيشل 200dh">💆 هيدرافيشل (1 شخص) — 200dh</option>
-                  <option value="علاج هيدرافيشل زوجي 300dh">💆💆 هيدرافيشل (2 شخص) — 300dh</option>
-                  <option value="عناية بالبشرة">✨ عناية بالبشرة</option>
-                  <option value="صبغ وتلوين الشعر">🎨 صبغ وتلوين الشعر</option>
-                  <option value="ميزوثيرابي">💉 ميزوثيرابي</option>
-                  <option value="استشارة مجانية">🌸 استشارة مجانية</option>
-                </select>
-              </div>
-            </div>
+            <!-- service field hidden — value set by card clicks or default -->
+            <input type="hidden" name="service" id="fservice" value="طلب حجز - Centre Solyra" />
             <button type="submit" class="submit-btn" id="submitBtn">
               احجزي الآن — مجاناً 🌸
             </button>
@@ -1071,14 +1058,8 @@
   // ── scroll helper ──
   function scrollToForm(service) {
     document.getElementById('leadForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => {
-      const sel = document.getElementById('fservice');
-      if (sel) {
-        for (let opt of sel.options) {
-          if (opt.value === service) { sel.value = service; break; }
-        }
-      }
-    }, 600);
+    const input = document.getElementById('fservice');
+    if (input && service) input.value = service;
   }
 
   // ── toast helper ──
@@ -1102,10 +1083,10 @@
 
     const name    = form.name.value.trim();
     const phone   = form.phone.value.trim();
-    const service = form.service.value;
+    const service = form.service.value || 'طلب حجز - Centre Solyra';
 
-    if (!name || !phone || !service) {
-      showToast('⚠️ يرجى ملء جميع الحقول');
+    if (!name || !phone) {
+      showToast('⚠️ يرجى ملء الاسم ورقم الواتساب');
       return;
     }
 
