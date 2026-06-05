@@ -674,11 +674,11 @@
     const form = e.target;
     const btn  = document.getElementById('submitBtn');
 
-    const name          = form.name.value.trim();
-    const phone         = form.phone.value.trim();
-    const specialty     = form.specialty.value;
-    const experience    = form.experience.value;
-    const previousSalon = form.previousSalon.value.trim();
+    const name          = document.getElementById('rname').value.trim();
+    const phone         = document.getElementById('rphone').value.trim();
+    const specialty     = document.getElementById('rspecialty').value;
+    const experience    = document.getElementById('rexperience').value;
+    const previousSalon = document.getElementById('rsalon').value.trim();
 
     if (!name || !phone || !specialty || !experience) {
       showToast('⚠️ يرجى ملء جميع الحقول المطلوبة');

@@ -1078,9 +1078,9 @@
     const form = e.target;
     const btn  = document.getElementById('submitBtn');
 
-    const name    = form.name.value.trim();
-    const phone   = form.phone.value.trim();
-    const service = form.service.value || 'طلب حجز - Centre Solyra';
+    const name    = document.getElementById('fname').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value || 'طلب حجز - Centre Solyra';
 
     if (!name || !phone) {
       showToast('⚠️ يرجى ملء الاسم ورقم الواتساب');
