@@ -69,8 +69,16 @@ async function sendToSheets(payload) {
 }
 
 // ── Meta CAPI ─────────────────────────────────────────────────
-async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, eventName) {
+async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, eventName, fbp, fbc) {
   if (!META_PIXEL_ID || !META_ACCESS_TOKEN) return;
+  const userData = {
+    ph: [sha256(phone)],
+    fn: [sha256(name)],
+    client_ip_address: clientIp,
+    client_user_agent: userAgent,
+  };
+  if (fbp) userData.fbp = fbp;
+  if (fbc) userData.fbc = fbc;
   const payload = {
     data: [{
       event_name: eventName,
@@ -78,12 +86,7 @@ async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSour
       event_id: eventId,
       event_source_url: eventSourceUrl,
       action_source: 'website',
-      user_data: {
-        ph: [sha256(phone)],
-        fn: [sha256(name)],
-        client_ip_address: clientIp,
-        client_user_agent: userAgent,
-      }
+      user_data: userData,
     }]
   };
   await fetch(
@@ -102,7 +105,8 @@ export default async function handler(req, res) {
     type = 'lead',
     name = '', phone = '', service = '',
     experience = '', previousSalon = '',
-    eventId = '', userAgent = '', eventSourceUrl = ''
+    eventId = '', userAgent = '', eventSourceUrl = '',
+    fbp = '', fbc = ''
   } = req.body || {};
 
   const clientIp = req.headers['x-forwarded-for']?.split(',')[0] || req.socket?.remoteAddress || '';
@@ -116,7 +120,7 @@ export default async function handler(req, res) {
         name, phone, service, experience, previousSalon,
         timestamp: moroccanTime()
       }),
-      sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'CompleteRegistration'),
+      sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'CompleteRegistration', fbp, fbc),
     ]);
   } else {
     // ── booking lead (default) ──
@@ -127,7 +131,7 @@ export default async function handler(req, res) {
         name, phone, service,
         timestamp: moroccanTime()
       }),
-      sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'Lead'),
+      sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'Lead', fbp, fbc),
     ]);
   }
 

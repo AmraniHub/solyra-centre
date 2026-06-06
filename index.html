@@ -1087,6 +1087,12 @@
     return 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
   }
 
+  // ── read Meta browser cookies for CAPI deduplication ──
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : undefined;
+  }
+
   // ── form submit ──
   document.getElementById('bookingForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -1115,6 +1121,8 @@
           name, phone, service, eventId,
           userAgent: navigator.userAgent,
           eventSourceUrl: location.href,
+          fbp: getCookie('_fbp'),
+          fbc: getCookie('_fbc'),
           lang: 'AR'
         })
       });
