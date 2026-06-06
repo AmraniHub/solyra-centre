@@ -2,6 +2,8 @@ import crypto from 'crypto';
 
 const TELEGRAM_BOT_TOKEN  = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID    = process.env.TELEGRAM_CHAT_ID;
+const TELEGRAM_BOT_TOKEN_2 = process.env.TELEGRAM_BOT_TOKEN_2;
+const TELEGRAM_CHAT_ID_2   = process.env.TELEGRAM_CHAT_ID_2;
 const SHEETS_WEBHOOK_URL  = process.env.SHEETS_WEBHOOK_URL;
 const META_PIXEL_ID       = process.env.META_PIXEL_ID;
 const META_ACCESS_TOKEN   = process.env.META_ACCESS_TOKEN;
@@ -18,9 +20,18 @@ function moroccanTime() {
   });
 }
 
+// ── Telegram: send to one bot ─────────────────────────────────
+async function sendTelegram(token, chatId, text) {
+  if (!token || !chatId) return;
+  await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
+  });
+}
+
 // ── Telegram: booking lead ────────────────────────────────────
 async function sendTelegramLead(name, phone, service) {
-  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
   const text = [
     `🌸 <b>حجز جديد — Centre Solyra</b>`,
     ``,
@@ -30,16 +41,14 @@ async function sendTelegramLead(name, phone, service) {
     `🕐 <b>التوقيت:</b> ${moroccanTime()}`,
   ].join('\n');
 
-  await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' })
-  });
+  await Promise.allSettled([
+    sendTelegram(TELEGRAM_BOT_TOKEN,   TELEGRAM_CHAT_ID,   text),
+    sendTelegram(TELEGRAM_BOT_TOKEN_2, TELEGRAM_CHAT_ID_2, text),
+  ]);
 }
 
 // ── Telegram: recruitment application ────────────────────────
 async function sendTelegramRecruit(name, phone, specialty, experience, previousSalon) {
-  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
   const text = [
     `💼 <b>طلب توظيف جديد — Centre Solyra</b>`,
     ``,
@@ -51,11 +60,10 @@ async function sendTelegramRecruit(name, phone, specialty, experience, previousS
     `🕐 <b>التوقيت:</b> ${moroccanTime()}`,
   ].join('\n');
 
-  await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' })
-  });
+  await Promise.allSettled([
+    sendTelegram(TELEGRAM_BOT_TOKEN,   TELEGRAM_CHAT_ID,   text),
+    sendTelegram(TELEGRAM_BOT_TOKEN_2, TELEGRAM_CHAT_ID_2, text),
+  ]);
 }
 
 // ── Google Sheets ─────────────────────────────────────────────
