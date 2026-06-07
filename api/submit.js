@@ -103,6 +103,27 @@ async function sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSour
   );
 }
 
+// ── AmraniAds CRM Bridge (fire-and-forget inside allSettled) ─
+// Forwards lead to the central AmraniAds CRM.
+// SAFE: Promise.allSettled means this CANNOT affect Telegram,
+// Sheets, or Meta CAPI — even if amraniads.com is unreachable.
+async function sendToCRM({ type, name, phone, service }) {
+  await fetch('https://amraniads.com/api/crm-intake', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify({
+      client_id:   'solyra',
+      client_name: 'Centre Solyra',
+      type,
+      name,
+      phone,
+      service,
+      timestamp:   moroccanTime()
+    }),
+    signal: AbortSignal.timeout(3000) // 3s max — never hangs
+  });
+}
+
 // ── Main handler ──────────────────────────────────────────────
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -129,6 +150,7 @@ export default async function handler(req, res) {
         timestamp: moroccanTime()
       }),
       sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'CompleteRegistration', fbp, fbc),
+      sendToCRM({ type: 'recrutement', name, phone, service }), // → AmraniAds CRM
     ]);
   } else {
     // ── booking lead (default) ──
@@ -140,6 +162,7 @@ export default async function handler(req, res) {
         timestamp: moroccanTime()
       }),
       sendMetaCAPI(name, phone, eventId, clientIp, userAgent, eventSourceUrl, 'Lead', fbp, fbc),
+      sendToCRM({ type: 'lead', name, phone, service }), // → AmraniAds CRM
     ]);
   }
 
