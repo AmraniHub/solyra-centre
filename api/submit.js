@@ -36,9 +36,12 @@ async function sendTelegramLead(name, phone, service) {
     `🌸 <b>حجز جديد — Centre Solyra</b>`,
     ``,
     `👤 <b>الاسم:</b> ${name}`,
-    `📞 <b>الهاتف:</b> <code>${phone}</code>`,
+    `📱 <b>الهاتف:</b> <code>${phone}</code>`,
     `💅 <b>الخدمة:</b> ${service}`,
-    `🕐 <b>التوقيت:</b> ${moroccanTime()}`,
+    `⏰ <b>التوقيت:</b> ${moroccanTime()}`,
+    ``,
+    `━━━━━━━━━━━━━━━`,
+    `<i>Centre Solyra · طنجة 🇲🇦</i>`,
   ].join('\n');
 
   await Promise.allSettled([
