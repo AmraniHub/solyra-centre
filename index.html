@@ -268,8 +268,12 @@
     }
     .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--pink); }
     .service-img-wrap {
-      height: 100px; background: var(--grad-soft); display: flex; align-items: center;
+      height: 160px; background: var(--grad-soft); display: flex; align-items: center;
       justify-content: center; font-size: 3rem; position: relative; overflow: hidden;
+    }
+    .service-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block;
     }
     .service-badge {
       position: absolute; top: 10px; right: 10px; background: var(--grad); color: #fff;
@@ -453,20 +457,6 @@
               <label for="fphone">رقم الواتساب</label>
               <input type="tel" id="fphone" name="phone" placeholder="06XXXXXXXX" required />
             </div>
-            <div class="field">
-              <label for="fservice-sel">الخدمة المطلوبة</label>
-              <div class="select-wrap">
-                <select id="fservice-sel" onchange="document.getElementById('fservice').value=this.value">
-                  <option value="طلب حجز - Centre Solyra">اختاري الخدمة</option>
-                  <option value="بروتين الشعر Nano Gel">بروتين الشعر — Nano Gel</option>
-                  <option value="هيدرافيشل">هيدرافيشل</option>
-                  <option value="عناية بالبشرة">عناية بالبشرة</option>
-                  <option value="صبغ وتلوين الشعر">صبغ وتلوين الشعر</option>
-                  <option value="ميزوثيرابي">ميزوثيرابي</option>
-                  <option value="استشارة مجانية">استشارة مجانية 🎁</option>
-                </select>
-              </div>
-            </div>
             <input type="hidden" name="service" id="fservice" value="طلب حجز - Centre Solyra" />
             <button type="submit" class="submit-btn" id="submitBtn">
               احجزي الآن — نتصل بك فوراً 🌸
@@ -595,7 +585,7 @@
 
     <div class="service-card" onclick="selectService('بروتين الشعر Nano Gel')">
       <div class="service-img-wrap">
-        <span>💇</span>
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="بروتين الشعر" loading="lazy" />
         <span class="service-badge">الأكثر طلباً</span>
       </div>
       <div class="service-body">
@@ -610,7 +600,7 @@
 
     <div class="service-card" onclick="selectService('هيدرافيشل')">
       <div class="service-img-wrap">
-        <span>💆</span>
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="هيدرافيشل" loading="lazy" />
         <span class="service-badge">عرض محدود</span>
       </div>
       <div class="service-body">
@@ -625,7 +615,7 @@
 
     <div class="service-card" onclick="selectService('عناية بالبشرة')">
       <div class="service-img-wrap">
-        <span>✨</span>
+        <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80" alt="عناية بالبشرة" loading="lazy" />
       </div>
       <div class="service-body">
         <div class="service-name">عناية بالبشرة</div>
@@ -639,7 +629,7 @@
 
     <div class="service-card" onclick="selectService('صبغ وتلوين الشعر')">
       <div class="service-img-wrap">
-        <span>🎨</span>
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="صبغ وتلوين الشعر" loading="lazy" />
       </div>
       <div class="service-body">
         <div class="service-name">صبغ وتلوين الشعر</div>
@@ -653,7 +643,7 @@
 
     <div class="service-card" onclick="selectService('ميزوثيرابي')">
       <div class="service-img-wrap">
-        <span>💉</span>
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="ميزوثيرابي" loading="lazy" />
         <span class="service-badge">تقنية متقدمة</span>
       </div>
       <div class="service-body">
@@ -668,7 +658,7 @@
 
     <div class="service-card" onclick="selectService('استشارة مجانية')">
       <div class="service-img-wrap">
-        <span>🌸</span>
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80" alt="استشارة مجانية" loading="lazy" />
       </div>
       <div class="service-body">
         <div class="service-name">استشارة مجانية 🎁</div>
@@ -753,10 +743,6 @@
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a class="wa-float" href="https://wa.me/212619946109?text=السلام عليكم، بغيت نحجز موعد عند Centre Solyra" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.528 5.855L.057 23.943l6.276-1.448A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.869 0-3.61-.505-5.112-1.385l-.366-.217-3.726.86.93-3.617-.239-.374A9.974 9.974 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
 
 <div id="toast"></div>
 
