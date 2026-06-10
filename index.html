@@ -355,6 +355,20 @@
     .wa-float svg { width: 30px; height: 30px; fill: #fff; }
     @keyframes pulse-wa { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.5); } 50% { box-shadow: 0 4px 36px rgba(37,211,102,.8); } }
 
+    /* ── SCROLL BTN ── */
+    .scroll-btn {
+      position: fixed; bottom: 24px; left: 24px; z-index: 200;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--grad); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(233,30,140,.45);
+      transition: transform .2s, opacity .3s;
+      opacity: 0; pointer-events: none;
+    }
+    .scroll-btn.visible { opacity: 1; pointer-events: all; }
+    .scroll-btn:hover { transform: scale(1.1); }
+    .scroll-btn svg { width: 22px; height: 22px; fill: #fff; }
+
     /* ── TOAST ── */
     #toast {
       position: fixed; bottom: 90px; left: 50%;
@@ -745,6 +759,13 @@
 </footer>
 
 
+<!-- Scroll to form button -->
+<button class="scroll-btn" id="scrollBtn" onclick="scrollToForm()" title="احجزي موعدك">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-13 5l-.85-1.81L6 8c4-2 9.72-3 13-1A13.5 13.5 0 0 1 17 8z"/>
+  </svg>
+</button>
+
 <div id="toast"></div>
 
 <script>
@@ -824,6 +845,12 @@
       }
     });
   }, { threshold: 0.1 });
+
+  // Show scroll btn after scrolling past hero
+  const scrollBtn = document.getElementById('scrollBtn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
 
   document.querySelectorAll('.why-card, .service-card, .review-item, .how-step, .guarantee-box').forEach(el => {
     el.style.opacity = '0';
