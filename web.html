@@ -111,6 +111,22 @@
       font-weight: 600; text-decoration: none; border-bottom: 1px solid #fce4ec;
     }
     .mobile-menu .nav-cta { margin-top: 12px; text-align: center; }
+    .lang-switch { display: flex; align-items: center; gap: 4px; margin: 0 8px; }
+    .lang-btn {
+      background: none; border: 1.5px solid rgba(233,30,140,0.25);
+      border-radius: 50px; padding: 5px 10px;
+      font-family: 'Cairo', sans-serif; font-size: .75rem; font-weight: 700;
+      color: var(--muted); cursor: pointer; transition: all .2s; line-height: 1;
+    }
+    .lang-btn:hover { border-color: var(--pink); color: var(--pink); }
+    .lang-btn.active { background: var(--grad); color: #fff; border-color: transparent; }
+    .mobile-lang-switch { display: flex; gap: 8px; padding: 10px 0; border-bottom: 1px solid #fce4ec; }
+    .featured-label {
+      position: absolute; top: 16px; inset-inline-start: 16px;
+      background: var(--grad-gold); color: #fff;
+      font-size: .72rem; font-weight: 700;
+      border-radius: 50px; padding: 4px 12px; z-index: 2;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -249,13 +265,6 @@
       box-shadow: 0 16px 48px rgba(233,30,140,.16);
     }
     .service-card.featured { border-color: var(--gold); }
-    .service-card.featured::after {
-      content: '⭐ الأكثر طلباً';
-      position: absolute; top: 16px; left: 16px;
-      background: var(--grad-gold); color: #fff;
-      font-size: .72rem; font-weight: 700;
-      border-radius: 50px; padding: 4px 12px;
-    }
     .service-img {
       height: 190px;
       overflow: hidden;
@@ -643,24 +652,34 @@
       <div class="nav-logo-text">Centre <span>Solyra</span></div>
     </a>
     <ul class="nav-links">
-      <li><a href="#services">خدماتنا</a></li>
-      <li><a href="#reviews">آراء العميلات</a></li>
-      <li><a href="#faq">أسئلة شائعة</a></li>
-      <li><a href="#location">📍 موقعنا</a></li>
-      <li><a href="/recrutement.html">التوظيف</a></li>
+      <li><a href="#services" data-i18n="nav.services">خدماتنا</a></li>
+      <li><a href="#reviews" data-i18n="nav.reviews">آراء العميلات</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">أسئلة شائعة</a></li>
+      <li><a href="#location" data-i18n="nav.location">📍 موقعنا</a></li>
+      <li><a href="/recrutement.html" data-i18n="nav.recruitment">التوظيف</a></li>
     </ul>
-    <a class="nav-cta" href="#booking">🌸 احجزي موعدك</a>
+    <a class="nav-cta" href="#booking" data-i18n="nav.cta">🌸 احجزي موعدك</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="ar">ع</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
     <button class="nav-burger" id="burgerBtn" aria-label="القائمة">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#services">خدماتنا</a>
-    <a href="#reviews">آراء العميلات</a>
-    <a href="#faq">أسئلة شائعة</a>
-    <a href="#location">📍 موقعنا</a>
-    <a href="/recrutement.html">التوظيف</a>
-    <a class="nav-cta" href="#booking">🌸 احجزي موعدك</a>
+    <div class="mobile-lang-switch">
+      <button class="lang-btn active" data-lang="ar">ع</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="#services" data-i18n="nav.services">خدماتنا</a>
+    <a href="#reviews" data-i18n="nav.reviews">آراء العميلات</a>
+    <a href="#faq" data-i18n="nav.faq">أسئلة شائعة</a>
+    <a href="#location" data-i18n="nav.location">📍 موقعنا</a>
+    <a href="/recrutement.html" data-i18n="nav.recruitment">التوظيف</a>
+    <a class="nav-cta" href="#booking" data-i18n="nav.cta">🌸 احجزي موعدك</a>
   </div>
 </nav>
 
@@ -670,25 +689,25 @@
   <div class="hero-blob hero-blob-2"></div>
   <div class="hero-blob hero-blob-3"></div>
   <div class="hero-inner">
-    <div class="hero-badge">🏆 الأول في طنجة · <span>+500 عميلة راضية</span></div>
-    <h1>
+    <div class="hero-badge" data-i18n-html="hero.badge">🏆 الأول في طنجة · <span>+500 عميلة راضية</span></div>
+    <h1 data-i18n-html="hero.h1">
       شعرك <em>ناعم كالحرير</em><br />
       وبشرتك <strong>تضيء</strong><br />
       — من <em>أول جلسة</em> أو نعيدوها ليك
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n-html="hero.sub">
       مركز Solyra طنجة — <b>6 سنوات خبرة</b> في تجميل المرأة المغربية.
       فريق متخصص، منتجات احترافية، ونتيجة <b>مضمونة 100%</b> من الجلسة الأولى.
     </p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#booking">🌸 احجزي موعدك — دابا</a>
-      <a class="btn-outline" href="#services">اكتشفي خدماتنا</a>
+      <a class="btn-primary" href="#booking" data-i18n="hero.cta1">🌸 احجزي موعدك — دابا</a>
+      <a class="btn-outline" href="#services" data-i18n="hero.cta2">اكتشفي خدماتنا</a>
     </div>
     <div class="hero-trust">
-      <div class="trust-item"><div class="tick">✓</div> نتيجة من أول جلسة</div>
-      <div class="trust-item"><div class="tick">✓</div> مضمون 100% أو نعيدها</div>
-      <div class="trust-item"><div class="tick">✓</div> فريق متخصص ومعتمد</div>
-      <div class="trust-item"><div class="tick">✓</div> منتجات احترافية فقط</div>
+      <div class="trust-item"><div class="tick">✓</div><span data-i18n="hero.trust1"> نتيجة من أول جلسة</span></div>
+      <div class="trust-item"><div class="tick">✓</div><span data-i18n="hero.trust2"> مضمون 100% أو نعيدها</span></div>
+      <div class="trust-item"><div class="tick">✓</div><span data-i18n="hero.trust3"> فريق متخصص ومعتمد</span></div>
+      <div class="trust-item"><div class="tick">✓</div><span data-i18n="hero.trust4"> منتجات احترافية فقط</span></div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -701,19 +720,19 @@
   <div class="stats-inner">
     <div class="stat-item anim">
       <div class="stat-num">+<span>500</span></div>
-      <div class="stat-label">عميلة راضية</div>
+      <div class="stat-label" data-i18n="stats.clients">عميلة راضية</div>
     </div>
     <div class="stat-item anim">
       <div class="stat-num"><span>98</span>%</div>
-      <div class="stat-label">نسبة الرضا</div>
+      <div class="stat-label" data-i18n="stats.satisfaction">نسبة الرضا</div>
     </div>
     <div class="stat-item anim">
       <div class="stat-num"><span>6</span>+</div>
-      <div class="stat-label">سنوات خبرة</div>
+      <div class="stat-label" data-i18n="stats.years">سنوات خبرة</div>
     </div>
     <div class="stat-item anim">
       <div class="stat-num">+<span>15</span></div>
-      <div class="stat-label">خدمة متخصصة</div>
+      <div class="stat-label" data-i18n="stats.services">خدمة متخصصة</div>
     </div>
   </div>
 </div>
@@ -724,12 +743,12 @@
     <div class="location-inner">
 
       <div class="location-info anim">
-        <div class="section-tag">موقعنا</div>
-        <h2>زورينا في <em>قلب طنجة</em></h2>
+        <div class="section-tag" data-i18n="loc.tag">موقعنا</div>
+        <h2 data-i18n-html="loc.h2">زورينا في <em>قلب طنجة</em></h2>
         <div class="location-detail">
           <div class="loc-icon">📍</div>
           <div class="loc-text">
-            <strong>العنوان</strong>
+            <strong data-i18n="loc.addr_label">العنوان</strong>
             En face cinéma Megarama Goya,<br />
             29 Avenue Prince Moulay Abdellah, Tanger
           </div>
@@ -737,18 +756,18 @@
         <div class="location-detail">
           <div class="loc-icon">🕐</div>
           <div class="loc-text">
-            <strong>أوقات العمل</strong>
-            الاثنين – السبت · من 9 صباحاً إلى 8 مساءً
+            <strong data-i18n="loc.hours_label">أوقات العمل</strong>
+            <span data-i18n="loc.hours_val">الاثنين – السبت · من 9 صباحاً إلى 8 مساءً</span>
           </div>
         </div>
         <div class="location-detail">
           <div class="loc-icon">📞</div>
           <div class="loc-text">
-            <strong>للتواصل والحجز</strong>
+            <strong data-i18n="loc.phone_label">للتواصل والحجز</strong>
             <a href="tel:0619946109" style="color:var(--pink);font-weight:700;">0619946109</a>
           </div>
         </div>
-        <a class="loc-cta" href="https://maps.app.goo.gl/JKznRrVqQEBmwc167" target="_blank" rel="noopener">
+        <a class="loc-cta" href="https://maps.app.goo.gl/JKznRrVqQEBmwc167" target="_blank" rel="noopener" data-i18n="loc.cta">
           📍 افتحي الخريطة في جوجل
         </a>
       </div>
@@ -769,20 +788,21 @@
 <section id="services">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">خدماتنا</div>
-      <h2 class="section-title">كل ما تحتاجيه <em>في مكان واحد</em></h2>
-      <p class="section-sub">خدمات تجميل متكاملة بأيدي متخصصات معتمدات — نتيجة حقيقية، مش مجرد وعود</p>
+      <div class="section-tag" data-i18n="srv.tag">خدماتنا</div>
+      <h2 class="section-title" data-i18n-html="srv.title">كل ما تحتاجيه <em>في مكان واحد</em></h2>
+      <p class="section-sub" data-i18n="srv.sub">خدمات تجميل متكاملة بأيدي متخصصات معتمدات — نتيجة حقيقية، مش مجرد وعود</p>
     </div>
     <div class="services-grid">
 
       <div class="service-card featured anim">
+        <span class="featured-label" data-i18n="srv.featured">⭐ الأكثر طلباً</span>
         <div class="service-img"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="بروتين الشعر" loading="lazy" /></div>
         <div class="service-body">
-          <div class="service-name">بروتين الشعر Nano Gel</div>
-          <div class="service-result">✨ شعر ناعم لـ4 أشهر</div>
-          <p class="service-desc">تقنية Nano Gel الأحدث — تخترق الشعرة من الداخل وتُعيد بناءها. شعر ناعم، هادئ، ولامع يدوم 4 أشهر من جلسة واحدة بدون حرارة مضرة.</p>
+          <div class="service-name" data-i18n="s1.name">بروتين الشعر Nano Gel</div>
+          <div class="service-result" data-i18n="s1.result">✨ شعر ناعم لـ4 أشهر</div>
+          <p class="service-desc" data-i18n="s1.desc">تقنية Nano Gel الأحدث — تخترق الشعرة من الداخل وتُعيد بناءها. شعر ناعم، هادئ، ولامع يدوم 4 أشهر من جلسة واحدة بدون حرارة مضرة.</p>
           <div class="service-footer">
-            <button class="service-cta" onclick="selectAndBook('بروتين الشعر Nano Gel')">احجزي الآن ←</button>
+            <button class="service-cta" data-i18n="srv.cta" onclick="selectAndBook('بروتين الشعر Nano Gel')">احجزي الآن ←</button>
           </div>
         </div>
       </div>
@@ -790,11 +810,11 @@
       <div class="service-card anim">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="هيدرافيشل" loading="lazy" /></div>
         <div class="service-body">
-          <div class="service-name">هيدرافيشل</div>
-          <div class="service-result">✨ بشرة مضيئة في 60 دقيقة</div>
-          <p class="service-desc">تنظيف عميق + ترطيب مكثف + جزيئات hyaluronic acid. بشرة نظيفة، ناعمة، ومشرقة فوراً — حتى البشرة الحساسة والمختلطة.</p>
+          <div class="service-name" data-i18n="s2.name">هيدرافيشل</div>
+          <div class="service-result" data-i18n="s2.result">✨ بشرة مضيئة في 60 دقيقة</div>
+          <p class="service-desc" data-i18n="s2.desc">تنظيف عميق + ترطيب مكثف + جزيئات hyaluronic acid. بشرة نظيفة، ناعمة، ومشرقة فوراً — حتى البشرة الحساسة والمختلطة.</p>
           <div class="service-footer">
-            <button class="service-cta" onclick="selectAndBook('هيدرافيشل')">احجزي الآن ←</button>
+            <button class="service-cta" data-i18n="srv.cta" onclick="selectAndBook('هيدرافيشل')">احجزي الآن ←</button>
           </div>
         </div>
       </div>
@@ -802,11 +822,11 @@
       <div class="service-card anim">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=600&q=80" alt="ميزوثيرابي" loading="lazy" /></div>
         <div class="service-body">
-          <div class="service-name">ميزوثيرابي</div>
-          <div class="service-result">✨ شباب بدون عملية</div>
-          <p class="service-desc">حقن مضادات الأكسدة وفيتامينات تُنشّط الخلايا وتشد الجلد. نتيجة مرئية من أول جلسة — شد، تجديد، وإزالة التجاعيد الخفيفة.</p>
+          <div class="service-name" data-i18n="s3.name">ميزوثيرابي</div>
+          <div class="service-result" data-i18n="s3.result">✨ شباب بدون عملية</div>
+          <p class="service-desc" data-i18n="s3.desc">حقن مضادات الأكسدة وفيتامينات تُنشّط الخلايا وتشد الجلد. نتيجة مرئية من أول جلسة — شد، تجديد، وإزالة التجاعيد الخفيفة.</p>
           <div class="service-footer">
-            <button class="service-cta" onclick="selectAndBook('ميزوثيرابي')">احجزي الآن ←</button>
+            <button class="service-cta" data-i18n="srv.cta" onclick="selectAndBook('ميزوثيرابي')">احجزي الآن ←</button>
           </div>
         </div>
       </div>
@@ -814,11 +834,11 @@
       <div class="service-card anim">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80" alt="إزالة الشعر" loading="lazy" /></div>
         <div class="service-body">
-          <div class="service-name">إزالة الشعر</div>
-          <div class="service-result">✨ بشرة ناعمة تدوم أسابيع</div>
-          <p class="service-desc">إزالة احترافية بتقنيات متعددة — نتيجة تدوم أسابيع، ألم أقل، وبشرة ناعمة تدومين عليها. للوجه والجسم كاملاً.</p>
+          <div class="service-name" data-i18n="s4.name">إزالة الشعر</div>
+          <div class="service-result" data-i18n="s4.result">✨ بشرة ناعمة تدوم أسابيع</div>
+          <p class="service-desc" data-i18n="s4.desc">إزالة احترافية بتقنيات متعددة — نتيجة تدوم أسابيع، ألم أقل، وبشرة ناعمة تدومين عليها. للوجه والجسم كاملاً.</p>
           <div class="service-footer">
-            <button class="service-cta" onclick="selectAndBook('إزالة الشعر')">احجزي الآن ←</button>
+            <button class="service-cta" data-i18n="srv.cta" onclick="selectAndBook('إزالة الشعر')">احجزي الآن ←</button>
           </div>
         </div>
       </div>
@@ -826,11 +846,11 @@
       <div class="service-card anim">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="تلوين وصبغ الشعر" loading="lazy" /></div>
         <div class="service-body">
-          <div class="service-name">تلوين وصبغ الشعر</div>
-          <div class="service-result">✨ لون رائع يدوم شهراً</div>
-          <p class="service-desc">أخصائيات صبغ معتمدات — بالات، أومبري، هايلايت، وتغطية الشيب. ألوان احترافية تدوم وتحافظ على صحة الشعر.</p>
+          <div class="service-name" data-i18n="s5.name">تلوين وصبغ الشعر</div>
+          <div class="service-result" data-i18n="s5.result">✨ لون رائع يدوم شهراً</div>
+          <p class="service-desc" data-i18n="s5.desc">أخصائيات صبغ معتمدات — بالات، أومبري، هايلايت، وتغطية الشيب. ألوان احترافية تدوم وتحافظ على صحة الشعر.</p>
           <div class="service-footer">
-            <button class="service-cta" onclick="selectAndBook('تلوين وصبغ الشعر')">احجزي الآن ←</button>
+            <button class="service-cta" data-i18n="srv.cta" onclick="selectAndBook('تلوين وصبغ الشعر')">احجزي الآن ←</button>
           </div>
         </div>
       </div>
@@ -838,11 +858,11 @@
       <div class="service-card anim">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="مانيكير وباديكير" loading="lazy" /></div>
         <div class="service-body">
-          <div class="service-name">مانيكير & باديكير</div>
-          <div class="service-result">✨ أظافر مثالية لـ3 أسابيع</div>
-          <p class="service-desc">جل فرنسي، أكريليك، ونقش يدوي احترافي. أحدث الألوان والتصاميم — أظافر مثالية تدوم 3 أسابيع بدون تكسير.</p>
+          <div class="service-name" data-i18n="s6.name">مانيكير & باديكير</div>
+          <div class="service-result" data-i18n="s6.result">✨ أظافر مثالية لـ3 أسابيع</div>
+          <p class="service-desc" data-i18n="s6.desc">جل فرنسي، أكريليك، ونقش يدوي احترافي. أحدث الألوان والتصاميم — أظافر مثالية تدوم 3 أسابيع بدون تكسير.</p>
           <div class="service-footer">
-            <button class="service-cta" onclick="selectAndBook('مانيكير وباديكير')">احجزي الآن ←</button>
+            <button class="service-cta" data-i18n="srv.cta" onclick="selectAndBook('مانيكير وباديكير')">احجزي الآن ←</button>
           </div>
         </div>
       </div>
@@ -855,37 +875,37 @@
 <section id="why">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">لماذا Centre Solyra؟</div>
-      <h2 class="section-title">ليش تختاري <em>Solyra</em> على غيرها</h2>
-      <p class="section-sub">مش كل المراكز تعطيك نفس النتيجة — هذا ما يجعلنا مختلفين</p>
+      <div class="section-tag" data-i18n="why.tag">لماذا Centre Solyra؟</div>
+      <h2 class="section-title" data-i18n-html="why.title">ليش تختاري <em>Solyra</em> على غيرها</h2>
+      <p class="section-sub" data-i18n="why.sub">مش كل المراكز تعطيك نفس النتيجة — هذا ما يجعلنا مختلفين</p>
     </div>
     <div class="why-grid">
       <div class="why-card anim">
         <div class="why-icon">🏆</div>
         <div class="why-content">
-          <h3>نتيجة مضمونة من أول جلسة</h3>
-          <p>مش كلام فارغ — عندنا ضمان مكتوب. إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة. ثقتنا في خدمتنا هي ضمانك.</p>
+          <h3 data-i18n="why1.h3">نتيجة مضمونة من أول جلسة</h3>
+          <p data-i18n="why1.p">مش كلام فارغ — عندنا ضمان مكتوب. إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة. ثقتنا في خدمتنا هي ضمانك.</p>
         </div>
       </div>
       <div class="why-card anim">
         <div class="why-icon">💎</div>
         <div class="why-content">
-          <h3>منتجات احترافية فقط — لا مساومة</h3>
-          <p>نستخدم فقط منتجات صالونات عالمية معتمدة. Nano Gel، حقن ميزو معقمة، منتجات بشرة طبية. جودة لا تُساوم عليها أبداً.</p>
+          <h3 data-i18n="why2.h3">منتجات احترافية فقط — لا مساومة</h3>
+          <p data-i18n="why2.p">نستخدم فقط منتجات صالونات عالمية معتمدة. Nano Gel، حقن ميزو معقمة، منتجات بشرة طبية. جودة لا تُساوم عليها أبداً.</p>
         </div>
       </div>
       <div class="why-card anim">
         <div class="why-icon">👩‍🔬</div>
         <div class="why-content">
-          <h3>فريق متخصص ومُدرَّب</h3>
-          <p>كل أخصائية في فريقنا عندها خبرة لا تقل عن 3 سنوات في تخصصها. تدريب مستمر على أحدث التقنيات — خبرة تظهر في النتيجة.</p>
+          <h3 data-i18n="why3.h3">فريق متخصص ومُدرَّب</h3>
+          <p data-i18n="why3.p">كل أخصائية في فريقنا عندها خبرة لا تقل عن 3 سنوات في تخصصها. تدريب مستمر على أحدث التقنيات — خبرة تظهر في النتيجة.</p>
         </div>
       </div>
       <div class="why-card anim">
         <div class="why-icon">🌟</div>
         <div class="why-content">
-          <h3>+500 عميلة وثقت فينا</h3>
-          <p>من 2019 حتى اليوم، أكثر من 500 امرأة مغربية اختارت Solyra وعادت إلينا مرة ثانية وثالثة. الرضا هو دليلنا الحقيقي.</p>
+          <h3 data-i18n="why4.h3">+500 عميلة وثقت فينا</h3>
+          <p data-i18n="why4.p">من 2019 حتى اليوم، أكثر من 500 امرأة مغربية اختارت Solyra وعادت إلينا مرة ثانية وثالثة. الرضا هو دليلنا الحقيقي.</p>
         </div>
       </div>
     </div>
@@ -896,25 +916,25 @@
 <section id="how">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">كيف يعمل؟</div>
-      <h2 class="section-title">3 خطوات بسيطة <em>إلى النتيجة</em></h2>
-      <p class="section-sub">الحجز سهل، النتيجة سريعة، والتجربة لا تُنسى</p>
+      <div class="section-tag" data-i18n="how.tag">كيف يعمل؟</div>
+      <h2 class="section-title" data-i18n-html="how.title">3 خطوات بسيطة <em>إلى النتيجة</em></h2>
+      <p class="section-sub" data-i18n="how.sub">الحجز سهل، النتيجة سريعة، والتجربة لا تُنسى</p>
     </div>
     <div class="how-steps">
       <div class="how-step anim">
         <div class="how-num">1</div>
-        <h3>احجزي موعدك</h3>
-        <p>املئي الاسم ورقم الهاتف في النموذج أو تواصلي معنا مباشرة — موعد يناسبك في ظرف دقائق.</p>
+        <h3 data-i18n="how1.h3">احجزي موعدك</h3>
+        <p data-i18n="how1.p">املئي الاسم ورقم الهاتف في النموذج أو تواصلي معنا مباشرة — موعد يناسبك في ظرف دقائق.</p>
       </div>
       <div class="how-step anim">
         <div class="how-num">2</div>
-        <h3>نتواصل معك</h3>
-        <p>فريقنا يتصل بك خلال أقل من ساعة لتأكيد الموعد واختيار الخدمة المناسبة ليك بالضبط.</p>
+        <h3 data-i18n="how2.h3">نتواصل معك</h3>
+        <p data-i18n="how2.p">فريقنا يتصل بك خلال أقل من ساعة لتأكيد الموعد واختيار الخدمة المناسبة ليك بالضبط.</p>
       </div>
       <div class="how-step anim">
         <div class="how-num">3</div>
-        <h3>استمتعي بالنتيجة</h3>
-        <p>احضري إلينا وانتظري التحول — خرجي من Solyra وأنت تشعرين بالفرق من أول جلسة.</p>
+        <h3 data-i18n="how3.h3">استمتعي بالنتيجة</h3>
+        <p data-i18n="how3.p">احضري إلينا وانتظري التحول — خرجي من Solyra وأنت تشعرين بالفرق من أول جلسة.</p>
       </div>
     </div>
   </div>
@@ -924,86 +944,86 @@
 <section id="reviews">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">آراء العميلات</div>
-      <h2 class="section-title">ماذا قالت عميلاتنا <em>بالضبط</em></h2>
-      <p class="section-sub">تجارب حقيقية من نساء مغربيات جربن Centre Solyra</p>
+      <div class="section-tag" data-i18n="rev.tag">آراء العميلات</div>
+      <h2 class="section-title" data-i18n-html="rev.title">ماذا قالت عميلاتنا <em>بالضبط</em></h2>
+      <p class="section-sub" data-i18n="rev.sub">تجارب حقيقية من نساء مغربيات جربن Centre Solyra</p>
     </div>
     <div class="reviews-grid">
 
       <div class="review-card anim">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">جربت بروتين في صالونات كثيرة قبل. فيChelsea Solyra الفرق واضح من أول غسلة — شعري ناعم وهادئ ولامع. 4 أشهر وما زلت على النتيجة!</p>
-        <div class="review-result">💇 بروتين Nano Gel — 4 أشهر من جلسة</div>
+        <p class="review-text" data-i18n="r1.text">جربت بروتين في صالونات كثيرة قبل. في Solyra الفرق واضح من أول غسلة — شعري ناعم وهادئ ولامع. 4 أشهر وما زلت على النتيجة!</p>
+        <div class="review-result" data-i18n="r1.result">💇 بروتين Nano Gel — 4 أشهر من جلسة</div>
         <div class="review-author">
           <div class="review-avatar">👩</div>
           <div>
-            <div class="review-name">فاطمة الزهراء</div>
-            <div class="review-service">طنجة · عميلة منذ 2023</div>
+            <div class="review-name" data-i18n="r1.name">فاطمة الزهراء</div>
+            <div class="review-service" data-i18n="r1.service">طنجة · عميلة منذ 2023</div>
           </div>
         </div>
       </div>
 
       <div class="review-card anim">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">الهيدرافيشل غيّر بشرتي بشكل مش طبيعي. في 60 دقيقة فقط بشرتي صافية ومضيئة كأنها مش بشرتي. دايما ترجعي لـ Solyra.</p>
-        <div class="review-result">🌊 هيدرافيشل — بشرة مضيئة فوراً</div>
+        <p class="review-text" data-i18n="r2.text">الهيدرافيشل غيّر بشرتي بشكل مش طبيعي. في 60 دقيقة فقط بشرتي صافية ومضيئة كأنها مش بشرتي. دايما ترجعي لـ Solyra.</p>
+        <div class="review-result" data-i18n="r2.result">🌊 هيدرافيشل — بشرة مضيئة فوراً</div>
         <div class="review-author">
           <div class="review-avatar">👩</div>
           <div>
-            <div class="review-name">نور هاشم</div>
-            <div class="review-service">طنجة · عميلة منذ 2022</div>
+            <div class="review-name" data-i18n="r2.name">نور هاشم</div>
+            <div class="review-service" data-i18n="r2.service">طنجة · عميلة منذ 2022</div>
           </div>
         </div>
       </div>
 
       <div class="review-card anim">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">الميزوثيرابي كان خايفاني في البداية، لكن الأخصائية شرحت لي كل شيء. من أول جلسة وجهي أشبب وأكثر إشراقاً. ما توقعتش نتيجة بهذا الوضع.</p>
-        <div class="review-result">💉 ميزوثيرابي — شد من الجلسة الأولى</div>
+        <p class="review-text" data-i18n="r3.text">الميزوثيرابي كان خايفاني في البداية، لكن الأخصائية شرحت لي كل شيء. من أول جلسة وجهي أشبب وأكثر إشراقاً. ما توقعتش نتيجة بهذا الوضع.</p>
+        <div class="review-result" data-i18n="r3.result">💉 ميزوثيرابي — شد من الجلسة الأولى</div>
         <div class="review-author">
           <div class="review-avatar">👩</div>
           <div>
-            <div class="review-name">أسماء بنمسعود</div>
-            <div class="review-service">طنجة · عميلة منذ 2024</div>
+            <div class="review-name" data-i18n="r3.name">أسماء بنمسعود</div>
+            <div class="review-service" data-i18n="r3.service">طنجة · عميلة منذ 2024</div>
           </div>
         </div>
       </div>
 
       <div class="review-card anim">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">جئت من تطوان خصيصاً لـ Solyra بعد ما سمعت عنهم من صديقتي. الصبغة خرجت أحسن من اللي تصورتها. اللون ثابت ولامع حتى بعد شهر كامل!</p>
-        <div class="review-result">🎨 تلوين — لون ثابت لشهر كامل</div>
+        <p class="review-text" data-i18n="r4.text">جئت من تطوان خصيصاً لـ Solyra بعد ما سمعت عنهم من صديقتي. الصبغة خرجت أحسن من اللي تصورتها. اللون ثابت ولامع حتى بعد شهر كامل!</p>
+        <div class="review-result" data-i18n="r4.result">🎨 تلوين — لون ثابت لشهر كامل</div>
         <div class="review-author">
           <div class="review-avatar">👩</div>
           <div>
-            <div class="review-name">مريم قاسمي</div>
-            <div class="review-service">تطوان · عميلة منذ 2023</div>
+            <div class="review-name" data-i18n="r4.name">مريم قاسمي</div>
+            <div class="review-service" data-i18n="r4.service">تطوان · عميلة منذ 2023</div>
           </div>
         </div>
       </div>
 
       <div class="review-card anim">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">المانيكير في Solyra من أحسن ما جربت في طنجة. الأظافر ثابتة ولامعة من أكثر من 3 أسابيع. والطاقم لطيف ومرتاحة معاهم جداً.</p>
-        <div class="review-result">💅 مانيكير جل — 3 أسابيع بدون تكسير</div>
+        <p class="review-text" data-i18n="r5.text">المانيكير في Solyra من أحسن ما جربت في طنجة. الأظافر ثابتة ولامعة من أكثر من 3 أسابيع. والطاقم لطيف ومرتاحة معاهم جداً.</p>
+        <div class="review-result" data-i18n="r5.result">💅 مانيكير جل — 3 أسابيع بدون تكسير</div>
         <div class="review-author">
           <div class="review-avatar">👩</div>
           <div>
-            <div class="review-name">سلمى العمراني</div>
-            <div class="review-service">طنجة · عميلة منذ 2024</div>
+            <div class="review-name" data-i18n="r5.name">سلمى العمراني</div>
+            <div class="review-service" data-i18n="r5.service">طنجة · عميلة منذ 2024</div>
           </div>
         </div>
       </div>
 
       <div class="review-card anim">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">عندي بشرة حساسة وكنت خايفة. الأخصائية اختارت البروتوكول المناسب ليا والنتيجة كانت مذهلة. أخيراً مركز يفهم نوع بشرتي ويتعامل معها صح.</p>
-        <div class="review-result">🌸 عناية بشرة — حتى البشرة الحساسة</div>
+        <p class="review-text" data-i18n="r6.text">عندي بشرة حساسة وكنت خايفة. الأخصائية اختارت البروتوكول المناسب ليا والنتيجة كانت مذهلة. أخيراً مركز يفهم نوع بشرتي ويتعامل معها صح.</p>
+        <div class="review-result" data-i18n="r6.result">🌸 عناية بشرة — حتى البشرة الحساسة</div>
         <div class="review-author">
           <div class="review-avatar">👩</div>
           <div>
-            <div class="review-name">خديجة التهامي</div>
-            <div class="review-service">طنجة · عميلة منذ 2022</div>
+            <div class="review-name" data-i18n="r6.name">خديجة التهامي</div>
+            <div class="review-service" data-i18n="r6.service">طنجة · عميلة منذ 2022</div>
           </div>
         </div>
       </div>
@@ -1016,17 +1036,17 @@
 <section id="guarantee">
   <div class="guarantee-inner">
     <div class="guarantee-shield">🛡️</div>
-    <h2>ضمان <span>100%</span> — نتيجة حقيقية أو نعيدوها ليك</h2>
-    <p>
+    <h2 data-i18n-html="gar.h2">ضمان <span>100%</span> — نتيجة حقيقية أو نعيدوها ليك</h2>
+    <p data-i18n="gar.p">
       عندنا ثقة كاملة في خدماتنا وفريقنا — ولهذا نقدم ضمان راحة البال الكامل.
       إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة، بدون شروط، وبدون تعقيدات.
       مش مجرد كلام — هذا وعد مكتوب من Centre Solyra.
     </p>
     <div class="guarantee-pills">
-      <span class="guarantee-pill">✅ نتيجة من أول جلسة</span>
-      <span class="guarantee-pill">✅ مضمون 100%</span>
-      <span class="guarantee-pill">✅ بدون أسئلة</span>
-      <span class="guarantee-pill">✅ بدون شروط خفية</span>
+      <span class="guarantee-pill" data-i18n="gar.p1">✅ نتيجة من أول جلسة</span>
+      <span class="guarantee-pill" data-i18n="gar.p2">✅ مضمون 100%</span>
+      <span class="guarantee-pill" data-i18n="gar.p3">✅ بدون أسئلة</span>
+      <span class="guarantee-pill" data-i18n="gar.p4">✅ بدون شروط خفية</span>
     </div>
   </div>
 </section>
@@ -1035,62 +1055,62 @@
 <section id="faq">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">أسئلة شائعة</div>
-      <h2 class="section-title">كل ما يدور <em>في بالك</em></h2>
-      <p class="section-sub">أجوبة صريحة على الأسئلة اللي تسألها العميلات دايماً</p>
+      <div class="section-tag" data-i18n="faq.tag">أسئلة شائعة</div>
+      <h2 class="section-title" data-i18n-html="faq.title">كل ما يدور <em>في بالك</em></h2>
+      <p class="section-sub" data-i18n="faq.sub">أجوبة صريحة على الأسئلة اللي تسألها العميلات دايماً</p>
     </div>
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          كيفاش نحجز موعد في Centre Solyra؟
+          <span data-i18n="faq1.q">كيفاش نحجز موعد في Centre Solyra؟</span>
           <div class="faq-icon">+</div>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n-html="faq1.a">
           املئي الاسم ورقم الواتساب في النموذج في أسفل الصفحة وانقري "احجزي الموعد". فريقنا سيتصل بك خلال أقل من ساعة لتأكيد الموعد. يمكنك أيضاً التواصل معنا مباشرة عبر واتساب على الرقم <strong>0619946109</strong>.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          قداش تدوم جلسة البروتين؟ وقداش تستمر النتيجة؟
+          <span data-i18n="faq2.q">قداش تدوم جلسة البروتين؟ وقداش تستمر النتيجة؟</span>
           <div class="faq-icon">+</div>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq2.a">
           الجلسة تأخذ ما بين 2 إلى 3 ساعات حسب طول الشعر وكثافته. النتيجة تدوم 3 إلى 4 أشهر مع العناية الصحيحة — نعطيك كل التوجيهات بعد الجلسة مجاناً.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          واش الضمان حقيقي أم مجرد تسويق؟
+          <span data-i18n="faq3.q">واش الضمان حقيقي أم مجرد تسويق؟</span>
           <div class="faq-icon">+</div>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq3.a">
           الضمان حقيقي 100%. إذا جئت وجربت وما عجبتكش النتيجة من أول جلسة، نعيد لك الجلسة بدون أي تكلفة إضافية أو أسئلة. ثقتنا في جودة خدمتنا هي التي تجعلنا نقدم هذا الضمان بكل ثقة.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          واش عندكم خدمات خاصة للعرائس؟
+          <span data-i18n="faq4.q">واش عندكم خدمات خاصة للعرائس؟</span>
           <div class="faq-icon">+</div>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq4.a">
           نعم! عندنا باكيج عروس شامل — تجهيز الشعر، البشرة، الأظافر، وكل التفاصيل ليوم زفافك. احجزي استشارة مجانية وسنصمم ليك برنامج متكامل حسب يوم الزفاف ونوع البشرة والشعر.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          فين تتواجدو بالضبط في طنجة؟
+          <span data-i18n="faq5.q">فين تتواجدو بالضبط في طنجة؟</span>
           <div class="faq-icon">+</div>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n-html="faq5.a">
           عنواننا: <strong>29 شارع الأمير مولاي عبد الله، أمام سينما ميغاراما غويا، طنجة</strong>. يمكنك البحث عنا في خرائط جوجل بكتابة "Centre Solyra Tanger". نفتح من الاثنين إلى السبت من 9 صباحاً إلى 8 مساءً.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          واش الميزوثيرابي مؤلمة؟ وكم جلسة تحتاج؟
+          <span data-i18n="faq6.q">واش الميزوثيرابي مؤلمة؟ وكم جلسة تحتاج؟</span>
           <div class="faq-icon">+</div>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq6.a">
           الألم خفيف جداً — معظم العميلات يصفنه بأنه "وخزات خفيفة" لا أكثر. نستخدم كريم تخدير موضعي قبل الجلسة للراحة القصوى. نتيجة أولية تظهر من الجلسة الأولى، ونوصي عادة بـ 3 إلى 4 جلسات للنتيجة المثالية.
         </div>
       </div>
@@ -1104,48 +1124,48 @@
     <div class="booking-inner">
 
       <div class="booking-pitch anim">
-        <div class="section-tag">احجزي الآن</div>
-        <h2>موعدك ينتظرك —<br /><em>احجزي دابا قبل ما يخلصو</em></h2>
-        <p>كل أسبوع عندنا أماكن محدودة. اللي تحجز الآن تضمن موعدها. فريقنا يتصل بك خلال ساعة لتأكيد كل التفاصيل.</p>
+        <div class="section-tag" data-i18n="book.tag">احجزي الآن</div>
+        <h2 data-i18n-html="book.h2">موعدك ينتظرك —<br /><em>احجزي دابا قبل ما يخلصو</em></h2>
+        <p data-i18n="book.p">كل أسبوع عندنا أماكن محدودة. اللي تحجز الآن تضمن موعدها. فريقنا يتصل بك خلال ساعة لتأكيد كل التفاصيل.</p>
         <div class="booking-promise">
-          <div class="bp-item"><div class="bp-tick">✓</div> رد خلال أقل من ساعة</div>
-          <div class="bp-item"><div class="bp-tick">✓</div> موعد يناسبك بالكامل</div>
-          <div class="bp-item"><div class="bp-tick">✓</div> استشارة مجانية مع خبيرتنا</div>
-          <div class="bp-item"><div class="bp-tick">✓</div> نتيجة مضمونة 100%</div>
+          <div class="bp-item"><div class="bp-tick">✓</div><span data-i18n="book.pr1"> رد خلال أقل من ساعة</span></div>
+          <div class="bp-item"><div class="bp-tick">✓</div><span data-i18n="book.pr2"> موعد يناسبك بالكامل</span></div>
+          <div class="bp-item"><div class="bp-tick">✓</div><span data-i18n="book.pr3"> استشارة مجانية مع خبيرتنا</span></div>
+          <div class="bp-item"><div class="bp-tick">✓</div><span data-i18n="book.pr4"> نتيجة مضمونة 100%</span></div>
         </div>
       </div>
 
       <div class="form-card anim" id="leadForm">
-        <h3>🌸 احجزي موعدك</h3>
-        <p class="form-sub">⏳ المواعيد المتاحة هذا الأسبوع محدودة</p>
+        <h3 data-i18n="book.card.h3">🌸 احجزي موعدك</h3>
+        <p class="form-sub" data-i18n="book.card.sub">⏳ المواعيد المتاحة هذا الأسبوع محدودة</p>
         <form id="bookingForm">
           <input type="hidden" id="fservice" name="service" value="طلب حجز - Centre Solyra" />
           <div class="form-group">
-            <label for="fname">الاسم الكامل *</label>
-            <input type="text" id="fname" name="name" placeholder="اسمك الكامل" autocomplete="name" required />
+            <label for="fname" data-i18n="book.label.name">الاسم الكامل *</label>
+            <input type="text" id="fname" name="name" placeholder="اسمك الكامل" data-i18n-ph="book.ph.name" autocomplete="name" required />
           </div>
           <div class="form-group">
-            <label for="fphone">رقم الواتساب *</label>
+            <label for="fphone" data-i18n="book.label.phone">رقم الواتساب *</label>
             <input type="tel" id="fphone" name="phone" placeholder="06XXXXXXXX" autocomplete="tel" required />
           </div>
           <div class="form-group">
-            <label for="fservice-sel">الخدمة المطلوبة</label>
+            <label for="fservice-sel" data-i18n="book.label.service">الخدمة المطلوبة</label>
             <select id="fservice-sel" onchange="document.getElementById('fservice').value = this.value || 'طلب حجز - Centre Solyra'">
-              <option value="">اختاري الخدمة (اختياري)</option>
-              <option value="بروتين الشعر Nano Gel">💇 بروتين الشعر Nano Gel</option>
-              <option value="هيدرافيشل">🌊 هيدرافيشل</option>
-              <option value="ميزوثيرابي">💉 ميزوثيرابي</option>
-              <option value="إزالة الشعر">🌸 إزالة الشعر</option>
-              <option value="تلوين وصبغ الشعر">🎨 تلوين وصبغ الشعر</option>
-              <option value="مانيكير وباديكير">💅 مانيكير وباديكير</option>
+              <option value="" data-i18n-opt="book.opt.default">اختاري الخدمة (اختياري)</option>
+              <option value="بروتين الشعر Nano Gel" data-i18n-opt="s1.name">💇 بروتين الشعر Nano Gel</option>
+              <option value="هيدرافيشل" data-i18n-opt="s2.name">🌊 هيدرافيشل</option>
+              <option value="ميزوثيرابي" data-i18n-opt="s3.name">💉 ميزوثيرابي</option>
+              <option value="إزالة الشعر" data-i18n-opt="s4.name">🌸 إزالة الشعر</option>
+              <option value="تلوين وصبغ الشعر" data-i18n-opt="s5.name">🎨 تلوين وصبغ الشعر</option>
+              <option value="مانيكير وباديكير" data-i18n-opt="s6.name">💅 مانيكير وباديكير</option>
               <option value="عناية بالبشرة">✨ عناية بالبشرة</option>
               <option value="استشارة مجانية">🎁 استشارة مجانية</option>
             </select>
           </div>
-          <button type="submit" class="submit-btn" id="submitBtn">
+          <button type="submit" class="submit-btn" id="submitBtn" data-i18n="book.submit">
             🌸 احجزي موعدك — دابا
           </button>
-          <p class="form-note">🔒 معلوماتك خاصة — لن نشاركها مع أحد</p>
+          <p class="form-note" data-i18n="book.note">🔒 معلوماتك خاصة — لن نشاركها مع أحد</p>
         </form>
       </div>
 
@@ -1161,7 +1181,7 @@
         <img src="logo.png" alt="Centre Solyra" />
         <div class="footer-brand-name">Centre <span>Solyra</span></div>
       </div>
-      <p class="footer-about">مركز تجميل متكامل للمرأة المغربية في طنجة — شعر، بشرة، أظافر، وعناية شاملة. نتيجة مضمونة 100% من الجلسة الأولى.</p>
+      <p class="footer-about" data-i18n="footer.about">مركز تجميل متكامل للمرأة المغربية في طنجة — شعر، بشرة، أظافر، وعناية شاملة. نتيجة مضمونة 100% من الجلسة الأولى.</p>
       <div class="footer-socials">
         <a class="social-link" href="https://wa.me/212619946109" target="_blank">📱</a>
         <a class="social-link" href="https://instagram.com/centresolyra" target="_blank">📸</a>
@@ -1169,7 +1189,7 @@
       </div>
     </div>
     <div class="footer-col">
-      <h4>خدماتنا</h4>
+      <h4 data-i18n="footer.srv.h4">خدماتنا</h4>
       <ul class="footer-list">
         <li>💇 بروتين الشعر Nano Gel</li>
         <li>🌊 هيدرافيشل</li>
@@ -1180,18 +1200,18 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>تواصلي معنا</h4>
+      <h4 data-i18n="footer.contact.h4">تواصلي معنا</h4>
       <div class="footer-contact-item">📍 <span>أمام سينما ميغاراما غويا، 29 شارع الأمير مولاي عبد الله، طنجة</span></div>
       <div class="footer-contact-item">📞 <a href="tel:0619946109">0619946109</a></div>
-      <div class="footer-contact-item">📱 <a href="https://wa.me/212619946109" target="_blank">واتساب مباشر</a></div>
-      <div class="footer-contact-item">🕐 الاثنين – السبت · 9ص – 8م</div>
+      <div class="footer-contact-item">📱 <a href="https://wa.me/212619946109" target="_blank" data-i18n="footer.wa">واتساب مباشر</a></div>
+      <div class="footer-contact-item">🕐 <span data-i18n="footer.hours">الاثنين – السبت · 9ص – 8م</span></div>
       <div class="footer-contact-item" style="margin-top:12px">
-        <a href="/recrutement.html" style="color:var(--rose);font-weight:700">💼 انضمي لفريقنا ←</a>
+        <a href="/recrutement.html" style="color:var(--rose);font-weight:700" data-i18n="footer.recruit">💼 انضمي لفريقنا ←</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Centre Solyra — جميع الحقوق محفوظة</span>
+    <span data-i18n="footer.copy">© 2025 Centre Solyra — جميع الحقوق محفوظة</span>
     <div class="footer-tags">
       <span class="footer-tag">طنجة</span>
       <span class="footer-tag">تجميل</span>
@@ -1212,6 +1232,199 @@
 <div id="toast"></div>
 
 <script>
+  /* ── i18n ── */
+  const T = {
+    ar: {
+      'nav.services':'خدماتنا','nav.reviews':'آراء العميلات','nav.faq':'أسئلة شائعة','nav.location':'📍 موقعنا','nav.recruitment':'التوظيف','nav.cta':'🌸 احجزي موعدك',
+      'hero.badge':'🏆 الأول في طنجة · <span>+500 عميلة راضية</span>',
+      'hero.h1':'شعرك <em>ناعم كالحرير</em><br />وبشرتك <strong>تضيء</strong><br />— من <em>أول جلسة</em> أو نعيدوها ليك',
+      'hero.sub':'مركز Solyra طنجة — <b>6 سنوات خبرة</b> في تجميل المرأة المغربية. فريق متخصص، منتجات احترافية، ونتيجة <b>مضمونة 100%</b> من الجلسة الأولى.',
+      'hero.cta1':'🌸 احجزي موعدك — دابا','hero.cta2':'اكتشفي خدماتنا',
+      'hero.trust1':' نتيجة من أول جلسة','hero.trust2':' مضمون 100% أو نعيدها','hero.trust3':' فريق متخصص ومعتمد','hero.trust4':' منتجات احترافية فقط',
+      'stats.clients':'عميلة راضية','stats.satisfaction':'نسبة الرضا','stats.years':'سنوات خبرة','stats.services':'خدمة متخصصة',
+      'loc.tag':'موقعنا','loc.h2':'زورينا في <em>قلب طنجة</em>','loc.addr_label':'العنوان','loc.hours_label':'أوقات العمل','loc.hours_val':'الاثنين – السبت · من 9 صباحاً إلى 8 مساءً','loc.phone_label':'للتواصل والحجز','loc.cta':'📍 افتحي الخريطة في جوجل',
+      'srv.tag':'خدماتنا','srv.title':'كل ما تحتاجيه <em>في مكان واحد</em>','srv.sub':'خدمات تجميل متكاملة بأيدي متخصصات معتمدات — نتيجة حقيقية، مش مجرد وعود','srv.featured':'⭐ الأكثر طلباً','srv.cta':'احجزي الآن ←',
+      's1.name':'بروتين الشعر Nano Gel','s1.result':'✨ شعر ناعم لـ4 أشهر','s1.desc':'تقنية Nano Gel الأحدث — تخترق الشعرة من الداخل وتُعيد بناءها. شعر ناعم، هادئ، ولامع يدوم 4 أشهر من جلسة واحدة بدون حرارة مضرة.',
+      's2.name':'هيدرافيشل','s2.result':'✨ بشرة مضيئة في 60 دقيقة','s2.desc':'تنظيف عميق + ترطيب مكثف + جزيئات hyaluronic acid. بشرة نظيفة، ناعمة، ومشرقة فوراً — حتى البشرة الحساسة والمختلطة.',
+      's3.name':'ميزوثيرابي','s3.result':'✨ شباب بدون عملية','s3.desc':'حقن مضادات الأكسدة وفيتامينات تُنشّط الخلايا وتشد الجلد. نتيجة مرئية من أول جلسة — شد، تجديد، وإزالة التجاعيد الخفيفة.',
+      's4.name':'إزالة الشعر','s4.result':'✨ بشرة ناعمة تدوم أسابيع','s4.desc':'إزالة احترافية بتقنيات متعددة — نتيجة تدوم أسابيع، ألم أقل، وبشرة ناعمة تدومين عليها. للوجه والجسم كاملاً.',
+      's5.name':'تلوين وصبغ الشعر','s5.result':'✨ لون رائع يدوم شهراً','s5.desc':'أخصائيات صبغ معتمدات — بالات، أومبري، هايلايت، وتغطية الشيب. ألوان احترافية تدوم وتحافظ على صحة الشعر.',
+      's6.name':'مانيكير & باديكير','s6.result':'✨ أظافر مثالية لـ3 أسابيع','s6.desc':'جل فرنسي، أكريليك، ونقش يدوي احترافي. أحدث الألوان والتصاميم — أظافر مثالية تدوم 3 أسابيع بدون تكسير.',
+      'why.tag':'لماذا Centre Solyra؟','why.title':'ليش تختاري <em>Solyra</em> على غيرها','why.sub':'مش كل المراكز تعطيك نفس النتيجة — هذا ما يجعلنا مختلفين',
+      'why1.h3':'نتيجة مضمونة من أول جلسة','why1.p':'مش كلام فارغ — عندنا ضمان مكتوب. إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة. ثقتنا في خدمتنا هي ضمانك.',
+      'why2.h3':'منتجات احترافية فقط — لا مساومة','why2.p':'نستخدم فقط منتجات صالونات عالمية معتمدة. Nano Gel، حقن ميزو معقمة، منتجات بشرة طبية. جودة لا تُساوم عليها أبداً.',
+      'why3.h3':'فريق متخصص ومُدرَّب','why3.p':'كل أخصائية في فريقنا عندها خبرة لا تقل عن 3 سنوات في تخصصها. تدريب مستمر على أحدث التقنيات — خبرة تظهر في النتيجة.',
+      'why4.h3':'+500 عميلة وثقت فينا','why4.p':'من 2019 حتى اليوم، أكثر من 500 امرأة مغربية اختارت Solyra وعادت إلينا مرة ثانية وثالثة. الرضا هو دليلنا الحقيقي.',
+      'how.tag':'كيف يعمل؟','how.title':'3 خطوات بسيطة <em>إلى النتيجة</em>','how.sub':'الحجز سهل، النتيجة سريعة، والتجربة لا تُنسى',
+      'how1.h3':'احجزي موعدك','how1.p':'املئي الاسم ورقم الهاتف في النموذج أو تواصلي معنا مباشرة — موعد يناسبك في ظرف دقائق.',
+      'how2.h3':'نتواصل معك','how2.p':'فريقنا يتصل بك خلال أقل من ساعة لتأكيد الموعد واختيار الخدمة المناسبة ليك بالضبط.',
+      'how3.h3':'استمتعي بالنتيجة','how3.p':'احضري إلينا وانتظري التحول — خرجي من Solyra وأنت تشعرين بالفرق من أول جلسة.',
+      'rev.tag':'آراء العميلات','rev.title':'ماذا قالت عميلاتنا <em>بالضبط</em>','rev.sub':'تجارب حقيقية من نساء مغربيات جربن Centre Solyra',
+      'r1.text':'جربت بروتين في صالونات كثيرة قبل. في Solyra الفرق واضح من أول غسلة — شعري ناعم وهادئ ولامع. 4 أشهر وما زلت على النتيجة!','r1.result':'💇 بروتين Nano Gel — 4 أشهر من جلسة','r1.name':'فاطمة الزهراء','r1.service':'طنجة · عميلة منذ 2023',
+      'r2.text':'الهيدرافيشل غيّر بشرتي بشكل مش طبيعي. في 60 دقيقة فقط بشرتي صافية ومضيئة كأنها مش بشرتي. دايما ترجعي لـ Solyra.','r2.result':'🌊 هيدرافيشل — بشرة مضيئة فوراً','r2.name':'نور هاشم','r2.service':'طنجة · عميلة منذ 2022',
+      'r3.text':'الميزوثيرابي كان خايفاني في البداية، لكن الأخصائية شرحت لي كل شيء. من أول جلسة وجهي أشبب وأكثر إشراقاً. ما توقعتش نتيجة بهذا الوضع.','r3.result':'💉 ميزوثيرابي — شد من الجلسة الأولى','r3.name':'أسماء بنمسعود','r3.service':'طنجة · عميلة منذ 2024',
+      'r4.text':'جئت من تطوان خصيصاً لـ Solyra بعد ما سمعت عنهم من صديقتي. الصبغة خرجت أحسن من اللي تصورتها. اللون ثابت ولامع حتى بعد شهر كامل!','r4.result':'🎨 تلوين — لون ثابت لشهر كامل','r4.name':'مريم قاسمي','r4.service':'تطوان · عميلة منذ 2023',
+      'r5.text':'المانيكير في Solyra من أحسن ما جربت في طنجة. الأظافر ثابتة ولامعة من أكثر من 3 أسابيع. والطاقم لطيف ومرتاحة معاهم جداً.','r5.result':'💅 مانيكير جل — 3 أسابيع بدون تكسير','r5.name':'سلمى العمراني','r5.service':'طنجة · عميلة منذ 2024',
+      'r6.text':'عندي بشرة حساسة وكنت خايفة. الأخصائية اختارت البروتوكول المناسب ليا والنتيجة كانت مذهلة. أخيراً مركز يفهم نوع بشرتي ويتعامل معها صح.','r6.result':'🌸 عناية بشرة — حتى البشرة الحساسة','r6.name':'خديجة التهامي','r6.service':'طنجة · عميلة منذ 2022',
+      'gar.h2':'ضمان <span>100%</span> — نتيجة حقيقية أو نعيدوها ليك','gar.p':'عندنا ثقة كاملة في خدماتنا وفريقنا — ولهذا نقدم ضمان راحة البال الكامل. إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة، بدون شروط، وبدون تعقيدات. مش مجرد كلام — هذا وعد مكتوب من Centre Solyra.','gar.p1':'✅ نتيجة من أول جلسة','gar.p2':'✅ مضمون 100%','gar.p3':'✅ بدون أسئلة','gar.p4':'✅ بدون شروط خفية',
+      'faq.tag':'أسئلة شائعة','faq.title':'كل ما يدور <em>في بالك</em>','faq.sub':'أجوبة صريحة على الأسئلة اللي تسألها العميلات دايماً',
+      'faq1.q':'كيفاش نحجز موعد في Centre Solyra؟','faq1.a':'املئي الاسم ورقم الواتساب في النموذج في أسفل الصفحة وانقري "احجزي الموعد". فريقنا سيتصل بك خلال أقل من ساعة لتأكيد الموعد. يمكنك أيضاً التواصل معنا مباشرة عبر واتساب على الرقم <strong>0619946109</strong>.',
+      'faq2.q':'قداش تدوم جلسة البروتين؟ وقداش تستمر النتيجة؟','faq2.a':'الجلسة تأخذ ما بين 2 إلى 3 ساعات حسب طول الشعر وكثافته. النتيجة تدوم 3 إلى 4 أشهر مع العناية الصحيحة — نعطيك كل التوجيهات بعد الجلسة مجاناً.',
+      'faq3.q':'واش الضمان حقيقي أم مجرد تسويق؟','faq3.a':'الضمان حقيقي 100%. إذا جئت وجربت وما عجبتكش النتيجة من أول جلسة، نعيد لك الجلسة بدون أي تكلفة إضافية أو أسئلة. ثقتنا في جودة خدمتنا هي التي تجعلنا نقدم هذا الضمان بكل ثقة.',
+      'faq4.q':'واش عندكم خدمات خاصة للعرائس؟','faq4.a':'نعم! عندنا باكيج عروس شامل — تجهيز الشعر، البشرة، الأظافر، وكل التفاصيل ليوم زفافك. احجزي استشارة مجانية وسنصمم ليك برنامج متكامل حسب يوم الزفاف ونوع البشرة والشعر.',
+      'faq5.q':'فين تتواجدو بالضبط في طنجة؟','faq5.a':'عنواننا: <strong>29 شارع الأمير مولاي عبد الله، أمام سينما ميغاراما غويا، طنجة</strong>. يمكنك البحث عنا في خرائط جوجل بكتابة "Centre Solyra Tanger". نفتح من الاثنين إلى السبت من 9 صباحاً إلى 8 مساءً.',
+      'faq6.q':'واش الميزوثيرابي مؤلمة؟ وكم جلسة تحتاج؟','faq6.a':'الألم خفيف جداً — معظم العميلات يصفنه بأنه "وخزات خفيفة" لا أكثر. نستخدم كريم تخدير موضعي قبل الجلسة للراحة القصوى. نتيجة أولية تظهر من الجلسة الأولى، ونوصي عادة بـ 3 إلى 4 جلسات للنتيجة المثالية.',
+      'book.tag':'احجزي الآن','book.h2':'موعدك ينتظرك —<br /><em>احجزي دابا قبل ما يخلصو</em>','book.p':'كل أسبوع عندنا أماكن محدودة. اللي تحجز الآن تضمن موعدها. فريقنا يتصل بك خلال ساعة لتأكيد كل التفاصيل.',
+      'book.pr1':' رد خلال أقل من ساعة','book.pr2':' موعد يناسبك بالكامل','book.pr3':' استشارة مجانية مع خبيرتنا','book.pr4':' نتيجة مضمونة 100%',
+      'book.card.h3':'🌸 احجزي موعدك','book.card.sub':'⏳ المواعيد المتاحة هذا الأسبوع محدودة',
+      'book.label.name':'الاسم الكامل *','book.ph.name':'اسمك الكامل','book.label.phone':'رقم الواتساب *','book.label.service':'الخدمة المطلوبة','book.opt.default':'اختاري الخدمة (اختياري)',
+      'book.submit':'🌸 احجزي موعدك — دابا','book.note':'🔒 معلوماتك خاصة — لن نشاركها مع أحد',
+      'form.err':'⚠️ يرجى ملء الاسم ورقم الواتساب','form.loading':'⏳ يتم الحجز...',
+      'footer.about':'مركز تجميل متكامل للمرأة المغربية في طنجة — شعر، بشرة، أظافر، وعناية شاملة. نتيجة مضمونة 100% من الجلسة الأولى.',
+      'footer.srv.h4':'خدماتنا','footer.contact.h4':'تواصلي معنا','footer.wa':'واتساب مباشر','footer.hours':'الاثنين – السبت · 9ص – 8م','footer.recruit':'💼 انضمي لفريقنا ←','footer.copy':'© 2025 Centre Solyra — جميع الحقوق محفوظة',
+    },
+    fr: {
+      'nav.services':'Nos Services','nav.reviews':'Avis Clients','nav.faq':'FAQ','nav.location':'📍 Notre Lieu','nav.recruitment':'Recrutement','nav.cta':'🌸 Réserver',
+      'hero.badge':'🏆 N°1 à Tanger · <span>+500 Clientes satisfaites</span>',
+      'hero.h1':'Des cheveux <em>soyeux comme la soie</em><br />et une peau <strong>lumineuse</strong><br />— dès <em>la première séance</em> ou on recommence',
+      'hero.sub':'Centre Solyra Tanger — <b>6 ans d\'expérience</b> au service de la beauté de la femme marocaine. Équipe spécialisée, produits professionnels, résultats <b>garantis à 100%</b> dès la première séance.',
+      'hero.cta1':'🌸 Réserver Maintenant','hero.cta2':'Découvrir nos services',
+      'hero.trust1':' Résultat dès la 1ère séance','hero.trust2':' Garanti 100% ou on recommence','hero.trust3':' Équipe spécialisée certifiée','hero.trust4':' Produits professionnels uniquement',
+      'stats.clients':'Clientes satisfaites','stats.satisfaction':'Taux de satisfaction','stats.years':'Ans d\'expérience','stats.services':'Services spécialisés',
+      'loc.tag':'Notre Lieu','loc.h2':'Visitez-nous au <em>cœur de Tanger</em>','loc.addr_label':'Adresse','loc.hours_label':'Horaires','loc.hours_val':'Lundi – Samedi · 9h à 20h','loc.phone_label':'Contact & Réservation','loc.cta':'📍 Ouvrir dans Google Maps',
+      'srv.tag':'Nos Services','srv.title':'Tout ce dont vous avez besoin <em>en un seul endroit</em>','srv.sub':'Services beauté complets par des spécialistes certifiées — vrais résultats, pas de promesses vides','srv.featured':'⭐ Le plus demandé','srv.cta':'Réserver →',
+      's1.name':'Protéine Nano Gel','s1.result':'✨ Cheveux lisses pendant 4 mois','s1.desc':'La technologie Nano Gel la plus récente — pénètre la fibre capillaire de l\'intérieur et la reconstruit. Cheveux lisses, disciplinés et brillants pendant 4 mois sans chaleur nocive.',
+      's2.name':'HydraFacial','s2.result':'✨ Peau lumineuse en 60 minutes','s2.desc':'Nettoyage en profondeur + hydratation intensive + molécules d\'acide hyaluronique. Peau propre, douce et rayonnante immédiatement — même pour les peaux sensibles et mixtes.',
+      's3.name':'Mésothérapie','s3.result':'✨ Jeunesse sans chirurgie','s3.desc':'Injections d\'antioxydants et de vitamines qui activent les cellules et raffermissent la peau. Résultat visible dès la première séance — fermeté, régénération et réduction des fines rides.',
+      's4.name':'Épilation','s4.result':'✨ Peau douce pendant des semaines','s4.desc':'Épilation professionnelle avec plusieurs techniques — résultats qui durent des semaines, moins de douleur, peau douce durable. Pour le visage et le corps entier.',
+      's5.name':'Coloration & Teinture','s5.result':'✨ Couleur éclatante pendant 1 mois','s5.desc':'Coloristes certifiées — balayage, ombré, highlights et couverture des cheveux blancs. Couleurs professionnelles durables qui préservent la santé des cheveux.',
+      's6.name':'Manucure & Pédicure','s6.result':'✨ Ongles parfaits pendant 3 semaines','s6.desc':'Gel français, acrylique et nail art professionnel. Les dernières couleurs et designs — des ongles parfaits qui durent 3 semaines sans casse.',
+      'why.tag':'Pourquoi Centre Solyra ?','why.title':'Pourquoi choisir <em>Solyra</em> plutôt qu\'un autre','why.sub':'Tous les centres ne donnent pas les mêmes résultats — voici ce qui nous différencie',
+      'why1.h3':'Résultats garantis dès la 1ère séance','why1.p':'Ce n\'est pas que des mots — nous offrons une garantie écrite. Si le résultat ne vous convient pas dès la première séance, on recommence sans poser de questions. Notre confiance en nos services est votre garantie.',
+      'why2.h3':'Produits professionnels uniquement','why2.p':'Nous utilisons exclusivement des produits de salons professionnels certifiés mondialement. Nano Gel, injections méso stérilisées, produits de soin médicaux. Une qualité sans compromis.',
+      'why3.h3':'Équipe spécialisée et formée','why3.p':'Chaque spécialiste de notre équipe a au moins 3 ans d\'expérience dans sa spécialité. Formation continue sur les dernières techniques — une expertise qui se voit dans les résultats.',
+      'why4.h3':'+500 clientes nous font confiance','why4.p':'Depuis 2019 à aujourd\'hui, plus de 500 femmes marocaines ont choisi Solyra et sont revenues une deuxième et troisième fois. La satisfaction est notre vraie preuve.',
+      'how.tag':'Comment ça marche ?','how.title':'3 étapes simples <em>vers le résultat</em>','how.sub':'La réservation est simple, le résultat est rapide, l\'expérience est inoubliable',
+      'how1.h3':'Réservez votre rendez-vous','how1.p':'Remplissez votre nom et numéro de téléphone dans le formulaire ou contactez-nous directement — un rendez-vous qui vous convient en quelques minutes.',
+      'how2.h3':'Nous vous contactons','how2.p':'Notre équipe vous appelle dans moins d\'une heure pour confirmer le rendez-vous et choisir le service qui vous convient exactement.',
+      'how3.h3':'Profitez du résultat','how3.p':'Venez nous voir et attendez la transformation — sortez de Solyra en ressentant la différence dès la première séance.',
+      'rev.tag':'Avis Clients','rev.title':'Ce que nos clientes ont dit <em>exactement</em>','rev.sub':'Témoignages réels de femmes marocaines ayant essayé Centre Solyra',
+      'r1.text':'J\'ai essayé la protéine dans beaucoup de salons avant. Chez Solyra la différence est visible dès le premier lavage — mes cheveux sont lisses, disciplinés et brillants. 4 mois après et je garde toujours le résultat !','r1.result':'💇 Protéine Nano Gel — 4 mois en une séance','r1.name':'Fatima Zahrae','r1.service':'Tanger · Cliente depuis 2023',
+      'r2.text':'L\'HydraFacial a transformé ma peau de manière incroyable. En seulement 60 minutes, ma peau est nette et lumineuse. On revient toujours chez Solyra.','r2.result':'🌊 HydraFacial — peau lumineuse immédiatement','r2.name':'Nour Hachem','r2.service':'Tanger · Cliente depuis 2022',
+      'r3.text':'La mésothérapie me faisait peur au début, mais la spécialiste m\'a tout expliqué. Dès la première séance mon visage est plus jeune et plus éclatant.','r3.result':'💉 Mésothérapie — lifting dès la 1ère séance','r3.name':'Asma Benmasoud','r3.service':'Tanger · Cliente depuis 2024',
+      'r4.text':'Je suis venue de Tétouan spécialement pour Solyra après en avoir entendu parler. La coloration est sortie mieux que ce que j\'imaginais. La couleur tient même après un mois !','r4.result':'🎨 Coloration — couleur stable pendant 1 mois','r4.name':'Maryam Kasmi','r4.service':'Tétouan · Cliente depuis 2023',
+      'r5.text':'La manucure chez Solyra est parmi les meilleures à Tanger. Les ongles tiennent depuis plus de 3 semaines. Et l\'équipe est très accueillante.','r5.result':'💅 Manucure gel — 3 semaines sans casse','r5.name':'Salma Amrani','r5.service':'Tanger · Cliente depuis 2024',
+      'r6.text':'J\'ai la peau sensible et j\'avais peur. La spécialiste a choisi le protocole adapté et le résultat était incroyable. Enfin un centre qui comprend mon type de peau.','r6.result':'🌸 Soin peau — même les peaux sensibles','r6.name':'Khadija Tahami','r6.service':'Tanger · Cliente depuis 2022',
+      'gar.h2':'Garantie <span>100%</span> — Vrai résultat ou on recommence','gar.p':'Nous avons une confiance totale dans nos services et notre équipe — c\'est pourquoi nous offrons une garantie complète. Si le résultat ne vous convient pas dès la première séance, on recommence sans questions, sans conditions. Ce n\'est pas que des mots — c\'est une promesse écrite de Centre Solyra.','gar.p1':'✅ Résultat dès la 1ère séance','gar.p2':'✅ Garanti 100%','gar.p3':'✅ Sans questions','gar.p4':'✅ Sans conditions cachées',
+      'faq.tag':'Questions Fréquentes','faq.title':'Tout ce qui <em>vous préoccupe</em>','faq.sub':'Réponses franches aux questions que nos clientes posent toujours',
+      'faq1.q':'Comment réserver un rendez-vous chez Centre Solyra ?','faq1.a':'Remplissez votre nom et numéro WhatsApp dans le formulaire en bas de page et cliquez sur "Réserver". Notre équipe vous appellera dans moins d\'une heure. Vous pouvez aussi nous contacter sur WhatsApp au <strong>0619946109</strong>.',
+      'faq2.q':'Combien de temps dure une séance protéine ? Et le résultat ?','faq2.a':'La séance dure entre 2 et 3 heures selon la longueur et la densité des cheveux. Le résultat dure 3 à 4 mois avec les bons soins — nous vous donnons toutes les instructions après la séance.',
+      'faq3.q':'La garantie est-elle réelle ou juste du marketing ?','faq3.a':'La garantie est réelle à 100%. Si vous venez et le résultat ne vous convient pas dès la première séance, nous répétons la séance sans frais supplémentaires ni questions. Notre confiance en la qualité de notre service nous permet d\'offrir cette garantie.',
+      'faq4.q':'Avez-vous des services spéciaux pour les mariées ?','faq4.a':'Oui ! Nous avons un package mariée complet — cheveux, peau, ongles et tous les détails pour votre mariage. Réservez une consultation gratuite et nous créerons un programme sur mesure.',
+      'faq5.q':'Où vous trouvez-vous exactement à Tanger ?','faq5.a':'Notre adresse : <strong>29 Avenue Prince Moulay Abdellah, en face du cinéma Megarama Goya, Tanger</strong>. Cherchez "Centre Solyra Tanger" sur Google Maps. Ouvert du lundi au samedi de 9h à 20h.',
+      'faq6.q':'La mésothérapie est-elle douloureuse ? Combien de séances faut-il ?','faq6.a':'La douleur est très légère — nos clientes la décrivent comme de légères picûres. Nous utilisons une crème anesthésiante locale avant la séance. Un résultat initial apparaît dès la première séance, et nous recommandons 3 à 4 séances pour un résultat optimal.',
+      'book.tag':'Réserver Maintenant','book.h2':'Votre rendez-vous vous attend —<br /><em>Réservez maintenant avant qu\'il soit trop tard</em>','book.p':'Chaque semaine nos créneaux sont limités. Celles qui réservent maintenant assurent leur place. Notre équipe vous rappelle dans l\'heure.',
+      'book.pr1':' Réponse en moins d\'une heure','book.pr2':' Rendez-vous selon votre disponibilité','book.pr3':' Consultation gratuite avec notre experte','book.pr4':' Résultat garanti 100%',
+      'book.card.h3':'🌸 Réserver votre séance','book.card.sub':'⏳ Créneaux disponibles cette semaine limités',
+      'book.label.name':'Nom complet *','book.ph.name':'Votre nom complet','book.label.phone':'Numéro WhatsApp *','book.label.service':'Service souhaité','book.opt.default':'Choisir un service (optionnel)',
+      'book.submit':'🌸 Réserver Maintenant','book.note':'🔒 Vos informations sont privées — jamais partagées',
+      'form.err':'⚠️ Veuillez remplir votre nom et numéro WhatsApp','form.loading':'⏳ Réservation en cours...',
+      'footer.about':'Centre beauté complet pour la femme marocaine à Tanger — cheveux, peau, ongles et soin global. Résultats garantis à 100% dès la première séance.',
+      'footer.srv.h4':'Nos Services','footer.contact.h4':'Nous Contacter','footer.wa':'WhatsApp Direct','footer.hours':'Lundi – Samedi · 9h – 20h','footer.recruit':'💼 Rejoignez notre équipe →','footer.copy':'© 2025 Centre Solyra — Tous droits réservés',
+    },
+    en: {
+      'nav.services':'Our Services','nav.reviews':'Client Reviews','nav.faq':'FAQ','nav.location':'📍 Location','nav.recruitment':'Careers','nav.cta':'🌸 Book Now',
+      'hero.badge':'🏆 #1 in Tangier · <span>+500 Happy Clients</span>',
+      'hero.h1':'Hair as <em>smooth as silk</em><br />and skin that <strong>glows</strong><br />— from <em>the first session</em> or we redo it',
+      'hero.sub':'Solyra Centre Tangier — <b>6 years of expertise</b> in beauty for Moroccan women. Specialist team, professional products, <b>100% guaranteed results</b> from the very first session.',
+      'hero.cta1':'🌸 Book Now','hero.cta2':'Explore Our Services',
+      'hero.trust1':' Results from session one','hero.trust2':' 100% guaranteed or we redo it','hero.trust3':' Certified specialist team','hero.trust4':' Professional products only',
+      'stats.clients':'Happy Clients','stats.satisfaction':'Satisfaction Rate','stats.years':'Years Experience','stats.services':'Specialized Services',
+      'loc.tag':'Our Location','loc.h2':'Visit Us in <em>the Heart of Tangier</em>','loc.addr_label':'Address','loc.hours_label':'Working Hours','loc.hours_val':'Monday – Saturday · 9am to 8pm','loc.phone_label':'Contact & Booking','loc.cta':'📍 Open in Google Maps',
+      'srv.tag':'Our Services','srv.title':'Everything You Need <em>in One Place</em>','srv.sub':'Complete beauty services by certified specialists — real results, not empty promises','srv.featured':'⭐ Most Popular','srv.cta':'Book Now →',
+      's1.name':'Nano Gel Hair Protein','s1.result':'✨ Smooth hair for 4 months','s1.desc':'The latest Nano Gel technology — penetrates the hair fiber from within and rebuilds it. Smooth, frizz-free, shiny hair lasting 4 months from one session without damaging heat.',
+      's2.name':'HydraFacial','s2.result':'✨ Glowing skin in 60 minutes','s2.desc':'Deep cleansing + intensive hydration + hyaluronic acid molecules. Clean, soft, and radiant skin immediately — even for sensitive and combination skin.',
+      's3.name':'Mesotherapy','s3.result':'✨ Youth without surgery','s3.desc':'Antioxidant and vitamin injections that activate cells and firm the skin. Visible result from the first session — firming, rejuvenation, and reduction of fine lines.',
+      's4.name':'Hair Removal','s4.result':'✨ Smooth skin that lasts weeks','s4.desc':'Professional hair removal with multiple techniques — results that last weeks, less pain, and long-lasting smooth skin. For the full face and body.',
+      's5.name':'Hair Coloring & Dyeing','s5.result':'✨ Vibrant color that lasts a month','s5.desc':'Certified colorists — balayage, ombré, highlights and grey coverage. Professional colors that last and maintain hair health.',
+      's6.name':'Manicure & Pedicure','s6.result':'✨ Perfect nails for 3 weeks','s6.desc':'French gel, acrylic and professional nail art. The latest colors and designs — perfect nails lasting 3 weeks without chipping.',
+      'why.tag':'Why Centre Solyra?','why.title':'Why Choose <em>Solyra</em> Over Others','why.sub':'Not every centre delivers the same results — here\'s what makes us different',
+      'why1.h3':'Guaranteed results from session one','why1.p':'Not just words — we offer a written guarantee. If you\'re not happy with the result from the first session, we redo it with no questions asked. Our confidence in our service is your guarantee.',
+      'why2.h3':'Professional products only — no compromise','why2.p':'We use only certified world-class salon products. Nano Gel, sterile meso injections, medical skincare products. Quality we never compromise on.',
+      'why3.h3':'Specialized and trained team','why3.p':'Every specialist on our team has at least 3 years of experience in their field. Continuous training on the latest techniques — expertise that shows in the results.',
+      'why4.h3':'+500 clients trust us','why4.p':'From 2019 to today, more than 500 Moroccan women have chosen Solyra and returned a second and third time. Satisfaction is our real proof.',
+      'how.tag':'How It Works','how.title':'3 Simple Steps <em>to Your Result</em>','how.sub':'Booking is easy, results are quick, the experience is unforgettable',
+      'how1.h3':'Book Your Appointment','how1.p':'Fill in your name and phone number in the form or contact us directly — an appointment that suits you in minutes.',
+      'how2.h3':'We Contact You','how2.p':'Our team calls you within less than an hour to confirm the appointment and choose the service that\'s exactly right for you.',
+      'how3.h3':'Enjoy Your Results','how3.p':'Come in and await your transformation — leave Solyra feeling the difference from the very first session.',
+      'rev.tag':'Client Reviews','rev.title':'What Our Clients Said <em>Exactly</em>','rev.sub':'Real experiences from Moroccan women who tried Centre Solyra',
+      'r1.text':'I\'ve tried hair protein at many salons before. At Solyra the difference is visible from the first wash — my hair is smooth, frizz-free and shiny. 4 months in and I\'m still enjoying the results!','r1.result':'💇 Nano Gel Protein — 4 months from one session','r1.name':'Fatima Zahrae','r1.service':'Tangier · Client since 2023',
+      'r2.text':'The HydraFacial transformed my skin in an incredible way. In just 60 minutes my skin is clear and glowing. I always come back to Solyra.','r2.result':'🌊 HydraFacial — glowing skin immediately','r2.name':'Nour Hachem','r2.service':'Tangier · Client since 2022',
+      'r3.text':'Mesotherapy scared me at first, but the specialist explained everything. From the first session my face looked younger and more radiant. I didn\'t expect such a result.','r3.result':'💉 Mesotherapy — lift from session one','r3.name':'Asma Benmasoud','r3.service':'Tangier · Client since 2024',
+      'r4.text':'I came from Tétouan specifically for Solyra after hearing about them from a friend. The color came out better than I imagined. Still vibrant and shiny after a full month!','r4.result':'🎨 Coloring — stable color for a month','r4.name':'Maryam Kasmi','r4.service':'Tétouan · Client since 2023',
+      'r5.text':'The manicure at Solyra is among the best I\'ve had in Tangier. The nails have held up for over 3 weeks. And the team is very welcoming.','r5.result':'💅 Gel Manicure — 3 weeks without chipping','r5.name':'Salma Amrani','r5.service':'Tangier · Client since 2024',
+      'r6.text':'I have sensitive skin and was worried. The specialist chose the right protocol for me and the result was amazing. Finally a centre that understands my skin type.','r6.result':'🌸 Skin care — even for sensitive skin','r6.name':'Khadija Tahami','r6.service':'Tangier · Client since 2022',
+      'gar.h2':'<span>100%</span> Guarantee — Real Results or We Redo It','gar.p':'We have complete confidence in our services and team — that\'s why we offer a full peace-of-mind guarantee. If you\'re not happy with the result from the first session, we redo it with no questions, no conditions. Not just words — this is a written promise from Centre Solyra.','gar.p1':'✅ Results from session one','gar.p2':'✅ 100% Guaranteed','gar.p3':'✅ No questions asked','gar.p4':'✅ No hidden conditions',
+      'faq.tag':'Frequently Asked Questions','faq.title':'Everything That <em>Crosses Your Mind</em>','faq.sub':'Honest answers to questions our clients always ask',
+      'faq1.q':'How do I book an appointment at Centre Solyra?','faq1.a':'Fill in your name and WhatsApp number in the form at the bottom of the page and click "Book". Our team will call you within less than an hour. You can also contact us directly on WhatsApp at <strong>0619946109</strong>.',
+      'faq2.q':'How long does a protein session take? And how long does the result last?','faq2.a':'The session takes between 2 and 3 hours depending on hair length and thickness. The result lasts 3 to 4 months with proper care — we give you all the instructions after the session.',
+      'faq3.q':'Is the guarantee real or just marketing?','faq3.a':'The guarantee is 100% real. If you come and aren\'t happy with the result from the first session, we repeat the session at no extra cost with no questions. Our confidence in our service is what allows us to offer this guarantee.',
+      'faq4.q':'Do you have special services for brides?','faq4.a':'Yes! We have a complete bridal package — hair prep, skin, nails and all the details for your wedding day. Book a free consultation and we\'ll design a complete program tailored to you.',
+      'faq5.q':'Where exactly are you located in Tangier?','faq5.a':'Our address: <strong>29 Avenue Prince Moulay Abdellah, opposite Megarama Goya cinema, Tangier</strong>. Search "Centre Solyra Tanger" on Google Maps. Open Monday to Saturday from 9am to 8pm.',
+      'faq6.q':'Is mesotherapy painful? How many sessions are needed?','faq6.a':'The pain is very light — most clients describe it as mild pricks nothing more. We use a local numbing cream before the session. An initial result appears from the first session, and we usually recommend 3 to 4 sessions for optimal results.',
+      'book.tag':'Book Now','book.h2':'Your appointment is waiting —<br /><em>Book now before spots run out</em>','book.p':'Every week our slots are limited. Those who book now secure their spot. Our team will call you within the hour to confirm all the details.',
+      'book.pr1':' Reply within less than an hour','book.pr2':' Appointment that suits you','book.pr3':' Free consultation with our expert','book.pr4':' 100% guaranteed results',
+      'book.card.h3':'🌸 Book Your Session','book.card.sub':'⏳ Available slots this week are limited',
+      'book.label.name':'Full Name *','book.ph.name':'Your full name','book.label.phone':'WhatsApp Number *','book.label.service':'Desired Service','book.opt.default':'Choose a service (optional)',
+      'book.submit':'🌸 Book Now','book.note':'🔒 Your information is private — never shared',
+      'form.err':'⚠️ Please fill in your name and WhatsApp number','form.loading':'⏳ Booking...',
+      'footer.about':'Complete beauty centre for Moroccan women in Tangier — hair, skin, nails and full care. 100% guaranteed results from the first session.',
+      'footer.srv.h4':'Our Services','footer.contact.h4':'Contact Us','footer.wa':'WhatsApp Direct','footer.hours':'Mon – Sat · 9am – 8pm','footer.recruit':'💼 Join Our Team →','footer.copy':'© 2025 Centre Solyra — All rights reserved',
+    }
+  };
+
+  let currentLang = 'ar';
+
+  function setLang(lang) {
+    currentLang = lang;
+    const d = document.documentElement;
+    d.lang = lang;
+    d.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    const dict = T[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = dict[el.getAttribute('data-i18n')];
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const v = dict[el.getAttribute('data-i18n-html')];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const v = dict[el.getAttribute('data-i18n-ph')];
+      if (v !== undefined) el.placeholder = v;
+    });
+    document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+      const v = dict[el.getAttribute('data-i18n-opt')];
+      if (v !== undefined) el.textContent = (el.value ? '' : '') + v.replace(/^[🌊💇💉🌸🎨💅✨🎁]\s/, '');
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.style.textAlign = lang === 'ar' ? 'right' : 'left';
+    });
+    localStorage.setItem('solyra_lang', lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  (function initLang() {
+    const saved = localStorage.getItem('solyra_lang');
+    if (saved && T[saved]) setLang(saved);
+  })();
+
   /* ── Nav ── */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -1283,10 +1496,10 @@
     const phone   = document.getElementById('fphone').value.trim();
     const service = document.getElementById('fservice').value || 'طلب حجز - Centre Solyra';
 
-    if (!name || !phone) { showToast('⚠️ يرجى ملء الاسم ورقم الواتساب'); return; }
+    if (!name || !phone) { showToast(T[currentLang]['form.err'] || '⚠️ يرجى ملء الاسم ورقم الواتساب'); return; }
 
     btn.disabled = true;
-    btn.textContent = '⏳ يتم الحجز...';
+    btn.textContent = T[currentLang]['form.loading'] || '⏳ يتم الحجز...';
 
     const eventId = genEventId();
     try {
