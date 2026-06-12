@@ -534,6 +534,49 @@
       border-radius: 50px; padding: 3px 12px; font-size: .74rem; font-weight: 600;
     }
 
+    /* ── LOCATION ── */
+    #location { background: #fff; }
+    .location-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 40px; align-items: center;
+    }
+    .location-info h2 {
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 900; color: var(--deep-pink); margin-bottom: 20px; line-height: 1.3;
+    }
+    .location-info h2 em { font-style: normal; color: var(--pink); }
+    .location-detail {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 16px;
+    }
+    .location-detail .loc-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--grad); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .location-detail .loc-text { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+    .location-detail .loc-text strong { display: block; font-size: .8rem; font-weight: 700; color: var(--deep-pink); margin-bottom: 2px; }
+    .loc-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--grad); color: #fff;
+      border-radius: 50px; padding: 12px 26px;
+      font-size: .92rem; font-weight: 700; text-decoration: none;
+      margin-top: 6px; transition: opacity .2s, transform .2s;
+    }
+    .loc-cta:hover { opacity: .88; transform: translateY(-1px); }
+    .map-wrap {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(233,30,140,.15);
+      border: 2px solid rgba(233,30,140,.12);
+      height: 360px;
+    }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+    @media (max-width: 700px) {
+      .location-inner { grid-template-columns: 1fr; }
+      .map-wrap { height: 260px; }
+    }
+
     /* ── SCROLL BTN ── */
     .scroll-btn {
       position: fixed; bottom: 28px; left: 24px; z-index: 99;
@@ -997,6 +1040,54 @@
           الألم خفيف جداً — معظم العميلات يصفنه بأنه "وخزات خفيفة" لا أكثر. نستخدم كريم تخدير موضعي قبل الجلسة للراحة القصوى. نتيجة أولية تظهر من الجلسة الأولى، ونوصي عادة بـ 3 إلى 4 جلسات للنتيجة المثالية.
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LOCATION ══════════ -->
+<section id="location">
+  <div class="container">
+    <div class="location-inner">
+
+      <div class="location-info anim">
+        <div class="section-tag">موقعنا</div>
+        <h2>زورينا في <em>قلب طنجة</em></h2>
+        <div class="location-detail">
+          <div class="loc-icon">📍</div>
+          <div class="loc-text">
+            <strong>العنوان</strong>
+            En face cinéma Megarama Goya,<br />
+            29 Avenue Prince Moulay Abdellah, Tanger
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="loc-icon">🕐</div>
+          <div class="loc-text">
+            <strong>أوقات العمل</strong>
+            الاثنين – السبت · من 9 صباحاً إلى 8 مساءً
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="loc-icon">📞</div>
+          <div class="loc-text">
+            <strong>للتواصل والحجز</strong>
+            <a href="tel:0619946109" style="color:var(--pink);font-weight:700;">0619946109</a>
+          </div>
+        </div>
+        <a class="loc-cta" href="https://maps.app.goo.gl/JKznRrVqQEBmwc167" target="_blank" rel="noopener">
+          📍 افتحي الخريطة في جوجل
+        </a>
+      </div>
+
+      <div class="map-wrap anim">
+        <iframe
+          src="https://maps.google.com/maps?q=En+face+cinema+Megarama+Goya,+29+Avenue+Prince+Moulay+Abdellah,+Tanger,+Morocco&output=embed&z=16"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
     </div>
   </div>
 </section>
