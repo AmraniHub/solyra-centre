@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centre Solyra — مركز الجمال بطنجة | شعر ناعم وبشرة مضيئة من أول جلسة</title>
+  <meta name="description" content="Centre Solyra طنجة — مركز تجميل متكامل. بروتين Nano Gel، هيدرافيشل، ميزوثيرابي، عناية بالبشرة. نتيجة مضمونة 100% من الجلسة الأولى." />
+  <meta name="facebook-domain-verification" content="2kjyvcbfy867m25x9hbmk7o0hzef02" />
+  <link rel="icon" href="logo.png" type="image/png" />
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1750980126312343');
+  fbq('track','PageView');
+  fbq('track','ViewContent');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1750980126312343&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:        #e91e8c;
+      --deep-pink:   #880e4f;
+      --mid-pink:    #c2185b;
+      --light-pink:  #fce4ec;
+      --rose:        #f48fb1;
+      --gold:        #c9922b;
+      --gold-light:  #fff8e1;
+      --gold-mid:    #f0c060;
+      --bg:          #fff5f8;
+      --surface:     #ffffff;
+      --text:        #1a0510;
+      --muted:       #7c3a5a;
+      --grad:        linear-gradient(135deg, #e91e8c 0%, #880e4f 100%);
+      --grad-gold:   linear-gradient(135deg, #c9922b 0%, #f0c060 100%);
+      --shadow:      0 4px 24px rgba(233,30,140,0.13);
+      --shadow-lg:   0 8px 48px rgba(233,30,140,0.20);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(233,30,140,0.10);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(233,30,140,0.12); }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 68px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo img { width: 42px; height: 42px; border-radius: 8px; object-fit: cover; object-position: 50% 18%; }
+    .nav-logo-text { font-size: 1.15rem; font-weight: 900; color: var(--deep-pink); line-height: 1.1; }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted); font-size: .9rem; font-weight: 600;
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta {
+      background: var(--grad); color: #fff;
+      border: none; border-radius: 50px; padding: 10px 24px;
+      font-family: 'Cairo', sans-serif; font-size: .9rem; font-weight: 700;
+      cursor: pointer; transition: opacity .2s, transform .2s;
+      text-decoration: none; display: inline-block;
+    }
+    .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--deep-pink); margin: 5px 0;
+      transition: .3s;
+    }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      background: #fff; border-top: 1px solid var(--light-pink);
+      padding: 12px 24px 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 10px 0; color: var(--muted); font-size: .95rem;
+      font-weight: 600; text-decoration: none; border-bottom: 1px solid #fce4ec;
+    }
+    .mobile-menu .nav-cta { margin-top: 12px; text-align: center; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #fff0f7 0%, #fce4ec 40%, #f3e5f5 80%, #fff8e1 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 100px 24px 60px;
+    }
+    .hero-blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: .35; pointer-events: none;
+    }
+    .hero-blob-1 { width: 520px; height: 520px; background: #f48fb1; top: -120px; right: -140px; }
+    .hero-blob-2 { width: 380px; height: 380px; background: #c9922b; bottom: -80px; left: -80px; opacity: .18; }
+    .hero-blob-3 { width: 260px; height: 260px; background: #880e4f; top: 40%; left: 30%; opacity: .12; }
+    .hero-inner {
+      max-width: 860px; width: 100%;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(233,30,140,0.08); border: 1px solid rgba(233,30,140,0.22);
+      border-radius: 50px; padding: 8px 20px;
+      font-size: .82rem; font-weight: 700; color: var(--deep-pink);
+      margin-bottom: 28px;
+    }
+    .hero-badge span { color: var(--gold); }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900; line-height: 1.25;
+      color: var(--deep-pink); margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--pink); }
+    .hero h1 strong { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      color: var(--muted); line-height: 1.8; margin-bottom: 36px;
+      max-width: 640px; margin-left: auto; margin-right: auto;
+    }
+    .hero-sub b { color: var(--deep-pink); }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 44px; }
+    .btn-primary {
+      background: var(--grad); color: #fff;
+      border: none; border-radius: 50px; padding: 16px 36px;
+      font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 6px 28px rgba(233,30,140,.35);
+      transition: transform .2s, box-shadow .2s; text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(233,30,140,.42); }
+    .btn-outline {
+      background: transparent; color: var(--deep-pink);
+      border: 2px solid var(--deep-pink); border-radius: 50px;
+      padding: 14px 30px; font-family: 'Cairo', sans-serif;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: background .2s, color .2s; text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: var(--deep-pink); color: #fff; }
+    .hero-trust {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: .82rem; font-weight: 600; color: var(--muted);
+    }
+    .trust-item .tick {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--grad); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; flex-shrink: 0;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+    .hero-scroll svg { width: 24px; height: 24px; fill: none; stroke: var(--rose); stroke-width: 2; }
+
+    /* ── STATS BAND ── */
+    .stats-band {
+      background: var(--grad);
+      padding: 28px 24px;
+    }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; text-align: center;
+    }
+    .stat-item { padding: 12px 8px; border-left: 1px solid rgba(255,255,255,.2); }
+    .stat-item:last-child { border-left: none; }
+    .stat-num {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900; color: #fff; line-height: 1;
+    }
+    .stat-num span { color: var(--gold-mid); }
+    .stat-label { font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.80); margin-top: 4px; }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 80px 24px; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(233,30,140,0.08); border: 1px solid rgba(233,30,140,0.18);
+      color: var(--pink); font-size: .78rem; font-weight: 700;
+      border-radius: 50px; padding: 5px 16px; margin-bottom: 16px;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900; color: var(--deep-pink);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .section-title em { font-style: normal; color: var(--pink); }
+    .section-sub { font-size: .97rem; color: var(--muted); line-height: 1.8; max-width: 560px; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header .section-sub { margin: 0 auto; }
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    /* ── SERVICES ── */
+    #services { background: #fff; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 1.5px solid rgba(233,30,140,0.10);
+      border-radius: 20px; overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(233,30,140,.16);
+    }
+    .service-card.featured { border-color: var(--gold); }
+    .service-card.featured::after {
+      content: '⭐ الأكثر طلباً';
+      position: absolute; top: 16px; left: 16px;
+      background: var(--grad-gold); color: #fff;
+      font-size: .72rem; font-weight: 700;
+      border-radius: 50px; padding: 4px 12px;
+    }
+    .service-img {
+      height: 190px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+    }
+    .service-body { padding: 22px 20px; }
+    .service-name { font-size: 1.05rem; font-weight: 900; color: var(--deep-pink); margin-bottom: 8px; }
+    .service-result {
+      font-size: .82rem; font-weight: 700; color: var(--gold);
+      background: var(--gold-light); border-radius: 50px;
+      padding: 4px 12px; display: inline-block; margin-bottom: 10px;
+    }
+    .service-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+    .service-footer { display: flex; align-items: center; justify-content: space-between; }
+    .service-cta {
+      background: var(--grad); color: #fff;
+      border: none; border-radius: 50px; padding: 8px 20px;
+      font-family: 'Cairo', sans-serif; font-size: .82rem; font-weight: 700;
+      cursor: pointer; transition: opacity .2s;
+    }
+    .service-cta:hover { opacity: .85; }
+
+    /* ── WHY ── */
+    #why { background: linear-gradient(160deg, #fff5f8 0%, #fce4ec 100%); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      background: #fff; border-radius: 20px; padding: 28px 24px;
+      display: flex; gap: 18px; align-items: flex-start;
+      border: 1.5px solid rgba(233,30,140,0.10);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .why-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      border-radius: 14px; background: var(--grad);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .why-content h3 { font-size: 1rem; font-weight: 900; color: var(--deep-pink); margin-bottom: 6px; }
+    .why-content p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── HOW IT WORKS ── */
+    #how { background: #fff; }
+    .how-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 32px; position: relative;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute; top: 36px; right: 16.67%; left: 16.67%;
+      height: 2px; background: linear-gradient(90deg, var(--pink), var(--gold));
+      z-index: 0;
+    }
+    .how-step {
+      text-align: center; position: relative; z-index: 1;
+    }
+    .how-num {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--grad); color: #fff;
+      font-size: 1.5rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 6px 24px rgba(233,30,140,.30);
+    }
+    .how-step h3 { font-size: 1rem; font-weight: 900; color: var(--deep-pink); margin-bottom: 8px; }
+    .how-step p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
+    #reviews { background: linear-gradient(160deg, #fff5f8 0%, #fce4ec 60%, #fff 100%); }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .review-card {
+      background: #fff; border-radius: 20px; padding: 24px;
+      border: 1.5px solid rgba(233,30,140,0.10);
+      transition: transform .3s, box-shadow .3s;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+    .review-text { font-size: .9rem; color: var(--text); line-height: 1.75; flex: 1; }
+    .review-text::before { content: '"'; color: var(--pink); font-size: 1.4rem; line-height: 0; vertical-align: -4px; margin-left: 2px; }
+    .review-text::after  { content: '"'; color: var(--pink); font-size: 1.4rem; line-height: 0; vertical-align: -4px; margin-right: 2px; }
+    .review-result {
+      font-size: .78rem; font-weight: 700; color: var(--gold);
+      background: var(--gold-light); padding: 4px 12px; border-radius: 50px;
+      display: inline-block; width: fit-content;
+    }
+    .review-author {
+      display: flex; align-items: center; gap: 12px;
+      border-top: 1px solid var(--light-pink); padding-top: 12px;
+    }
+    .review-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--grad); display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .review-name { font-size: .88rem; font-weight: 700; color: var(--deep-pink); }
+    .review-service { font-size: .78rem; color: var(--muted); }
+
+    /* ── GUARANTEE ── */
+    #guarantee { background: var(--grad); padding: 64px 24px; }
+    .guarantee-inner {
+      max-width: 720px; margin: 0 auto; text-align: center;
+    }
+    .guarantee-shield {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; margin: 0 auto 24px;
+      border: 2px solid rgba(255,255,255,0.30);
+    }
+    .guarantee-inner h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900; color: #fff; margin-bottom: 16px; line-height: 1.3;
+    }
+    .guarantee-inner h2 span { color: var(--gold-mid); }
+    .guarantee-inner p { color: rgba(255,255,255,.85); font-size: .97rem; line-height: 1.8; margin-bottom: 28px; }
+    .guarantee-pills { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .guarantee-pill {
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+      color: #fff; border-radius: 50px; padding: 7px 18px;
+      font-size: .82rem; font-weight: 700;
+    }
+
+    /* ── FAQ ── */
+    #faq { background: #fff; }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      border: 1.5px solid rgba(233,30,140,0.12);
+      border-radius: 16px; overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item.open { border-color: var(--pink); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 12px;
+      background: none; border: none; padding: 18px 20px;
+      font-family: 'Cairo', sans-serif; font-size: .95rem;
+      font-weight: 700; color: var(--deep-pink);
+      cursor: pointer; text-align: right;
+    }
+    .faq-q:hover { background: var(--light-pink); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--light-pink); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem; transition: transform .3s, background .3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--pink); color: #fff; }
+    .faq-a {
+      display: none; padding: 0 20px 18px;
+      font-size: .9rem; color: var(--muted); line-height: 1.8;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── BOOKING FORM ── */
+    #booking { background: linear-gradient(160deg, #fce4ec 0%, #f3e5f5 100%); }
+    .booking-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: start;
+    }
+    .booking-pitch h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900; color: var(--deep-pink); margin-bottom: 12px; line-height: 1.3;
+    }
+    .booking-pitch h2 em { font-style: normal; color: var(--pink); }
+    .booking-pitch p { font-size: .95rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+    .booking-promise {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .bp-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .9rem; font-weight: 600; color: var(--deep-pink);
+    }
+    .bp-item .bp-tick {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--grad); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; flex-shrink: 0;
+    }
+    .form-card {
+      background: #fff; border-radius: 24px; padding: 36px 32px;
+      box-shadow: var(--shadow-lg);
+      border: 1.5px solid rgba(233,30,140,0.10);
+    }
+    .form-card h3 {
+      font-size: 1.15rem; font-weight: 900; color: var(--deep-pink);
+      margin-bottom: 4px;
+    }
+    .form-card .form-sub { font-size: .82rem; color: var(--muted); margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: .82rem; font-weight: 700;
+      color: var(--deep-pink); margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%; padding: 13px 16px;
+      border: 1.5px solid rgba(233,30,140,0.20);
+      border-radius: 12px; font-family: 'Cairo', sans-serif;
+      font-size: .95rem; color: var(--text);
+      background: #fff; outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(233,30,140,.10);
+    }
+    .form-group input::placeholder { color: #c4a4b4; }
+    .submit-btn {
+      width: 100%; padding: 16px;
+      background: var(--grad); color: #fff;
+      border: none; border-radius: 50px;
+      font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; box-shadow: 0 6px 24px rgba(233,30,140,.30);
+      transition: transform .2s, box-shadow .2s; margin-top: 4px;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(233,30,140,.38); }
+    .submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .form-note { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 10px; }
+
+    /* ── FOOTER ── */
+    footer { background: #1a0510; color: #fff; padding: 56px 24px 28px; }
+    .footer-grid {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px; margin-bottom: 40px;
+    }
+    .footer-brand-logo {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .footer-brand-logo img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; object-position: 50% 18%; }
+    .footer-brand-name { font-size: 1.1rem; font-weight: 900; color: #fff; }
+    .footer-brand-name span { color: var(--gold); }
+    .footer-about { font-size: .87rem; color: rgba(255,255,255,.60); line-height: 1.8; margin-bottom: 16px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-link {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem; text-decoration: none;
+      transition: background .2s;
+    }
+    .social-link:hover { background: rgba(233,30,140,.3); }
+    .footer-col h4 { font-size: .9rem; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
+    .footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-list li { font-size: .85rem; color: rgba(255,255,255,.60); }
+    .footer-list a { color: rgba(255,255,255,.60); text-decoration: none; transition: color .2s; }
+    .footer-list a:hover { color: var(--rose); }
+    .footer-contact-item {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: .85rem; color: rgba(255,255,255,.60);
+      margin-bottom: 10px; line-height: 1.6;
+    }
+    .footer-contact-item a { color: rgba(255,255,255,.60); text-decoration: none; }
+    .footer-contact-item a:hover { color: var(--rose); }
+    .footer-bottom {
+      max-width: 1120px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px; display: flex;
+      align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom span { font-size: .82rem; color: rgba(255,255,255,.40); }
+    .footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .footer-tag {
+      background: rgba(233,30,140,.15); color: var(--rose);
+      border-radius: 50px; padding: 3px 12px; font-size: .74rem; font-weight: 600;
+    }
+
+    /* ── SCROLL BTN ── */
+    .scroll-btn {
+      position: fixed; bottom: 28px; left: 24px; z-index: 99;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--grad); border: none; cursor: pointer;
+      box-shadow: 0 6px 24px rgba(233,30,140,.38);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: scale(.8);
+      transition: opacity .3s, transform .3s;
+      pointer-events: none;
+    }
+    .scroll-btn.visible { opacity: 1; transform: scale(1); pointer-events: auto; }
+    .scroll-btn svg { width: 24px; height: 24px; fill: #fff; }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: var(--deep-pink); color: #fff; padding: 12px 24px;
+      border-radius: 50px; font-size: .9rem; font-weight: 600;
+      opacity: 0; transition: all .3s; pointer-events: none; white-space: nowrap; z-index: 200;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── ANIMATE IN ── */
+    .anim { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .anim.in { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .booking-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-left: none; }
+      .how-steps::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-burger { display: block; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; gap: 20px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .booking-inner { padding: 0; }
+      .form-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <img src="logo.png" alt="Centre Solyra" />
+      <div class="nav-logo-text">Centre <span>Solyra</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#reviews">آراء العميلات</a></li>
+      <li><a href="#faq">أسئلة شائعة</a></li>
+      <li><a href="/recrutement.html">التوظيف</a></li>
+    </ul>
+    <a class="nav-cta" href="#booking">🌸 احجزي موعدك</a>
+    <button class="nav-burger" id="burgerBtn" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">خدماتنا</a>
+    <a href="#reviews">آراء العميلات</a>
+    <a href="#faq">أسئلة شائعة</a>
+    <a href="/recrutement.html">التوظيف</a>
+    <a class="nav-cta" href="#booking">🌸 احجزي موعدك</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">🏆 الأول في طنجة · <span>+500 عميلة راضية</span></div>
+    <h1>
+      شعرك <em>ناعم كالحرير</em><br />
+      وبشرتك <strong>تضيء</strong><br />
+      — من <em>أول جلسة</em> أو نعيدوها ليك
+    </h1>
+    <p class="hero-sub">
+      مركز Solyra طنجة — <b>6 سنوات خبرة</b> في تجميل المرأة المغربية.
+      فريق متخصص، منتجات احترافية، ونتيجة <b>مضمونة 100%</b> من الجلسة الأولى.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#booking">🌸 احجزي موعدك — دابا</a>
+      <a class="btn-outline" href="#services">اكتشفي خدماتنا</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="tick">✓</div> نتيجة من أول جلسة</div>
+      <div class="trust-item"><div class="tick">✓</div> مضمون 100% أو نعيدها</div>
+      <div class="trust-item"><div class="tick">✓</div> فريق متخصص ومعتمد</div>
+      <div class="trust-item"><div class="tick">✓</div> منتجات احترافية فقط</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ══════════ STATS ══════════ -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-item anim">
+      <div class="stat-num">+<span>500</span></div>
+      <div class="stat-label">عميلة راضية</div>
+    </div>
+    <div class="stat-item anim">
+      <div class="stat-num"><span>98</span>%</div>
+      <div class="stat-label">نسبة الرضا</div>
+    </div>
+    <div class="stat-item anim">
+      <div class="stat-num"><span>6</span>+</div>
+      <div class="stat-label">سنوات خبرة</div>
+    </div>
+    <div class="stat-item anim">
+      <div class="stat-num">+<span>15</span></div>
+      <div class="stat-label">خدمة متخصصة</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">خدماتنا</div>
+      <h2 class="section-title">كل ما تحتاجيه <em>في مكان واحد</em></h2>
+      <p class="section-sub">خدمات تجميل متكاملة بأيدي متخصصات معتمدات — نتيجة حقيقية، مش مجرد وعود</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card featured anim">
+        <div class="service-img">💆‍♀️</div>
+        <div class="service-body">
+          <div class="service-name">بروتين الشعر Nano Gel</div>
+          <div class="service-result">✨ شعر ناعم لـ4 أشهر</div>
+          <p class="service-desc">تقنية Nano Gel الأحدث — تخترق الشعرة من الداخل وتُعيد بناءها. شعر ناعم، هادئ، ولامع يدوم 4 أشهر من جلسة واحدة بدون حرارة مضرة.</p>
+          <div class="service-footer">
+            <button class="service-cta" onclick="selectAndBook('بروتين الشعر Nano Gel')">احجزي الآن ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card anim">
+        <div class="service-img">🌊</div>
+        <div class="service-body">
+          <div class="service-name">هيدرافيشل</div>
+          <div class="service-result">✨ بشرة مضيئة في 60 دقيقة</div>
+          <p class="service-desc">تنظيف عميق + ترطيب مكثف + جزيئات hyaluronic acid. بشرة نظيفة، ناعمة، ومشرقة فوراً — حتى البشرة الحساسة والمختلطة.</p>
+          <div class="service-footer">
+            <button class="service-cta" onclick="selectAndBook('هيدرافيشل')">احجزي الآن ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card anim">
+        <div class="service-img">💉</div>
+        <div class="service-body">
+          <div class="service-name">ميزوثيرابي</div>
+          <div class="service-result">✨ شباب بدون عملية</div>
+          <p class="service-desc">حقن مضادات الأكسدة وفيتامينات تُنشّط الخلايا وتشد الجلد. نتيجة مرئية من أول جلسة — شد، تجديد، وإزالة التجاعيد الخفيفة.</p>
+          <div class="service-footer">
+            <button class="service-cta" onclick="selectAndBook('ميزوثيرابي')">احجزي الآن ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card anim">
+        <div class="service-img">🌸</div>
+        <div class="service-body">
+          <div class="service-name">إزالة الشعر</div>
+          <div class="service-result">✨ بشرة ناعمة تدوم أسابيع</div>
+          <p class="service-desc">إزالة احترافية بتقنيات متعددة — نتيجة تدوم أسابيع، ألم أقل، وبشرة ناعمة تدومين عليها. للوجه والجسم كاملاً.</p>
+          <div class="service-footer">
+            <button class="service-cta" onclick="selectAndBook('إزالة الشعر')">احجزي الآن ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card anim">
+        <div class="service-img">🎨</div>
+        <div class="service-body">
+          <div class="service-name">تلوين وصبغ الشعر</div>
+          <div class="service-result">✨ لون رائع يدوم شهراً</div>
+          <p class="service-desc">أخصائيات صبغ معتمدات — بالات، أومبري، هايلايت، وتغطية الشيب. ألوان احترافية تدوم وتحافظ على صحة الشعر.</p>
+          <div class="service-footer">
+            <button class="service-cta" onclick="selectAndBook('تلوين وصبغ الشعر')">احجزي الآن ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card anim">
+        <div class="service-img">💅</div>
+        <div class="service-body">
+          <div class="service-name">مانيكير & باديكير</div>
+          <div class="service-result">✨ أظافر مثالية لـ3 أسابيع</div>
+          <p class="service-desc">جل فرنسي، أكريليك، ونقش يدوي احترافي. أحدث الألوان والتصاميم — أظافر مثالية تدوم 3 أسابيع بدون تكسير.</p>
+          <div class="service-footer">
+            <button class="service-cta" onclick="selectAndBook('مانيكير وباديكير')">احجزي الآن ←</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WHY ══════════ -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">لماذا Centre Solyra؟</div>
+      <h2 class="section-title">ليش تختاري <em>Solyra</em> على غيرها</h2>
+      <p class="section-sub">مش كل المراكز تعطيك نفس النتيجة — هذا ما يجعلنا مختلفين</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card anim">
+        <div class="why-icon">🏆</div>
+        <div class="why-content">
+          <h3>نتيجة مضمونة من أول جلسة</h3>
+          <p>مش كلام فارغ — عندنا ضمان مكتوب. إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة. ثقتنا في خدمتنا هي ضمانك.</p>
+        </div>
+      </div>
+      <div class="why-card anim">
+        <div class="why-icon">💎</div>
+        <div class="why-content">
+          <h3>منتجات احترافية فقط — لا مساومة</h3>
+          <p>نستخدم فقط منتجات صالونات عالمية معتمدة. Nano Gel، حقن ميزو معقمة، منتجات بشرة طبية. جودة لا تُساوم عليها أبداً.</p>
+        </div>
+      </div>
+      <div class="why-card anim">
+        <div class="why-icon">👩‍🔬</div>
+        <div class="why-content">
+          <h3>فريق متخصص ومُدرَّب</h3>
+          <p>كل أخصائية في فريقنا عندها خبرة لا تقل عن 3 سنوات في تخصصها. تدريب مستمر على أحدث التقنيات — خبرة تظهر في النتيجة.</p>
+        </div>
+      </div>
+      <div class="why-card anim">
+        <div class="why-icon">🌟</div>
+        <div class="why-content">
+          <h3>+500 عميلة وثقت فينا</h3>
+          <p>من 2019 حتى اليوم، أكثر من 500 امرأة مغربية اختارت Solyra وعادت إلينا مرة ثانية وثالثة. الرضا هو دليلنا الحقيقي.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section id="how">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">كيف يعمل؟</div>
+      <h2 class="section-title">3 خطوات بسيطة <em>إلى النتيجة</em></h2>
+      <p class="section-sub">الحجز سهل، النتيجة سريعة، والتجربة لا تُنسى</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step anim">
+        <div class="how-num">1</div>
+        <h3>احجزي موعدك</h3>
+        <p>املئي الاسم ورقم الهاتف في النموذج أو تواصلي معنا مباشرة — موعد يناسبك في ظرف دقائق.</p>
+      </div>
+      <div class="how-step anim">
+        <div class="how-num">2</div>
+        <h3>نتواصل معك</h3>
+        <p>فريقنا يتصل بك خلال أقل من ساعة لتأكيد الموعد واختيار الخدمة المناسبة ليك بالضبط.</p>
+      </div>
+      <div class="how-step anim">
+        <div class="how-num">3</div>
+        <h3>استمتعي بالنتيجة</h3>
+        <p>احضري إلينا وانتظري التحول — خرجي من Solyra وأنت تشعرين بالفرق من أول جلسة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">آراء العميلات</div>
+      <h2 class="section-title">ماذا قالت عميلاتنا <em>بالضبط</em></h2>
+      <p class="section-sub">تجارب حقيقية من نساء مغربيات جربن Centre Solyra</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card anim">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">جربت بروتين في صالونات كثيرة قبل. فيChelsea Solyra الفرق واضح من أول غسلة — شعري ناعم وهادئ ولامع. 4 أشهر وما زلت على النتيجة!</p>
+        <div class="review-result">💇 بروتين Nano Gel — 4 أشهر من جلسة</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">فاطمة الزهراء</div>
+            <div class="review-service">طنجة · عميلة منذ 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card anim">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">الهيدرافيشل غيّر بشرتي بشكل مش طبيعي. في 60 دقيقة فقط بشرتي صافية ومضيئة كأنها مش بشرتي. دايما ترجعي لـ Solyra.</p>
+        <div class="review-result">🌊 هيدرافيشل — بشرة مضيئة فوراً</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">نور هاشم</div>
+            <div class="review-service">طنجة · عميلة منذ 2022</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card anim">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">الميزوثيرابي كان خايفاني في البداية، لكن الأخصائية شرحت لي كل شيء. من أول جلسة وجهي أشبب وأكثر إشراقاً. ما توقعتش نتيجة بهذا الوضع.</p>
+        <div class="review-result">💉 ميزوثيرابي — شد من الجلسة الأولى</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">أسماء بنمسعود</div>
+            <div class="review-service">طنجة · عميلة منذ 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card anim">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">جئت من تطوان خصيصاً لـ Solyra بعد ما سمعت عنهم من صديقتي. الصبغة خرجت أحسن من اللي تصورتها. اللون ثابت ولامع حتى بعد شهر كامل!</p>
+        <div class="review-result">🎨 تلوين — لون ثابت لشهر كامل</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">مريم قاسمي</div>
+            <div class="review-service">تطوان · عميلة منذ 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card anim">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">المانيكير في Solyra من أحسن ما جربت في طنجة. الأظافر ثابتة ولامعة من أكثر من 3 أسابيع. والطاقم لطيف ومرتاحة معاهم جداً.</p>
+        <div class="review-result">💅 مانيكير جل — 3 أسابيع بدون تكسير</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">سلمى العمراني</div>
+            <div class="review-service">طنجة · عميلة منذ 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card anim">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">عندي بشرة حساسة وكنت خايفة. الأخصائية اختارت البروتوكول المناسب ليا والنتيجة كانت مذهلة. أخيراً مركز يفهم نوع بشرتي ويتعامل معها صح.</p>
+        <div class="review-result">🌸 عناية بشرة — حتى البشرة الحساسة</div>
+        <div class="review-author">
+          <div class="review-avatar">👩</div>
+          <div>
+            <div class="review-name">خديجة التهامي</div>
+            <div class="review-service">طنجة · عميلة منذ 2022</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GUARANTEE ══════════ -->
+<section id="guarantee">
+  <div class="guarantee-inner">
+    <div class="guarantee-shield">🛡️</div>
+    <h2>ضمان <span>100%</span> — نتيجة حقيقية أو نعيدوها ليك</h2>
+    <p>
+      عندنا ثقة كاملة في خدماتنا وفريقنا — ولهذا نقدم ضمان راحة البال الكامل.
+      إذا ما عجبكيش النتيجة من أول جلسة، نعيدوها ليك بدون أسئلة، بدون شروط، وبدون تعقيدات.
+      مش مجرد كلام — هذا وعد مكتوب من Centre Solyra.
+    </p>
+    <div class="guarantee-pills">
+      <span class="guarantee-pill">✅ نتيجة من أول جلسة</span>
+      <span class="guarantee-pill">✅ مضمون 100%</span>
+      <span class="guarantee-pill">✅ بدون أسئلة</span>
+      <span class="guarantee-pill">✅ بدون شروط خفية</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">أسئلة شائعة</div>
+      <h2 class="section-title">كل ما يدور <em>في بالك</em></h2>
+      <p class="section-sub">أجوبة صريحة على الأسئلة اللي تسألها العميلات دايماً</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          كيفاش نحجز موعد في Centre Solyra؟
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          املئي الاسم ورقم الواتساب في النموذج في أسفل الصفحة وانقري "احجزي الموعد". فريقنا سيتصل بك خلال أقل من ساعة لتأكيد الموعد. يمكنك أيضاً التواصل معنا مباشرة عبر واتساب على الرقم <strong>0619946109</strong>.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          قداش تدوم جلسة البروتين؟ وقداش تستمر النتيجة؟
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          الجلسة تأخذ ما بين 2 إلى 3 ساعات حسب طول الشعر وكثافته. النتيجة تدوم 3 إلى 4 أشهر مع العناية الصحيحة — نعطيك كل التوجيهات بعد الجلسة مجاناً.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          واش الضمان حقيقي أم مجرد تسويق؟
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          الضمان حقيقي 100%. إذا جئت وجربت وما عجبتكش النتيجة من أول جلسة، نعيد لك الجلسة بدون أي تكلفة إضافية أو أسئلة. ثقتنا في جودة خدمتنا هي التي تجعلنا نقدم هذا الضمان بكل ثقة.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          واش عندكم خدمات خاصة للعرائس؟
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          نعم! عندنا باكيج عروس شامل — تجهيز الشعر، البشرة، الأظافر، وكل التفاصيل ليوم زفافك. احجزي استشارة مجانية وسنصمم ليك برنامج متكامل حسب يوم الزفاف ونوع البشرة والشعر.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          فين تتواجدو بالضبط في طنجة؟
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          عنواننا: <strong>29 شارع الأمير مولاي عبد الله، أمام سينما ميغاراما غويا، طنجة</strong>. يمكنك البحث عنا في خرائط جوجل بكتابة "Centre Solyra Tanger". نفتح من الاثنين إلى السبت من 9 صباحاً إلى 8 مساءً.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          واش الميزوثيرابي مؤلمة؟ وكم جلسة تحتاج؟
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          الألم خفيف جداً — معظم العميلات يصفنه بأنه "وخزات خفيفة" لا أكثر. نستخدم كريم تخدير موضعي قبل الجلسة للراحة القصوى. نتيجة أولية تظهر من الجلسة الأولى، ونوصي عادة بـ 3 إلى 4 جلسات للنتيجة المثالية.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOOKING FORM ══════════ -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-inner">
+
+      <div class="booking-pitch anim">
+        <div class="section-tag">احجزي الآن</div>
+        <h2>موعدك ينتظرك —<br /><em>احجزي دابا قبل ما يخلصو</em></h2>
+        <p>كل أسبوع عندنا أماكن محدودة. اللي تحجز الآن تضمن موعدها. فريقنا يتصل بك خلال ساعة لتأكيد كل التفاصيل.</p>
+        <div class="booking-promise">
+          <div class="bp-item"><div class="bp-tick">✓</div> رد خلال أقل من ساعة</div>
+          <div class="bp-item"><div class="bp-tick">✓</div> موعد يناسبك بالكامل</div>
+          <div class="bp-item"><div class="bp-tick">✓</div> استشارة مجانية مع خبيرتنا</div>
+          <div class="bp-item"><div class="bp-tick">✓</div> نتيجة مضمونة 100%</div>
+        </div>
+      </div>
+
+      <div class="form-card anim" id="leadForm">
+        <h3>🌸 احجزي موعدك</h3>
+        <p class="form-sub">⏳ المواعيد المتاحة هذا الأسبوع محدودة</p>
+        <form id="bookingForm">
+          <input type="hidden" id="fservice" name="service" value="طلب حجز - Centre Solyra" />
+          <div class="form-group">
+            <label for="fname">الاسم الكامل *</label>
+            <input type="text" id="fname" name="name" placeholder="اسمك الكامل" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label for="fphone">رقم الواتساب *</label>
+            <input type="tel" id="fphone" name="phone" placeholder="06XXXXXXXX" autocomplete="tel" required />
+          </div>
+          <div class="form-group">
+            <label for="fservice-sel">الخدمة المطلوبة</label>
+            <select id="fservice-sel" onchange="document.getElementById('fservice').value = this.value || 'طلب حجز - Centre Solyra'">
+              <option value="">اختاري الخدمة (اختياري)</option>
+              <option value="بروتين الشعر Nano Gel">💇 بروتين الشعر Nano Gel</option>
+              <option value="هيدرافيشل">🌊 هيدرافيشل</option>
+              <option value="ميزوثيرابي">💉 ميزوثيرابي</option>
+              <option value="إزالة الشعر">🌸 إزالة الشعر</option>
+              <option value="تلوين وصبغ الشعر">🎨 تلوين وصبغ الشعر</option>
+              <option value="مانيكير وباديكير">💅 مانيكير وباديكير</option>
+              <option value="عناية بالبشرة">✨ عناية بالبشرة</option>
+              <option value="استشارة مجانية">🎁 استشارة مجانية</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            🌸 احجزي موعدك — دابا
+          </button>
+          <p class="form-note">🔒 معلوماتك خاصة — لن نشاركها مع أحد</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <img src="logo.png" alt="Centre Solyra" />
+        <div class="footer-brand-name">Centre <span>Solyra</span></div>
+      </div>
+      <p class="footer-about">مركز تجميل متكامل للمرأة المغربية في طنجة — شعر، بشرة، أظافر، وعناية شاملة. نتيجة مضمونة 100% من الجلسة الأولى.</p>
+      <div class="footer-socials">
+        <a class="social-link" href="https://wa.me/212619946109" target="_blank">📱</a>
+        <a class="social-link" href="https://instagram.com/centresolyra" target="_blank">📸</a>
+        <a class="social-link" href="https://www.facebook.com/centresolyra" target="_blank">📘</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>خدماتنا</h4>
+      <ul class="footer-list">
+        <li>💇 بروتين الشعر Nano Gel</li>
+        <li>🌊 هيدرافيشل</li>
+        <li>💉 ميزوثيرابي</li>
+        <li>🎨 تلوين وصبغ الشعر</li>
+        <li>🌸 إزالة الشعر</li>
+        <li>💅 مانيكير & باديكير</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تواصلي معنا</h4>
+      <div class="footer-contact-item">📍 <span>أمام سينما ميغاراما غويا، 29 شارع الأمير مولاي عبد الله، طنجة</span></div>
+      <div class="footer-contact-item">📞 <a href="tel:0619946109">0619946109</a></div>
+      <div class="footer-contact-item">📱 <a href="https://wa.me/212619946109" target="_blank">واتساب مباشر</a></div>
+      <div class="footer-contact-item">🕐 الاثنين – السبت · 9ص – 8م</div>
+      <div class="footer-contact-item" style="margin-top:12px">
+        <a href="/recrutement.html" style="color:var(--rose);font-weight:700">💼 انضمي لفريقنا ←</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Centre Solyra — جميع الحقوق محفوظة</span>
+    <div class="footer-tags">
+      <span class="footer-tag">طنجة</span>
+      <span class="footer-tag">تجميل</span>
+      <span class="footer-tag">بروتين الشعر</span>
+      <span class="footer-tag">هيدرافيشل</span>
+      <span class="footer-tag">مضمون 100%</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to form button -->
+<button class="scroll-btn" id="scrollBtn" onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth',block:'center'})" title="احجزي موعدك">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-13 5l-.85-1.81L6 8c4-2 9.72-3 13-1A13.5 13.5 0 0 1 17 8z"/>
+  </svg>
+</button>
+
+<div id="toast"></div>
+
+<script>
+  /* ── Nav ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  /* ── Scroll btn ── */
+  const scrollBtn = document.getElementById('scrollBtn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+
+  /* ── Smooth scroll anchors ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  /* ── FAQ ── */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── Select service & scroll to form ── */
+  function selectAndBook(service) {
+    document.getElementById('fservice').value = service;
+    const sel = document.getElementById('fservice-sel');
+    for (let i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === service) { sel.selectedIndex = i; break; }
+    }
+    document.getElementById('leadForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* ── Toast ── */
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  /* ── Event ID + cookie ── */
+  function genEventId() { return 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9); }
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : undefined;
+  }
+
+  /* ── Form submit ── */
+  document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn  = document.getElementById('submitBtn');
+    const name    = document.getElementById('fname').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value || 'طلب حجز - Centre Solyra';
+
+    if (!name || !phone) { showToast('⚠️ يرجى ملء الاسم ورقم الواتساب'); return; }
+
+    btn.disabled = true;
+    btn.textContent = '⏳ يتم الحجز...';
+
+    const eventId = genEventId();
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, phone, service, eventId,
+          userAgent: navigator.userAgent,
+          eventSourceUrl: location.href,
+          fbp: getCookie('_fbp'),
+          fbc: getCookie('_fbc'),
+        })
+      });
+    } catch (_) {}
+
+    if (typeof fbq !== 'undefined') { fbq('track', 'Lead', {}, { eventID: eventId }); }
+    window.location.href = '/success.html';
+  });
+
+  /* ── Animate on scroll ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
