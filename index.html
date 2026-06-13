@@ -210,6 +210,39 @@
     .section-sub { text-align: center; color: var(--muted); font-size: .92rem; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
 
     /* ── WHY US ── */
+    /* ── BEFORE / AFTER ── */
+    .ba-section { background: #fff5f8; padding: 64px 40px; }
+    .ba-section .section-title { margin-bottom: 8px; }
+    .ba-section .section-sub  { margin-bottom: 40px; }
+    .ba-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .ba-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 6px 32px rgba(233,30,140,.10); border: 1.5px solid rgba(233,30,140,.10); }
+    .ba-slider { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; cursor: ew-resize; user-select: none; }
+    .ba-before, .ba-after { position: absolute; inset: 0; }
+    .ba-before img, .ba-after img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-after { clip-path: inset(0 50% 0 0); transition: clip-path .05s linear; }
+    .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; }
+    .ba-handle::before, .ba-handle::after {
+      content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg,#e91e8c,#880e4f);
+      box-shadow: 0 2px 12px rgba(233,30,140,.5);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ba-handle::before { top: 50%; transform: translate(-50%,-50%); }
+    .ba-handle::after { content: '↔'; top: 50%; transform: translate(-50%,-50%); color: #fff; font-size: .85rem; background: none; box-shadow: none; }
+    .ba-labels { display: flex; justify-content: space-between; padding: 4px 10px 0; }
+    .ba-label { font-size: .67rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+    .ba-label.before { color: #aaa; }
+    .ba-label.after  { color: var(--pink); }
+    .ba-body { padding: 14px 16px 16px; }
+    .ba-service { font-size: .78rem; font-weight: 700; color: var(--pink); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .ba-result  { font-size: .92rem; font-weight: 800; color: var(--deep-pink); margin-bottom: 4px; }
+    .ba-note    { font-size: .78rem; color: var(--muted); }
+    @media (max-width: 680px) {
+      .ba-section { padding: 48px 20px; }
+      .ba-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+
     .cards-strip { max-width: 1060px; margin: 0 auto; padding: 70px 40px 40px; }
     .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
     .why-card {
@@ -544,6 +577,73 @@
   </div>
 </section>
 
+<!-- BEFORE / AFTER -->
+<section class="ba-section">
+  <div class="section-label">نتائج حقيقية</div>
+  <h2 class="section-title">شوفي الفرق <span class="accent">بنفسك</span></h2>
+  <p class="section-sub">حرّكي الشريط لترى قبل وبعد — نتائج عميلاتنا الحقيقيات</p>
+  <div class="ba-grid">
+
+    <!-- Card 1: Hair Protein -->
+    <div class="ba-card anim">
+      <div class="ba-slider" data-ba>
+        <div class="ba-before">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="قبل بروتين الشعر" />
+        </div>
+        <div class="ba-after">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="بعد بروتين الشعر" />
+        </div>
+        <div class="ba-handle"></div>
+      </div>
+      <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
+      <div class="ba-body">
+        <div class="ba-service">بروتين الشعر Nano Gel</div>
+        <div class="ba-result">شعر ناعم ولامع لـ4 أشهر</div>
+        <div class="ba-note">من جلسة واحدة — بدون حرارة زائدة</div>
+      </div>
+    </div>
+
+    <!-- Card 2: HydraFacial -->
+    <div class="ba-card anim">
+      <div class="ba-slider" data-ba>
+        <div class="ba-before">
+          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="قبل هيدرافيشل" />
+        </div>
+        <div class="ba-after">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80" alt="بعد هيدرافيشل" />
+        </div>
+        <div class="ba-handle"></div>
+      </div>
+      <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
+      <div class="ba-body">
+        <div class="ba-service">هيدرافيشل</div>
+        <div class="ba-result">بشرة مضيئة ونضرة في 60 دقيقة</div>
+        <div class="ba-note">تناسب البشرة الحساسة — نتيجة فورية</div>
+      </div>
+    </div>
+
+    <!-- Card 3: Coloring -->
+    <div class="ba-card anim">
+      <div class="ba-slider" data-ba>
+        <div class="ba-before">
+          <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?w=600&q=80" alt="قبل التلوين" />
+        </div>
+        <div class="ba-after">
+          <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80" alt="بعد التلوين" />
+        </div>
+        <div class="ba-handle"></div>
+      </div>
+      <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
+      <div class="ba-body">
+        <div class="ba-service">تلوين وصبغ الشعر</div>
+        <div class="ba-result">بالاياج وأومبري يدوم شهراً</div>
+        <div class="ba-note">تغطية كاملة للشيب — ألوان طبيعية وعصرية</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- WHY US -->
 <section class="cards-strip">
   <div class="section-label">لماذا Centre Solyra؟</div>
@@ -609,7 +709,7 @@
       </iframe>
     </div>
     <div class="location-photo-wrap">
-      <img src="/solyra-centre.png" alt="Centre Solyra طنجة" loading="lazy" />
+      <img src="/solyra-centre.jpg" alt="Centre Solyra طنجة" loading="lazy" />
     </div>
   </div>
   <div class="location-cta-row">
@@ -912,6 +1012,28 @@
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     observer.observe(el);
+  });
+</script>
+<script>
+  document.querySelectorAll('[data-ba]').forEach(function(slider) {
+    var after = slider.querySelector('.ba-after');
+    var handle = slider.querySelector('.ba-handle');
+    var dragging = false;
+
+    function setPos(x) {
+      var rect = slider.getBoundingClientRect();
+      var pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 2), 98);
+      after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      handle.style.left = pct + '%';
+    }
+
+    slider.addEventListener('mousedown', function(e) { dragging = true; setPos(e.clientX); });
+    window.addEventListener('mousemove', function(e) { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', function() { dragging = false; });
+
+    slider.addEventListener('touchstart', function(e) { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', function(e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', function() { dragging = false; });
   });
 </script>
 </body>
