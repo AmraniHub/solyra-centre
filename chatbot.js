@@ -9,7 +9,7 @@
   'use strict';
 
   /* ── Config ─────────────────────────────────────────────────────────── */
-  var WORKER_URL  = 'https://solyra-chat.amranirich.workers.dev/chat'; // ← update after deploy
+  var WORKER_URL  = 'https://solyra-chat.amrani4online.workers.dev/chat';
   var SUBMIT_URL  = '/api/submit';
   var SESSION_KEY = 'sc_v1';
   var SESSION_TTL = 2 * 60 * 60 * 1000; // 2 hours
