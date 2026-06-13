@@ -549,7 +549,7 @@
     }
 
     /* ── LOCATION ── */
-    #location { background: #fff; }
+    #location { background: #fff; padding-bottom: 36px; }
     .location-inner {
       max-width: 1000px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1.4fr;
@@ -596,6 +596,12 @@
       width: 100%; display: block;
       max-height: 420px; object-fit: cover; object-position: center;
     }
+    .centre-photo-caption {
+      background: #fff; padding: 12px 16px 14px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .cpc-name { font-size: .95rem; font-weight: 900; color: var(--deep-pink); }
+    .cpc-addr { font-size: .78rem; color: var(--muted); line-height: 1.5; }
     @media (max-width: 700px) {
       .location-inner { grid-template-columns: 1fr; }
       .map-wrap { height: 260px; }
@@ -796,6 +802,10 @@
 
       <div class="centre-photo-wrap anim">
         <img src="/solyra-centre.jpg" alt="Centre Solyra" class="centre-photo" loading="lazy" />
+        <div class="centre-photo-caption">
+          <span class="cpc-name">Centre Solyra — طنجة</span>
+          <span class="cpc-addr">29 شارع الأمير مولاي عبد الله · أمام سينما ميغاراما غويا</span>
+        </div>
       </div>
 
     </div>
