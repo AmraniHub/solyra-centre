@@ -220,20 +220,28 @@
 
       /* Mobile */
       '@media(max-width:520px){',
-      '#sc-root{bottom:18px;right:14px}',
-      '#sc-btn{width:50px;height:50px}',
-      '#sc-panel{position:fixed;bottom:0;right:0;left:0;width:100%;height:58vh;max-height:480px;border-radius:18px 18px 0 0;padding-bottom:env(safe-area-inset-bottom,0)}',
-      '#sc-panel.open ~ #sc-btn,#sc-panel:not(.sc-hidden) ~ #sc-btn{display:none!important}',
-      '#sc-nudge{position:fixed;bottom:80px;right:12px;left:12px;max-width:none;border-radius:12px}',
-      '#sc-hd{padding:10px 12px}',
-      '#sc-av{width:30px;height:30px}',
-      '#sc-hd-name{font-size:.82rem}',
-      '#sc-hd-status{font-size:.65rem}',
-      '#sc-msgs{padding:10px 10px}',
-      '.sc-m{font-size:.83rem;padding:8px 11px}',
-      '#sc-inp-area{padding:7px 9px}',
-      '.sc-chip{font-size:.68rem;padding:3px 9px}',
-      '#sc-in{font-size:.83rem;padding:8px 12px}',
+      '#sc-root{bottom:16px;right:12px}',
+      '#sc-btn{width:48px;height:48px}',
+      '#sc-pulse{inset:-6px}',
+      '#sc-panel{position:fixed;bottom:0;right:0;left:0;width:100%;height:52vh;min-height:320px;max-height:420px;border-radius:16px 16px 0 0;padding-bottom:env(safe-area-inset-bottom,0)}',
+      '#sc-panel:not(.sc-hidden) ~ #sc-btn{display:none!important}',
+      '#sc-nudge{position:fixed;bottom:76px;right:12px;left:12px;max-width:none;border-radius:10px}',
+      '#sc-hd{padding:9px 12px}',
+      '#sc-av{width:28px;height:28px}',
+      '#sc-hd-name{font-size:.8rem}',
+      '#sc-hd-status{font-size:.62rem}',
+      '#sc-msgs{padding:8px 10px;gap:7px}',
+      '.sc-m{font-size:.81rem;padding:7px 10px;max-width:88%}',
+      '#sc-inp-area{padding:6px 8px}',
+      '#sc-chips{gap:4px;margin-bottom:5px}',
+      '.sc-chip{font-size:.67rem;padding:3px 8px}',
+      '#sc-in{font-size:.82rem;padding:7px 11px}',
+      '#sc-send{width:34px;height:34px;font-size:.9rem}',
+      '#sc-lead,#sc-thanks{padding:10px 12px}',
+      '#sc-lead-title{font-size:.82rem}',
+      '#sc-lead-sub{font-size:.7rem}',
+      '#sc-lead input{padding:7px 10px;font-size:.82rem;margin-bottom:5px}',
+      '#sc-lead-btn,#sc-wa{padding:8px;font-size:.82rem}',
       '}',
     ].join('');
     document.head.appendChild(s);
@@ -623,8 +631,8 @@
     var siteLang = document.documentElement.lang || localStorage.getItem('solyra_lang') || 'ar';
     setLang(siteLang === 'fr' ? 'fr' : siteLang === 'en' ? 'en' : 'ar');
 
-    var hadSession = loadSession();
-    if (hadSession) restoreMessages();
+    // Always start fresh on page load — no message history restored
+    localStorage.removeItem(SESSION_KEY);
 
     wireEvents();
     watchSiteLang();
