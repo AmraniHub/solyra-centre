@@ -426,7 +426,7 @@
         messages.push({ role: 'assistant', content: fullText });
         msgCount++;
         saveSession();
-        if (!leadShown && (hasIntent(fullText) || hasIntent(userText) || msgCount >= 6)) {
+        if (!leadShown && hasIntent(userText)) {
           setTimeout(showLeadForm, 700);
         }
       }
