@@ -474,7 +474,7 @@
       .hero { padding: 24px 20px 40px; }
       .hero-inner { flex-direction: column; gap: 12px; }
       .hero-text { flex: 0 0 auto; width: 100%; }
-      .hero-form-col { width: 100%; flex: 0 0 auto; }
+      .hero-form-col { width: 100%; flex: 0 0 auto; order: -1; }
       .cards-strip { padding: 50px 20px 30px; }
       .services-section { padding: 50px 20px; }
       .stats-band { padding: 48px 20px; }
@@ -933,10 +933,6 @@
 
   function selectService(service) {
     document.getElementById('fservice').value = service;
-    const sel = document.getElementById('fservice-sel');
-    for (let i = 0; i < sel.options.length; i++) {
-      if (sel.options[i].value === service) { sel.selectedIndex = i; break; }
-    }
     document.getElementById('leadForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
