@@ -431,12 +431,14 @@
 
     function finishStream() {
       if (fullText) {
-        messages.push({ role: 'assistant', content: fullText });
+        var showForm = !leadShown && (fullText.indexOf('[SHOW_FORM]') !== -1 || hasIntent(userText));
+        // Strip the signal tag before saving/displaying
+        var cleanText = fullText.replace(/\[SHOW_FORM\]/g, '').trim();
+        if (bubble) bubble.textContent = cleanText;
+        messages.push({ role: 'assistant', content: cleanText });
         msgCount++;
         saveSession();
-        if (!leadShown && hasIntent(userText)) {
-          setTimeout(showLeadForm, 700);
-        }
+        if (showForm) setTimeout(showLeadForm, 600);
       }
       streaming = false;
       var btn = document.getElementById('sc-send');
