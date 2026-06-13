@@ -214,7 +214,7 @@
     .ba-section { background: #fff5f8; padding: 64px 40px; }
     .ba-section .section-title { margin-bottom: 8px; }
     .ba-section .section-sub  { margin-bottom: 40px; }
-    .ba-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .ba-grid { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
     .ba-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 6px 32px rgba(233,30,140,.10); border: 1.5px solid rgba(233,30,140,.10); }
     .ba-slider { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; cursor: ew-resize; user-select: none; }
     .ba-before, .ba-after { position: absolute; inset: 0; }
@@ -238,9 +238,43 @@
     .ba-service { font-size: .78rem; font-weight: 700; color: var(--pink); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
     .ba-result  { font-size: .92rem; font-weight: 800; color: var(--deep-pink); margin-bottom: 4px; }
     .ba-note    { font-size: .78rem; color: var(--muted); }
+    /* Centre photo + call block */
+    .ba-centre-block {
+      max-width: 720px; margin: 44px auto 0;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(233,30,140,.14);
+      border: 1.5px solid rgba(233,30,140,.12);
+      background: #fff;
+    }
+    .ba-centre-img {
+      width: 100%; display: block;
+      max-height: 380px; object-fit: cover;
+      /* mobile long-press will offer save — no extra attr needed */
+    }
+    .ba-centre-info {
+      padding: 18px 22px 20px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .ba-centre-name {
+      font-size: 1rem; font-weight: 900; color: var(--deep-pink);
+    }
+    .ba-centre-addr {
+      font-size: .82rem; color: var(--muted); line-height: 1.5;
+    }
+    .ba-call-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 10px; padding: 13px 24px;
+      background: linear-gradient(135deg, #e91e8c, #880e4f);
+      color: #fff; border-radius: 50px; text-decoration: none;
+      font-family: 'Cairo', sans-serif; font-size: .95rem; font-weight: 700;
+      box-shadow: 0 4px 20px rgba(233,30,140,.35);
+      transition: opacity .2s; align-self: flex-start;
+    }
+    .ba-call-btn:hover { opacity: .88; }
     @media (max-width: 680px) {
       .ba-section { padding: 48px 20px; }
       .ba-grid { grid-template-columns: 1fr; gap: 20px; }
+      .ba-call-btn { width: 100%; justify-content: center; }
     }
 
     .cards-strip { max-width: 1060px; margin: 0 auto; padding: 70px 40px 40px; }
@@ -584,13 +618,15 @@
   <p class="section-sub">حرّكي الشريط لترى قبل وبعد — نتائج عميلاتنا الحقيقيات</p>
   <div class="ba-grid">
 
-    <!-- Card 1: Hair Protein -->
+    <!-- Card 1: Hair Protein — frizzy/dry → smooth/shiny -->
     <div class="ba-card anim">
       <div class="ba-slider" data-ba>
         <div class="ba-before">
-          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="قبل بروتين الشعر" />
+          <!-- dry, frizzy, porous hair -->
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80" alt="قبل بروتين الشعر" />
         </div>
         <div class="ba-after">
+          <!-- smooth, silky, straight shiny hair post-treatment -->
           <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="بعد بروتين الشعر" />
         </div>
         <div class="ba-handle"></div>
@@ -598,50 +634,52 @@
       <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
       <div class="ba-body">
         <div class="ba-service">بروتين الشعر Nano Gel</div>
-        <div class="ba-result">شعر ناعم ولامع لـ4 أشهر</div>
-        <div class="ba-note">من جلسة واحدة — بدون حرارة زائدة</div>
+        <div class="ba-result">من جاف ومجعّد إلى ناعم ولامع لـ4 أشهر</div>
+        <div class="ba-note">جلسة واحدة — نتيجة تدوم أشهر</div>
       </div>
     </div>
 
-    <!-- Card 2: HydraFacial -->
+    <!-- Card 2: HydraFacial — dull/uneven skin → glowing/clear -->
     <div class="ba-card anim">
       <div class="ba-slider" data-ba>
         <div class="ba-before">
+          <!-- tired, uneven, dull bare skin -->
           <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="قبل هيدرافيشل" />
         </div>
         <div class="ba-after">
-          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80" alt="بعد هيدرافيشل" />
+          <!-- radiant, clear, glowing skin -->
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="بعد هيدرافيشل" />
         </div>
         <div class="ba-handle"></div>
       </div>
       <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
       <div class="ba-body">
         <div class="ba-service">هيدرافيشل</div>
-        <div class="ba-result">بشرة مضيئة ونضرة في 60 دقيقة</div>
-        <div class="ba-note">تناسب البشرة الحساسة — نتيجة فورية</div>
-      </div>
-    </div>
-
-    <!-- Card 3: Coloring -->
-    <div class="ba-card anim">
-      <div class="ba-slider" data-ba>
-        <div class="ba-before">
-          <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?w=600&q=80" alt="قبل التلوين" />
-        </div>
-        <div class="ba-after">
-          <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80" alt="بعد التلوين" />
-        </div>
-        <div class="ba-handle"></div>
-      </div>
-      <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
-      <div class="ba-body">
-        <div class="ba-service">تلوين وصبغ الشعر</div>
-        <div class="ba-result">بالاياج وأومبري يدوم شهراً</div>
-        <div class="ba-note">تغطية كاملة للشيب — ألوان طبيعية وعصرية</div>
+        <div class="ba-result">من بشرة كالحة إلى إشراق فوري في 60 دقيقة</div>
+        <div class="ba-note">تناسب جميع أنواع البشرة — حتى الحساسة</div>
       </div>
     </div>
 
   </div>
+
+  <!-- Centre photo + call CTA -->
+  <div class="ba-centre-block anim">
+    <img
+      src="/solyra-centre2.jpg"
+      alt="Centre Solyra طنجة"
+      class="ba-centre-img"
+      loading="lazy"
+    />
+    <div class="ba-centre-info">
+      <div class="ba-centre-name">Centre Solyra — طنجة</div>
+      <div class="ba-centre-addr">29 شارع الأمير مولاي عبد الله · أمام سينما ميغاراما غويا</div>
+      <a class="ba-call-btn" href="tel:+212619946109">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg>
+        اتصلي بنا الآن — 0619 946 109
+      </a>
+    </div>
+  </div>
+
 </section>
 
 <!-- WHY US -->
