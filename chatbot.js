@@ -599,16 +599,35 @@
     }
   }
 
+  /* ── Sync with site language switcher ───────────────────────────────── */
+  function watchSiteLang() {
+    // web.html sets document.documentElement.lang when user picks a language
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        if (m.attributeName === 'lang') {
+          var siteLang = document.documentElement.lang || 'ar';
+          var mapped = siteLang === 'fr' ? 'fr' : siteLang === 'en' ? 'en' : 'ar';
+          if (mapped !== lang) setLang(mapped);
+        }
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
+
   /* ── Init ────────────────────────────────────────────────────────────── */
   function init() {
     injectCSS();
     buildDOM();
-    setLang('ar');
+
+    // Start with whatever language the site is already showing
+    var siteLang = document.documentElement.lang || localStorage.getItem('solyra_lang') || 'ar';
+    setLang(siteLang === 'fr' ? 'fr' : siteLang === 'en' ? 'en' : 'ar');
 
     var hadSession = loadSession();
     if (hadSession) restoreMessages();
 
     wireEvents();
+    watchSiteLang();
     setTimeout(showNudge, 6000);
   }
 
