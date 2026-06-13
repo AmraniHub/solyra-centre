@@ -586,9 +586,20 @@
       height: 360px;
     }
     .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .centre-photo-wrap {
+      margin-top: 28px;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(233,30,140,.15);
+      border: 2px solid rgba(233,30,140,.10);
+    }
+    .centre-photo {
+      width: 100%; display: block;
+      max-height: 420px; object-fit: cover; object-position: center;
+    }
     @media (max-width: 700px) {
       .location-inner { grid-template-columns: 1fr; }
       .map-wrap { height: 260px; }
+      .centre-photo { max-height: 260px; }
     }
 
     /* ── SCROLL BTN ── */
@@ -781,6 +792,10 @@
           allowfullscreen=""
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+      </div>
+
+      <div class="centre-photo-wrap anim">
+        <img src="/solyra-centre.png" alt="Centre Solyra" class="centre-photo" loading="lazy" />
       </div>
 
     </div>
