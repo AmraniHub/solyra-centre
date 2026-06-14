@@ -214,7 +214,7 @@
     .ba-section { background: #fff5f8; padding: 64px 40px; }
     .ba-section .section-title { margin-bottom: 8px; }
     .ba-section .section-sub  { margin-bottom: 40px; }
-    .ba-grid { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .ba-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
     .ba-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 6px 32px rgba(233,30,140,.10); border: 1.5px solid rgba(233,30,140,.10); }
     .ba-slider { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; cursor: ew-resize; user-select: none; }
     .ba-before, .ba-after { position: absolute; inset: 0; }
@@ -606,8 +606,27 @@
 <section class="ba-section">
   <div class="section-label">نتائج حقيقية</div>
   <h2 class="section-title">شوفي الفرق <span class="accent">بنفسك</span></h2>
-  <p class="section-sub">حرّكي الشريط لترى قبل وبعد — نتائج عميلاتنا الحقيقيات</p>
+  <p class="section-sub">حرّكي الشريط لترى قبل وبعد — جسم، شعر، وبشرة</p>
   <div class="ba-grid">
+
+    <!-- Card 0: Body Slimming — before/after PRIORITY -->
+    <div class="ba-card anim">
+      <div class="ba-slider" data-ba>
+        <div class="ba-before">
+          <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80" alt="قبل التنحيف" />
+        </div>
+        <div class="ba-after">
+          <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80" alt="بعد التنحيف" />
+        </div>
+        <div class="ba-handle"></div>
+      </div>
+      <div class="ba-labels"><span class="ba-label before">قبل</span><span class="ba-label after">بعد ✨</span></div>
+      <div class="ba-body">
+        <div class="ba-service">برنامج التنحيف — 10 حصص</div>
+        <div class="ba-result">من سيلوليت وبطن إلى قوام ممشوق ورشيق</div>
+        <div class="ba-note">ليبوكافيتيشن + ترددات راديوية + مساج — 1200 DH</div>
+      </div>
+    </div>
 
     <!-- Card 1: Hair Protein — frizzy/dry → smooth/shiny -->
     <div class="ba-card anim">
@@ -739,9 +758,40 @@
 <!-- SERVICES -->
 <section class="services-section">
   <div class="section-label">خدماتنا</div>
-  <h2 class="section-title">اكتشفي <span class="accent">خدماتنا</span></h2>
-  <p class="section-sub">كل خدمة مصممة لتعطيك النتيجة اللي تبغيها — من أول جلسة</p>
+  <h2 class="section-title">جسمك، شعرك، وبشرتك — <span class="accent">كل شيء هنا</span></h2>
+  <p class="section-sub">خدمات تنحيف وتجميل متكاملة — نتيجة حقيقية من أول جلسة</p>
   <div class="services-grid">
+
+    <!-- ★ SLIMMING PRIORITY CARDS ★ -->
+    <div class="service-card" onclick="selectService('برنامج التنحيف')">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="برنامج التنحيف" loading="lazy" />
+        <span class="service-badge">عرض خاص 🔥</span>
+      </div>
+      <div class="service-body">
+        <div class="service-name">برنامج التنحيف — 10 حصص</div>
+        <div class="service-desc">ليبوكافيتيشن، ترددات راديوية، مساج تنحيف — برنامج مكثف لشهر كامل. قوام أكثر تناسقاً وثقة من الجلسة الأولى</div>
+        <div class="service-footer">
+          <div class="service-price">1200 DH <span>/ البرنامج كامل</span></div>
+          <a class="service-btn" href="#leadForm">احجزي ←</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" onclick="selectService('علاج السيلوليت')">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="علاج السيلوليت" loading="lazy" />
+        <span class="service-badge">تقنية متقدمة</span>
+      </div>
+      <div class="service-body">
+        <div class="service-name">علاج السيلوليت</div>
+        <div class="service-desc">مساج تنحيف + موجات صدمية + ضغط هوائي — نتهاجمو السيلوليت من كل الجهات. بشرة أكثر نعومة ومظهر موحد</div>
+        <div class="service-footer">
+          <div class="service-price">حسب الجلسة</div>
+          <a class="service-btn" href="#leadForm">احجزي ←</a>
+        </div>
+      </div>
+    </div>
 
     <div class="service-card" onclick="selectService('بروتين الشعر Nano Gel')">
       <div class="service-img-wrap">
