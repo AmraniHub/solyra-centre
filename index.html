@@ -414,6 +414,28 @@
       transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(0,0,0,.2);
     }
     .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.28); }
+    .cta-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+    .cta-form input {
+      width: 100%; padding: 14px 18px; border-radius: 50px; border: none;
+      font-family: 'Cairo', sans-serif; font-size: .97rem; text-align: right;
+      outline: none; background: rgba(255,255,255,.15); color: #fff;
+    }
+    .cta-form input::placeholder { color: rgba(255,255,255,.65); }
+    .cta-form input:focus { background: rgba(255,255,255,.25); }
+    .cta-form button {
+      width: 100%; padding: 15px; border-radius: 50px; border: none; cursor: pointer;
+      background: #fff; color: var(--deep-pink);
+      font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 900;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2); transition: transform .2s, opacity .2s;
+    }
+    .cta-form button:hover { transform: translateY(-2px); }
+    .cta-form button:disabled { opacity: .6; cursor: not-allowed; }
+    .cta-note { font-size: .78rem; color: rgba(255,255,255,.7); margin-top: 0 !important; margin-bottom: 0 !important; }
+    @media (min-width: 540px) {
+      .cta-form { flex-direction: row; flex-wrap: wrap; }
+      .cta-form input { flex: 1 1 200px; }
+      .cta-form button { flex: 0 0 auto; padding: 15px 32px; width: auto; }
+    }
 
     /* ── FOOTER ── */
     footer { background: var(--deep-pink); color: rgba(255,255,255,.75); padding: 48px 40px 24px; }
@@ -904,9 +926,13 @@
     <div class="cta-scarcity">⏳ المواعيد المتاحة هذا الأسبوع محدودة</div>
     <h2>احجزي دابا قبل ما يخلصو المواعيد</h2>
     <p>كل أسبوع عندنا أماكن محدودة. اللي تحجز دابا تضمن موعدها. اللي تأخر تستنى للأسبوع الجاي.</p>
-    <button class="cta-btn" onclick="scrollToForm()">
-      🌸 احجزي موعدك — دابا
-    </button>
+
+    <form class="cta-form" id="ctaForm">
+      <input type="text"  id="cta-name"  placeholder="اسمك الكريم" required />
+      <input type="tel"   id="cta-phone" placeholder="رقم الواتساب — 06XXXXXXXX" required />
+      <button type="submit">🌸 احجزي موعدك — دابا</button>
+    </form>
+    <p class="cta-note">🔒 معلوماتك سرية — رد خلال ساعة ⚡</p>
   </div>
 </section>
 
@@ -1012,6 +1038,25 @@
       });
     } catch (_) {}
 
+    if (typeof fbq !== 'undefined') { fbq('track', 'Lead', {}, { eventID: eventId }); }
+    window.location.href = '/success.html';
+  });
+
+  document.getElementById('ctaForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn   = this.querySelector('button');
+    const name  = document.getElementById('cta-name').value.trim();
+    const phone = document.getElementById('cta-phone').value.trim();
+    if (!name || !phone) { showToast('⚠️ يرجى ملء الاسم ورقم الواتساب'); return; }
+    btn.disabled = true; btn.textContent = '⏳ يتم الحجز...';
+    const eventId = genEventId();
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, service: 'طلب حجز - Centre Solyra', eventId, userAgent: navigator.userAgent, eventSourceUrl: location.href, fbp: getCookie('_fbp'), fbc: getCookie('_fbc'), lang: 'AR' })
+      });
+    } catch (_) {}
     if (typeof fbq !== 'undefined') { fbq('track', 'Lead', {}, { eventID: eventId }); }
     window.location.href = '/success.html';
   });
