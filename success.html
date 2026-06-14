@@ -26,7 +26,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 60%, #f3e5f5 100%);
+      background: linear-gradient(135deg, #EEF7E8 0%, #d6edc8 60%, #FBF3DC 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -41,8 +41,8 @@
       max-width: 480px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 12px 60px rgba(233,30,140,.18);
-      border: 1.5px solid rgba(233,30,140,.12);
+      box-shadow: 0 12px 60px rgba(45,106,31,.18);
+      border: 1.5px solid rgba(45,106,31,.12);
       animation: pop .5s cubic-bezier(.175,.885,.32,1.275) both;
     }
     @keyframes pop {
@@ -52,32 +52,32 @@
     .check-circle {
       width: 88px; height: 88px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #e91e8c, #880e4f);
+      background: linear-gradient(135deg, #3A7A26, #1B3A10);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 2.6rem;
       margin-bottom: 24px;
-      box-shadow: 0 6px 28px rgba(233,30,140,.35);
+      box-shadow: 0 6px 28px rgba(45,106,31,.35);
     }
-    h1 { font-size: 1.8rem; font-weight: 900; color: #880e4f; margin-bottom: 12px; }
-    .sub { font-size: 1rem; color: #7c3a5a; margin-bottom: 28px; line-height: 1.7; }
-    .sub strong { color: #e91e8c; }
+    h1 { font-size: 1.8rem; font-weight: 900; color: #1B3A10; margin-bottom: 12px; }
+    .sub { font-size: 1rem; color: #4A6635; margin-bottom: 28px; line-height: 1.7; }
+    .sub strong { color: #3A7A26; }
     .steps {
-      background: #fff5f8;
+      background: #EEF7E8;
       border-radius: 14px;
       padding: 20px 24px;
       text-align: right;
       margin-bottom: 28px;
-      border: 1px solid rgba(233,30,140,.1);
+      border: 1px solid rgba(45,106,31,.1);
     }
-    .steps h3 { font-size: .9rem; font-weight: 700; color: #c2185b; margin-bottom: 12px; }
-    .step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: .9rem; color: #7c3a5a; }
+    .steps h3 { font-size: .9rem; font-weight: 700; color: #2D6A1F; margin-bottom: 12px; }
+    .step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: .9rem; color: #4A6635; }
     .step:last-child { margin-bottom: 0; }
     .step-num {
       width: 24px; height: 24px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #e91e8c, #880e4f);
+      background: linear-gradient(135deg, #3A7A26, #1B3A10);
       color: #fff;
       font-size: .75rem;
       font-weight: 900;
@@ -88,21 +88,21 @@
       margin-top: 1px;
     }
     .contact-note {
-      background: var(--light-pink, #fce4ec);
-      border: 1.5px solid #f48fb1;
+      background: #EEF7E8;
+      border: 1.5px solid #8DC56A;
       border-radius: 14px;
       padding: 16px 20px;
       font-size: .95rem;
-      color: #7c3a5a;
+      color: #4A6635;
       margin-bottom: 20px;
       line-height: 1.7;
     }
-    .contact-note strong { color: #c2185b; display: block; margin-bottom: 4px; font-size: 1rem; }
+    .contact-note strong { color: #2D6A1F; display: block; margin-bottom: 4px; font-size: 1rem; }
     .find-us-card {
       margin-bottom: 20px;
       border-radius: 18px; overflow: hidden;
-      box-shadow: 0 6px 28px rgba(233,30,140,.15);
-      border: 1.5px solid rgba(233,30,140,.10);
+      box-shadow: 0 6px 28px rgba(45,106,31,.15);
+      border: 1.5px solid rgba(45,106,31,.10);
     }
     .find-us-card img { width: 100%; display: block; max-height: 200px; object-fit: cover; }
     .find-us-map { position: relative; }
@@ -113,19 +113,19 @@
       background: #fff;
       font-size: .8rem; color: #7c3a5a; line-height: 1.5;
     }
-    .find-us-label strong { display: block; font-size: .92rem; color: var(--deep-pink, #880e4f); margin-bottom: 2px; }
+    .find-us-label strong { display: block; font-size: .92rem; color: #1B3A10; margin-bottom: 2px; }
     .map-btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       width: 100%; margin-top: 12px; padding: 13px;
-      background: linear-gradient(135deg,#e91e8c,#880e4f);
+      background: linear-gradient(135deg,#3A7A26,#1B3A10);
       color: #fff; border-radius: 50px; font-family: 'Cairo',sans-serif;
       font-size: .95rem; font-weight: 700; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(233,30,140,.35); transition: opacity .2s;
+      box-shadow: 0 4px 20px rgba(45,106,31,.35); transition: opacity .2s;
     }
     .map-btn:hover { opacity: .88; }
     .back-btn {
       display: inline-block;
-      color: #c2185b;
+      color: #2D6A1F;
       font-size: .88rem;
       font-weight: 600;
       text-decoration: none;
@@ -206,7 +206,7 @@
 
 <script>
   // confetti
-  const colors = ['#e91e8c','#f48fb1','#c9922b','#880e4f','#fce4ec'];
+  const colors = ['#3A7A26','#8DC56A','#C9A840','#1B3A10','#EEF7E8'];
   const c = document.getElementById('confetti');
   for (let i = 0; i < 30; i++) {
     const d = document.createElement('div');
