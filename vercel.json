@@ -1,6 +1,7 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/web", "destination": "/web.html" }
+    { "source": "/web",  "destination": "/web.html"  },
+    { "source": "/slim", "destination": "/slim.html" }
   ]
 }
