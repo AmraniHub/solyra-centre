@@ -237,6 +237,55 @@
     .fmr-quote { font-size: .8rem; color: var(--text); line-height: 1.5; font-style: italic; }
     .fmr-name  { font-size: .75rem; color: var(--muted); font-weight: 700; }
 
+    /* ── BEFORE / AFTER ── */
+    .ba-section { padding: 60px 24px; background: var(--cream); }
+    .ba-inner { max-width: 980px; margin: 0 auto; }
+    .ba-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-top: 36px; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 12px 48px rgba(27,58,16,.18);
+    }
+    .ba-side { position: relative; display: flex; flex-direction: column; }
+    .ba-side.before { background: #fef2f2; }
+    .ba-side.after  { background: var(--deep); }
+    .ba-img-wrap { position: relative; height: 230px; overflow: hidden; }
+    .ba-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-side.before .ba-img-wrap img { filter: grayscale(.6) brightness(.85); }
+    .ba-side.after  .ba-img-wrap img { filter: brightness(.8) saturate(1.1); }
+    .ba-badge {
+      position: absolute; top: 14px; right: 14px;
+      font-size: .78rem; font-weight: 900;
+      padding: 6px 16px; border-radius: 50px; letter-spacing: .04em; z-index: 2;
+    }
+    .ba-side.before .ba-badge { background: rgba(252,165,165,.9); color: #7f1d1d; }
+    .ba-side.after  .ba-badge { background: var(--gold); color: var(--deep); }
+    .ba-content { padding: 22px 24px; flex: 1; }
+    .ba-content-title { font-size: 1rem; font-weight: 900; margin-bottom: 14px; }
+    .ba-side.before .ba-content-title { color: #b91c1c; }
+    .ba-side.after  .ba-content-title { color: var(--gold-mid); }
+    .ba-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .ba-list li { font-size: .87rem; display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
+    .ba-side.before .ba-list li { color: #991b1b; }
+    .ba-side.after  .ba-list li { color: rgba(255,255,255,.88); }
+    .ba-divider-label {
+      text-align: center; margin: 24px 0 0;
+      font-size: .8rem; color: var(--muted); font-weight: 700;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .ba-divider-label::before, .ba-divider-label::after {
+      content: ''; flex: 1; height: 1px; background: rgba(45,106,31,.15);
+    }
+    .ba-stats {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      background: var(--deep); border-radius: 18px;
+      margin-top: 20px; overflow: hidden;
+      border: 1.5px solid var(--gold);
+    }
+    .ba-stat { padding: 20px 10px; text-align: center; border-left: 1px solid rgba(255,255,255,.15); }
+    .ba-stat:last-child { border-left: none; }
+    .ba-stat-num { font-size: 1.9rem; font-weight: 900; color: var(--gold-mid); line-height: 1; }
+    .ba-stat-label { font-size: .76rem; color: rgba(255,255,255,.7); margin-top: 4px; font-weight: 600; }
+
     /* ── ANCHOR STRIP ── */
     .anchor-strip {
       background: var(--deep);
@@ -490,6 +539,9 @@
       .compare-grid { grid-template-columns: 1fr; }
       .two-cols    { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .ba-split { grid-template-columns: 1fr; }
+      .ba-stats { grid-template-columns: repeat(2,1fr); }
+      .ba-stat:nth-child(2) { border-left: none; }
       .trust-strip-inner { grid-template-columns: repeat(2,1fr); }
       .ts-item:nth-child(2) { border-left: none; }
     }
@@ -586,6 +638,74 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ══ BEFORE / AFTER RESULTS ══ -->
+<section class="ba-section">
+  <div class="ba-inner">
+    <div class="section-header">
+      <div class="tag">قبل وبعد البرنامج</div>
+      <h2 class="big-title">شنو يتغير — <em>خلال 10 حصص</em></h2>
+      <p class="section-sub">من سيلوليت وانتفاخ إلى قوام ممشوق ورشيق — داخل شهر واحد</p>
+    </div>
+
+    <div class="ba-split">
+      <!-- BEFORE -->
+      <div class="ba-side before">
+        <div class="ba-img-wrap">
+          <span class="ba-badge">قبل</span>
+          <img src="slim-hero-mobile.jpg" alt="قبل البرنامج" loading="lazy" />
+        </div>
+        <div class="ba-content">
+          <div class="ba-content-title">❌ قبل البرنامج</div>
+          <ul class="ba-list">
+            <li>🔴 سيلوليت وانتفاخ في البطن والخصر</li>
+            <li>🔴 احتباس السوائل والإحساس بالثقل</li>
+            <li>🔴 جلد مترهل وقوام بلا حيوية</li>
+            <li>🔴 ضيق بالمظهر وانعدام الثقة</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="ba-side after">
+        <div class="ba-img-wrap">
+          <span class="ba-badge">بعد</span>
+          <img src="slim-hero.jpg" alt="بعد برنامج التنحيف Centre Solyra" loading="lazy" />
+        </div>
+        <div class="ba-content">
+          <div class="ba-content-title">✅ بعد 10 حصص</div>
+          <ul class="ba-list">
+            <li>✅ قوام أخف وشكل أوضح يبان</li>
+            <li>✅ السيلوليت تقلص بشكل ملحوظ</li>
+            <li>✅ جلد مشدود وبشرة منعمة</li>
+            <li>✅ خفة وراحة وثقة كاملة بالنفس</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-divider-label">النتائج تختلف من سيدة لأخرى — هاد ما حسّته عميلاتنا</div>
+
+    <div class="ba-stats">
+      <div class="ba-stat">
+        <div class="ba-stat-num">+50</div>
+        <div class="ba-stat-label">سيدة أكملت البرنامج</div>
+      </div>
+      <div class="ba-stat">
+        <div class="ba-stat-num">10</div>
+        <div class="ba-stat-label">حصة متكاملة</div>
+      </div>
+      <div class="ba-stat">
+        <div class="ba-stat-num">5</div>
+        <div class="ba-stat-label">تقنيات في كل حصة</div>
+      </div>
+      <div class="ba-stat">
+        <div class="ba-stat-num">30</div>
+        <div class="ba-stat-label">يوم لترى الفرق</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -716,6 +836,42 @@
           <div>
             <div class="review-name">خديجة ر.</div>
             <div class="review-loc">طنجة · أوصت بثلاث صاحبات</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-body">جربت مراكز كتيرة قبل وما كنت نلقى نتيجة. في Solyra من الحصة الخامسة لاحظت فرق في الردفين والفخدين. المختصة شرحات ليا كل خطوة — هادا مهم ليا بزاف.</p>
+        <div class="review-result">🌿 نحت الفخدين — 10 حصص</div>
+        <div class="review-footer">
+          <div class="avatar">👩</div>
+          <div>
+            <div class="review-name">نوال ع.</div>
+            <div class="review-loc">طنجة · أول تجربة تنجح معها</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-body">جاتني الفكرة من صاحبتي لي دارت البرنامج قبلي. صدقتها وجاوبت على الإعلان — واللي صدمتني هو سرعة الرد والاحترافية. الجلسات مريحة وخاصة للغاية. نوصي بيها.</p>
+        <div class="review-result">🌿 نحت القوام — بعد ما أوصت بها صاحبتها</div>
+        <div class="review-footer">
+          <div class="avatar">👩</div>
+          <div>
+            <div class="review-name">إيمان م.</div>
+            <div class="review-loc">طنجة · جات بعد توصية</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-body">كنت نتردد — عندي ثلاثة دراري وما عندي وقت. لكن المواعيد مرونة ومشا ليا مع وقتي. بعد الحصة السابعة، حسيت بالفرق في الملابس — القياس تغير! الله يبارك فيهم.</p>
+        <div class="review-result">🌿 خسارة القياس — 7 حصص</div>
+        <div class="review-footer">
+          <div class="avatar">👩</div>
+          <div>
+            <div class="review-name">أسماء ح.</div>
+            <div class="review-loc">طنجة · أم لثلاثة أطفال</div>
           </div>
         </div>
       </div>
