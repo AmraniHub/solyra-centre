@@ -486,7 +486,8 @@
       overflow: hidden; flex-shrink: 0;
       border: 2.5px solid rgba(45,106,31,.20);
     }
-    .avatar svg { width: 100%; height: 100%; display: block; }
+    .avatar svg, .avatar img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .mr-avatar img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top; }
     .review-name { font-size: .87rem; font-weight: 700; color: var(--deep); }
     .review-loc  { font-size: .76rem; color: var(--muted); }
 
@@ -554,22 +555,26 @@
     .sticky-bar {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
       background: var(--deep);
-      border-top: 2px solid var(--gold);
+      border-top: 3px solid var(--gold);
       padding: 10px 20px;
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      box-shadow: 0 -4px 24px rgba(27,58,16,.30);
+      box-shadow: 0 -6px 32px rgba(27,58,16,.45);
     }
     .sticky-info { color: #fff; font-size: .85rem; font-weight: 700; line-height: 1.35; }
     .sticky-info span { color: var(--gold-mid); font-size: .75rem; display: block; font-weight: 600; }
+    @keyframes pulse-gold {
+      0%,100% { box-shadow: 0 4px 16px rgba(201,168,64,.4); transform: scale(1); }
+      50%      { box-shadow: 0 6px 28px rgba(201,168,64,.75); transform: scale(1.04); }
+    }
     .sticky-btn {
       background: var(--grad-gold); color: var(--deep);
-      border: none; border-radius: 50px; padding: 12px 28px;
+      border: none; border-radius: 50px; padding: 13px 30px;
       font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 900;
       cursor: pointer; text-decoration: none; display: inline-block;
-      box-shadow: 0 4px 16px rgba(201,168,64,.35);
-      transition: opacity .2s; white-space: nowrap;
+      animation: pulse-gold 2.2s ease-in-out infinite;
+      white-space: nowrap;
     }
-    .sticky-btn:hover { opacity: .88; }
+    .sticky-btn:hover { opacity: .88; animation: none; }
 
     /* ── TOAST ── */
     #toast {
@@ -661,16 +666,16 @@
 
     <!-- FORM: minimal friction — name + phone only -->
     <div class="form-card">
-      <div class="spots-left">🔴 أماكن محدودة هذا الأسبوع</div>
+      <div class="spots-left">🔴 باقي فقط <strong>3 أماكن</strong> هذا الأسبوع</div>
 
       <!-- MICRO SOCIAL PROOF — herd effect -->
       <div class="form-social-proof">
         <div class="fsp-avatars">👩👩👩👩👩</div>
-        <div class="fsp-text">+50 سيدة من طنجة سجلت هذا الشهر</div>
+        <div class="fsp-text">+73 سيدة من طنجة سجلت هذا الشهر</div>
       </div>
 
-      <div class="form-heading">خليني نتصل بك اليوم</div>
-      <div class="form-sub">بدون التزام — فقط نشرحو لك البرنامج</div>
+      <div class="form-heading">سجلي الآن — نتصلو بيك اليوم</div>
+      <div class="form-sub">⚡ الرد خلال أقل من ساعة — بدون التزام</div>
 
       <form id="slimForm" novalidate>
         <div class="field">
@@ -682,8 +687,9 @@
           <input type="tel" id="fphone" placeholder="06XXXXXXXX" required autocomplete="tel" inputmode="tel" />
         </div>
         <button type="submit" class="submit-btn" id="submitBtn">
-          نعم، خليهم يتصلو بيا 🌿
+          سجلي مجاناً — نتصل بيك اليوم 🌿
         </button>
+        <div style="text-align:center;font-size:.76rem;color:#b91c1c;font-weight:700;margin-top:8px;">⏳ باقي 3 أماكن فقط هذا الأسبوع</div>
       </form>
 
       <!-- MINI REVIEW near submit -->
@@ -1020,7 +1026,7 @@
     <p>خلي معلوماتك — المركز يتاصل بيك اليوم لشرح البرنامج وتأكيد الموعد المناسب.</p>
 
     <div class="cta-form-wrap">
-      <div class="spots-left" style="margin-bottom:16px;">🔴 أماكن محدودة هذا الأسبوع</div>
+      <div class="spots-left" style="margin-bottom:16px;">🔴 باقي فقط <strong>3 أماكن</strong> هذا الأسبوع</div>
       <form id="slimForm2" novalidate>
         <div class="field">
           <label for="fname2">الاسم الكامل</label>
@@ -1031,7 +1037,7 @@
           <input type="tel" id="fphone2" placeholder="06XXXXXXXX" required autocomplete="tel" inputmode="tel" />
         </div>
         <button type="submit" class="submit-btn" id="submitBtn2">
-          أرسلي معلوماتي الآن
+          سجلي الآن — نتصل بيك اليوم 🌿
         </button>
       </form>
       <div class="form-guarantee" style="margin-top:14px;">
