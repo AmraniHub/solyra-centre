@@ -258,11 +258,28 @@
     .machine-card:hover { transform: translateY(-4px); border-color: var(--gold); }
     .machine-img-wrap {
       width: 100%; height: 170px; overflow: hidden; position: relative;
-      background: rgba(255,255,255,.05);
       display: flex; align-items: center; justify-content: center;
     }
-    .machine-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .machine-emoji { font-size: 3.2rem; }
+    .machine-img-wrap.lip   { background: linear-gradient(135deg,#0b5e5e,#1a9fa8); }
+    .machine-img-wrap.radio { background: linear-gradient(135deg,#1a3260,#2e5fad); }
+    .machine-img-wrap.vac   { background: linear-gradient(135deg,#5c3000,#b56200); }
+    .machine-img-wrap.laser { background: linear-gradient(135deg,#5c0d22,#b01c3c); }
+    .machine-img-wrap svg { width: 72%; height: 72%; }
+
+    /* ── MINI REVIEWS BAR (below hero) ── */
+    .mini-reviews-bar { background: var(--light); padding: 22px 24px; border-top: 2px solid rgba(45,106,31,.10); }
+    .mini-reviews-inner {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .mini-review {
+      background: #fff; border-radius: 16px; padding: 16px 18px;
+      border: 1.5px solid rgba(45,106,31,.12);
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .mr-stars { color: var(--gold); font-size: .82rem; letter-spacing: 1px; }
+    .mr-quote { font-size: .87rem; color: var(--text); line-height: 1.55; font-style: italic; }
+    .mr-name  { font-size: .75rem; color: var(--muted); font-weight: 700; }
     .machine-body { padding: 16px 14px 20px; }
     .machine-name-ar {
       font-size: .98rem; font-weight: 900;
@@ -576,6 +593,7 @@
       .compare-grid { grid-template-columns: 1fr; }
       .two-cols    { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .mini-reviews-inner { grid-template-columns: 1fr; }
       .machines-grid { grid-template-columns: repeat(2,1fr); }
       .ba-split { grid-template-columns: 1fr; }
       .ba-stats { grid-template-columns: repeat(2,1fr); }
@@ -679,6 +697,22 @@
   </div>
 </section>
 
+<!-- ══ MINI REVIEWS (directly below form) ══ -->
+<div class="mini-reviews-bar">
+  <div class="mini-reviews-inner">
+    <div class="mini-review">
+      <div class="mr-stars">★★★★★</div>
+      <p class="mr-quote">"من الحصة الثالثة بدا الخصر يبان والانتفاخ راح — حتى زوجي لاحظ الفرق!"</p>
+      <div class="mr-name">— سلمى ب. · طنجة · كررت البرنامج مرتين</div>
+    </div>
+    <div class="mini-review">
+      <div class="mr-stars">★★★★★</div>
+      <p class="mr-quote">"1200 درهم يستاهلوا بزاف — من الحصة السابعة بدلت قياسي وراجعت الثقة في نفسي"</p>
+      <div class="mr-name">— أسماء ح. · طنجة · أم لثلاثة أطفال</div>
+    </div>
+  </div>
+</div>
+
 <!-- ══ MACHINES / TECHNIQUES ══ -->
 <section class="machines-section">
   <div class="machines-inner">
@@ -690,20 +724,36 @@
 
     <div class="machines-grid">
 
+      <!-- Lipocavitation -->
       <div class="machine-card">
-        <div class="machine-img-wrap">
-          <span class="machine-emoji">🔬</span>
+        <div class="machine-img-wrap lip">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="42" r="10" fill="rgba(255,255,255,0.95)"/>
+            <circle cx="50" cy="42" r="20" stroke="rgba(255,255,255,0.55)" stroke-width="2.5"/>
+            <circle cx="50" cy="42" r="30" stroke="rgba(255,255,255,0.30)" stroke-width="2"/>
+            <circle cx="50" cy="42" r="40" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+            <line x1="43" y1="56" x2="43" y2="78" stroke="rgba(255,255,255,0.80)" stroke-width="5" stroke-linecap="round"/>
+            <line x1="57" y1="56" x2="57" y2="78" stroke="rgba(255,255,255,0.80)" stroke-width="5" stroke-linecap="round"/>
+            <line x1="43" y1="78" x2="57" y2="78" stroke="rgba(255,255,255,0.80)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
         </div>
         <div class="machine-body">
           <div class="machine-name-ar">اللبوكافيتشين</div>
           <div class="machine-name-fr">Lipocavitation</div>
-          <div class="machine-desc">موجات فوق صوتية تفتت خلايا الدهون بدون جراحة — فعالة بشكل خاص على البطن والأفخاذ</div>
+          <div class="machine-desc">موجات فوق صوتية تفتت خلايا الدهون بدون جراحة — فعالة على البطن والأفخاذ</div>
         </div>
       </div>
 
+      <!-- Radiofréquence -->
       <div class="machine-card">
-        <div class="machine-img-wrap">
-          <span class="machine-emoji">📡</span>
+        <div class="machine-img-wrap radio">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 78 Q 50 18 80 78" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 30 78 Q 50 32 70 78" stroke="rgba(255,255,255,0.60)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 40 78 Q 50 46 60 78" stroke="rgba(255,255,255,0.40)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="50" cy="78" r="5" fill="rgba(255,255,255,0.95)"/>
+            <line x1="50" y1="73" x2="50" y2="88" stroke="rgba(255,255,255,0.80)" stroke-width="4" stroke-linecap="round"/>
+          </svg>
         </div>
         <div class="machine-body">
           <div class="machine-name-ar">الترددات الراديوية</div>
@@ -712,9 +762,16 @@
         </div>
       </div>
 
+      <!-- Vacuum -->
       <div class="machine-card">
-        <div class="machine-img-wrap">
-          <span class="machine-emoji">💨</span>
+        <div class="machine-img-wrap vac">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="48" r="28" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-dasharray="6 4"/>
+            <circle cx="50" cy="48" r="18" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.60)" stroke-width="2.5"/>
+            <circle cx="50" cy="48" r="8"  fill="rgba(255,255,255,0.90)"/>
+            <path d="M50 76 Q50 86 50 90" stroke="rgba(255,255,255,0.75)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M42 85 Q50 90 58 85" stroke="rgba(255,255,255,0.75)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          </svg>
         </div>
         <div class="machine-body">
           <div class="machine-name-ar">الشفط / الفاكيوم</div>
@@ -723,9 +780,18 @@
         </div>
       </div>
 
+      <!-- Lipolaser -->
       <div class="machine-card">
-        <div class="machine-img-wrap">
-          <span class="machine-emoji">⚡</span>
+        <div class="machine-img-wrap laser">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="36" y="20" width="28" height="44" rx="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.80)" stroke-width="2.5"/>
+            <line x1="50" y1="64" x2="50" y2="78" stroke="rgba(255,255,255,0.80)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="50" y1="78" x2="38" y2="88" stroke="rgba(255,255,255,0.70)" stroke-width="3" stroke-linecap="round"/>
+            <line x1="50" y1="78" x2="62" y2="88" stroke="rgba(255,255,255,0.70)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="50" cy="40" r="5" fill="rgba(255,200,200,0.95)"/>
+            <line x1="50" y1="35" x2="50" y2="14" stroke="rgba(255,180,180,0.90)" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+            <circle cx="50" cy="12" r="3" fill="rgba(255,150,150,0.85)"/>
+          </svg>
         </div>
         <div class="machine-body">
           <div class="machine-name-ar">الليزر الدهني</div>
