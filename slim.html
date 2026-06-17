@@ -55,11 +55,10 @@
       background: #b91c1c;
       color: #fff;
       text-align: center;
-      padding: 9px 16px;
-      font-size: .85rem;
+      padding: 7px 16px;
+      font-size: .8rem;
       font-weight: 700;
       letter-spacing: .01em;
-      animation: pulse-bar 2s ease-in-out infinite;
     }
     @keyframes pulse-bar {
       0%,100% { background: #b91c1c; }
@@ -80,14 +79,14 @@
       background-image: url('slim-hero.jpg');
       background-size: cover;
       background-position: center 30%;
-      filter: brightness(.45) saturate(1.1);
+      filter: brightness(.72) saturate(1.1);
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(135deg,
-        rgba(27,58,16,0.88) 0%,
-        rgba(27,58,16,0.55) 50%,
-        rgba(0,0,0,0.65) 100%);
+      background: linear-gradient(105deg,
+        rgba(27,58,16,0.82) 0%,
+        rgba(27,58,16,0.60) 45%,
+        rgba(27,58,16,0.10) 100%);
     }
     .hero-inner {
       position: relative; z-index: 2;
@@ -462,8 +461,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
-      .hero-bg { background-image: url('slim-hero-mobile.jpg'); background-position: center center; filter: brightness(.55) saturate(1.1); }
-      .hero-overlay { background: linear-gradient(180deg, rgba(27,58,16,0.55) 0%, rgba(27,58,16,0.30) 40%, rgba(0,0,0,0.72) 100%); }
+      .hero-bg { background-image: url('slim-hero-mobile.jpg'); background-position: center center; filter: brightness(.72) saturate(1.1); }
+      .hero-overlay { background: linear-gradient(180deg, rgba(27,58,16,0.75) 0%, rgba(27,58,16,0.45) 50%, rgba(0,0,0,0.55) 100%); }
       .hero-inner  { grid-template-columns: 1fr; gap: 32px; }
       .hero-copy   { order: 2; }
       .form-card   { order: 1; }
@@ -489,7 +488,7 @@
 
 <!-- ══ URGENCY BAR ══ -->
 <div class="urgency-bar">
-  ⚡ أماكن محدودة هذا الشهر — البرنامج للنساء فقط في طنجة &nbsp;·&nbsp; احجزي قبل تكمل الأماكن
+  ⚡ أماكن محدودة هذا الأسبوع — التسجيل قبل اكتمال العدد
 </div>
 
 <!-- ══ HERO ══ -->
@@ -504,15 +503,13 @@
 
       <!-- DREAM OUTCOME: what they want -->
       <h1>
-        استعيدي قوامك<br />
-        وثقتك بنفسك<br />
-        <span class="accent">في شهر واحد فقط</span>
+        رشاقة أوضح<br />
+        وقوام أخف<br />
+        <span class="accent">خلال شهر</span>
       </h1>
 
-      <!-- PAIN AGITATION -->
       <p class="hero-pain">
-        مللتي من الكرش والدهون العنيدة اللي ما كتمشيش مع أي رجيم؟<br />
-        Centre Solyra عندها الحل — <strong>برنامج متكامل بدون جراحة، بدون حبوب، بدون معاناة.</strong>
+        إلى بغيتي تحسّني مظهر القوام وتبداي العناية بجسمك بدون جراحة ولا حبوب — <strong>برنامج تنحيف ونحت القوام للنساء فقط في Centre SolyRa بطنجة، تحت إشراف مختصات.</strong>
       </p>
 
       <!-- MINIMIZE EFFORT & SACRIFICE (Hormozi) -->
@@ -528,20 +525,20 @@
         <div class="pp-num">1200 <small style="font-size:1.2rem">DH</small></div>
         <div class="pp-right">
           <span class="pp-label">البرنامج كامل — 10 حصص</span>
-          <span class="pp-sessions">نتائج تلاحظينها من الحصص الأولى</span>
+          <span class="pp-sessions">النتائج تختلف من سيدة لأخرى</span>
         </div>
       </div>
     </div>
 
     <!-- FORM: minimal friction — name + phone only -->
     <div class="form-card">
-      <div class="spots-left">🔴 أماكن متاحة هذا الشهر — محدودة</div>
-      <div class="form-heading">احجزي الآن — نتصل بك اليوم</div>
-      <div class="form-sub">خطوتين فقط · <strong>ردنا في أقل من ساعة</strong></div>
+      <div class="spots-left">🔴 أماكن محدودة هذا الأسبوع</div>
+      <div class="form-heading">خلي معلوماتك — نتاصلو بيك اليوم</div>
+      <div class="form-sub"><strong>نتاصلو بيك اليوم</strong> باش نشرحو لك البرنامج ونحددو الموعد المناسب</div>
 
       <form id="slimForm" novalidate>
         <div class="field">
-          <label for="fname">اسمك الكريم</label>
+          <label for="fname">الاسم الكامل</label>
           <input type="text" id="fname" placeholder="مثال: فاطمة الزهراء" required autocomplete="name" />
         </div>
         <div class="field">
@@ -549,12 +546,12 @@
           <input type="tel" id="fphone" placeholder="06XXXXXXXX" required autocomplete="tel" inputmode="tel" />
         </div>
         <button type="submit" class="submit-btn" id="submitBtn">
-          📅 احجزي الآن — مجاناً
+          أرسلي معلوماتي الآن
         </button>
       </form>
 
       <div class="form-guarantee">
-        🔒 معلوماتك سرية — لن تُشارك مع أي جهة أخرى
+        🔒 معلوماتك سرية ولن تُشارك مع أي جهة أخرى
       </div>
     </div>
 
@@ -709,14 +706,14 @@
 <section class="cta-section" id="booking">
   <div class="cta-inner">
     <div class="tag">الخطوة الأخيرة</div>
-    <h2>ما عندكيش ما تخسريه —<br /><em>الاستشارة مجانية</em></h2>
-    <p>اكتبي اسمك ورقمك — فريقنا يتصل بك اليوم لشرح البرنامج والإجابة على كل أسئلتك. بدون التزام، بدون ضغط.</p>
+    <h2>رشاقة أوضح وقوام أخف —<br /><em>10 حصص خلال شهر</em></h2>
+    <p>خلي معلوماتك — المركز يتاصل بيك اليوم لشرح البرنامج وتأكيد الموعد المناسب.</p>
 
     <div class="cta-form-wrap">
-      <div class="spots-left" style="margin-bottom:16px;">🔴 أماكن محدودة هذا الشهر — احجزي قبل تكمل</div>
+      <div class="spots-left" style="margin-bottom:16px;">🔴 أماكن محدودة هذا الأسبوع</div>
       <form id="slimForm2" novalidate>
         <div class="field">
-          <label for="fname2">اسمك الكريم</label>
+          <label for="fname2">الاسم الكامل</label>
           <input type="text" id="fname2" placeholder="مثال: آمنة الحسني" required autocomplete="name" />
         </div>
         <div class="field">
@@ -724,11 +721,11 @@
           <input type="tel" id="fphone2" placeholder="06XXXXXXXX" required autocomplete="tel" inputmode="tel" />
         </div>
         <button type="submit" class="submit-btn" id="submitBtn2">
-          🌿 احجزي الآن — نتصل بك اليوم
+          أرسلي معلوماتي الآن
         </button>
       </form>
       <div class="form-guarantee" style="margin-top:14px;">
-        🔒 معلوماتك سرية · ردنا في أقل من ساعة واحدة
+        🔒 معلوماتك سرية ولن تُشارك مع أي جهة أخرى
       </div>
     </div>
   </div>
