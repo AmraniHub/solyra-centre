@@ -237,6 +237,43 @@
     .fmr-quote { font-size: .8rem; color: var(--text); line-height: 1.5; font-style: italic; }
     .fmr-name  { font-size: .75rem; color: var(--muted); font-weight: 700; }
 
+    /* ── MACHINES ── */
+    .machines-section {
+      padding: 52px 24px;
+      background: linear-gradient(160deg, var(--deep) 0%, #0d2208 100%);
+      border-top: 3px solid var(--gold);
+    }
+    .machines-inner { max-width: 980px; margin: 0 auto; }
+    .machines-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;
+      margin-top: 36px;
+    }
+    .machine-card {
+      border-radius: 20px; overflow: hidden;
+      background: rgba(255,255,255,.06);
+      border: 1.5px solid rgba(201,168,64,.22);
+      text-align: center;
+      transition: transform .2s, border-color .2s;
+    }
+    .machine-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .machine-img-wrap {
+      width: 100%; height: 170px; overflow: hidden; position: relative;
+      background: rgba(255,255,255,.05);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .machine-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .machine-emoji { font-size: 3.2rem; }
+    .machine-body { padding: 16px 14px 20px; }
+    .machine-name-ar {
+      font-size: .98rem; font-weight: 900;
+      color: var(--gold-mid); margin-bottom: 3px;
+    }
+    .machine-name-fr {
+      font-size: .76rem; color: rgba(255,255,255,.55);
+      font-weight: 600; margin-bottom: 8px; letter-spacing: .02em;
+    }
+    .machine-desc { font-size: .78rem; color: rgba(255,255,255,.72); line-height: 1.55; }
+
     /* ── BEFORE / AFTER ── */
     .ba-section { padding: 60px 24px; background: var(--cream); }
     .ba-inner { max-width: 980px; margin: 0 auto; }
@@ -539,6 +576,7 @@
       .compare-grid { grid-template-columns: 1fr; }
       .two-cols    { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .machines-grid { grid-template-columns: repeat(2,1fr); }
       .ba-split { grid-template-columns: 1fr; }
       .ba-stats { grid-template-columns: repeat(2,1fr); }
       .ba-stat:nth-child(2) { border-left: none; }
@@ -635,6 +673,75 @@
 
       <div class="form-guarantee">
         🔒 معلوماتك سرية ولن تُشارك مع أي جهة أخرى
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MACHINES / TECHNIQUES ══ -->
+<section class="machines-section">
+  <div class="machines-inner">
+    <div class="section-header">
+      <div class="tag" style="background:rgba(201,168,64,.15);border-color:rgba(201,168,64,.35);color:var(--gold-mid);">تقنيات متطورة لنتائج فعالة</div>
+      <h2 class="big-title" style="color:#fff;">الأجهزة المستخدمة — <em>في كل حصة</em></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.7);">5 تقنيات علاجية متكاملة في جلسة واحدة — بدون ألم، بدون تعافي</p>
+    </div>
+
+    <div class="machines-grid">
+
+      <div class="machine-card">
+        <div class="machine-img-wrap">
+          <span class="machine-emoji">🔬</span>
+        </div>
+        <div class="machine-body">
+          <div class="machine-name-ar">اللبوكافيتشين</div>
+          <div class="machine-name-fr">Lipocavitation</div>
+          <div class="machine-desc">موجات فوق صوتية تفتت خلايا الدهون بدون جراحة — فعالة بشكل خاص على البطن والأفخاذ</div>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <div class="machine-img-wrap">
+          <span class="machine-emoji">📡</span>
+        </div>
+        <div class="machine-body">
+          <div class="machine-name-ar">الترددات الراديوية</div>
+          <div class="machine-name-fr">Radiofréquence</div>
+          <div class="machine-desc">حرارة عميقة تشد الجلد وتنحت القوام — تحفز الكولاجين وتصغر مظهر السيلوليت</div>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <div class="machine-img-wrap">
+          <span class="machine-emoji">💨</span>
+        </div>
+        <div class="machine-body">
+          <div class="machine-name-ar">الشفط / الفاكيوم</div>
+          <div class="machine-name-fr">Vacuum</div>
+          <div class="machine-desc">يحرك الدهون الراكدة ويفعّل الدورة الليمفاوية — يقلل الانتفاخ واحتباس السوائل</div>
+        </div>
+      </div>
+
+      <div class="machine-card">
+        <div class="machine-img-wrap">
+          <span class="machine-emoji">⚡</span>
+        </div>
+        <div class="machine-body">
+          <div class="machine-name-ar">الليزر الدهني</div>
+          <div class="machine-name-fr">Lipolaser</div>
+          <div class="machine-desc">ليزر بارد يخترق طبقات الجلد لتحرير الدهون المتراكمة — بدون ألم وبدون آثار جانبية</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5th technique: manual massage — full width -->
+    <div style="margin-top:16px;background:rgba(255,255,255,.06);border:1.5px solid rgba(201,168,64,.22);border-radius:20px;padding:22px 28px;display:flex;align-items:center;gap:20px;">
+      <span style="font-size:2.4rem;flex-shrink:0;">🤲</span>
+      <div>
+        <div style="font-size:1rem;font-weight:900;color:var(--gold-mid);margin-bottom:4px;">مساج تنحيف يدوي — <span style="font-weight:600;font-size:.85rem;color:rgba(255,255,255,.6);">Massage amincissant manuel</span></div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;">بأيدي مختصات متدربات — يصرف السموم ويخفف مظهر السيلوليت ويعطي الجسم خفة ملموسة من أول حصة</div>
       </div>
     </div>
 
