@@ -217,8 +217,25 @@
       font-size: .8rem;
       color: #b91c1c;
       font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .form-social-proof {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--light);
+      border-radius: 10px; padding: 8px 12px;
       margin-bottom: 14px;
     }
+    .fsp-avatars { font-size: 1rem; letter-spacing: -4px; }
+    .fsp-text { font-size: .78rem; font-weight: 700; color: var(--green); }
+    .form-mini-review {
+      display: flex; flex-direction: column; gap: 2px;
+      background: var(--light);
+      border-radius: 10px; padding: 10px 14px;
+      margin-top: 12px; margin-bottom: 4px;
+    }
+    .fmr-stars { color: var(--gold); font-size: .82rem; letter-spacing: 1px; }
+    .fmr-quote { font-size: .8rem; color: var(--text); line-height: 1.5; font-style: italic; }
+    .fmr-name  { font-size: .75rem; color: var(--muted); font-weight: 700; }
 
     /* ── ANCHOR STRIP ── */
     .anchor-strip {
@@ -533,8 +550,15 @@
     <!-- FORM: minimal friction — name + phone only -->
     <div class="form-card">
       <div class="spots-left">🔴 أماكن محدودة هذا الأسبوع</div>
-      <div class="form-heading">خلي معلوماتك — نتاصلو بيك اليوم</div>
-      <div class="form-sub"><strong>نتاصلو بيك اليوم</strong> باش نشرحو لك البرنامج ونحددو الموعد المناسب</div>
+
+      <!-- MICRO SOCIAL PROOF — herd effect -->
+      <div class="form-social-proof">
+        <div class="fsp-avatars">👩👩👩👩👩</div>
+        <div class="fsp-text">+50 سيدة من طنجة سجلت هذا الشهر</div>
+      </div>
+
+      <div class="form-heading">خليني يتصلو بيك اليوم</div>
+      <div class="form-sub">بدون التزام — فقط نشرحو لك البرنامج</div>
 
       <form id="slimForm" novalidate>
         <div class="field">
@@ -546,9 +570,16 @@
           <input type="tel" id="fphone" placeholder="06XXXXXXXX" required autocomplete="tel" inputmode="tel" />
         </div>
         <button type="submit" class="submit-btn" id="submitBtn">
-          أرسلي معلوماتي الآن
+          نعم، خليهم يتصلو بيا 🌿
         </button>
       </form>
+
+      <!-- MINI REVIEW near submit -->
+      <div class="form-mini-review">
+        <span class="fmr-stars">★★★★★</span>
+        <span class="fmr-quote">"من الحصة الثالثة بدا الفرق — الخصر تبدل والخفة رجعت"</span>
+        <span class="fmr-name">— سلمى، طنجة</span>
+      </div>
 
       <div class="form-guarantee">
         🔒 معلوماتك سرية ولن تُشارك مع أي جهة أخرى
