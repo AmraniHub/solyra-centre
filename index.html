@@ -99,6 +99,8 @@
       cursor: pointer; text-decoration: none; transition: all .2s; white-space: nowrap;
     }
     .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .nav-wa { display:flex; align-items:center; gap:6px; background:#25D366; color:#fff; font-family:'Cairo',sans-serif; font-weight:900; font-size:.82rem; border-radius:50px; padding:8px 16px; text-decoration:none; transition:transform .15s,box-shadow .15s; white-space:nowrap; }
+    .nav-wa:hover { transform:scale(1.05); box-shadow:0 4px 16px rgba(37,211,102,.45); }
 
     /* ── HERO ── */
     .hero {
@@ -528,7 +530,10 @@
       <span>Centre </span><span>Solyra</span>
     </div>
   </a>
-  <a class="nav-cta" href="#leadForm">احجزي موعدك ✨</a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="https://wa.me/212619946109" class="nav-wa" target="_blank">💬 واتساب</a>
+    <a class="nav-cta" href="#leadForm">احجزي موعدك ✨</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -589,6 +594,7 @@
             </button>
           </form>
           <p class="form-note">🔒 معلوماتك سرية — لن نشاركها مع أي جهة</p>
+          <p class="form-note" style="margin-top:8px">أو تواصل مباشرة: <a href="https://wa.me/212619946109" target="_blank" style="color:#25D366;font-weight:700;text-decoration:none">💬 +212619946109</a></p>
         </div>
       </div>
 
@@ -958,7 +964,7 @@
         <h4>تواصلي معنا</h4>
         <div class="contact-item">📍 <span>En face cinéma Mégarama Goya, 29 Av. Prince Moulay Abdellah, Tanger</span></div>
         <div class="contact-item">📞 <a href="tel:0619946109">0619946109</a></div>
-        <div class="contact-item">📱 <a href="https://wa.me/212619946109" target="_blank">WhatsApp</a></div>
+        <div class="contact-item">📱 <a href="https://wa.me/212619946109" target="_blank" style="color:#25D366;font-weight:700">💬 +212619946109</a></div>
         <div class="contact-item">📸 <a href="https://instagram.com/centresolyra" target="_blank">@centresolyra</a></div>
       </div>
     </div>
